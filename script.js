@@ -96,7 +96,6 @@ function renderProjectDetails(project) {
       </button>
       <p class="project-details__kicker">Projeto selecionado</p>
       <h2 id="details-title">${escapeHtml(project.titulo)}</h2>
-      ${project.subtitulo ? `<p class="project-details__subtitle">${escapeHtml(project.subtitulo)}</p>` : ""}
       <div class="project-details__intro">
         ${renderParagraphs(project.descricaoCompleta || project.descricaoCurta || "")}
       </div>

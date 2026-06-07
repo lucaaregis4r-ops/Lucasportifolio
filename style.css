@@ -188,13 +188,9 @@ select {
 }
 
 .project-card__summary {
-  display: -webkit-box;
   margin: 1rem 0;
   color: var(--color-text-soft);
   line-height: 1.6;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
 }
 
 .project-card__footer {
