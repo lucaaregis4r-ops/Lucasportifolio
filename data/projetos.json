@@ -1,0 +1,139 @@
+[
+  {
+    "id": "a-temporada",
+    "titulo": "A Temporada",
+    "subtitulo": "A temporada é um jogo Baseado em html, idealizado como uma atividade coletiva para atletas poderem trabalhar construção de equi...",
+    "descricaoCurta": "A temporada é um jogo Baseado em html, idealizado como uma atividade coletiva para atletas poderem trabalhar construção de equipes e entenderem melhor a construção de uma comissão técnica e a montagem de elencos.",
+    "descricaoCompleta": "A Temporada é um jogo em HTML que criei como uma atividade coletiva para atletas. A ideia era fazer com que eles pudessem viver, de um jeito mais prático e divertido, alguns desafios que aparecem na construção de uma equipe esportiva.\n\nNo jogo, os participantes assumem o papel de uma comissão técnica. Eles precisam montar um elenco, fazer escolhas, pensar nas características dos atletas, equilibrar posições e tentar construir uma equipe que faça sentido para a temporada. A proposta não é só “ganhar o jogo”, mas discutir o que está por trás das escolhas feitas dentro de uma equipe.\n\nO projeto surgiu muito a partir da minha prática na psicologia do esporte. Em vários momentos, percebo que os atletas entendem o esporte principalmente pelo lugar em que eles estão: querem jogar, querem ser escolhidos, querem ter espaço e reconhecimento. Isso faz parte. Mas também acho importante criar situações em que eles possam olhar para o outro lado, entendendo um pouco melhor como é difícil montar um grupo, pensar em critérios e tomar decisões que nem sempre agradam todo mundo.\n\nA partir dessas escolhas, a atividade permite trabalhar temas como construção de equipe, liderança, comunicação, papéis dentro do grupo, tomada de decisão e compreensão da função da comissão técnica.\n\nEscolhi fazer o jogo em HTML justamente por ser uma ferramenta simples, leve e fácil de usar. Não precisa instalar nada muito complexo e pode ser adaptado para diferentes grupos e modalidades. A ideia era criar algo que pudesse funcionar dentro da rotina real de clube, sem depender de uma estrutura enorme.\n\nMais do que um jogo pronto e fechado, vejo A Temporada como uma tentativa de transformar conceitos da psicologia do esporte em uma experiência concreta. Em vez de só falar sobre equipe, os atletas precisam construir uma. Em vez de só falar sobre decisão, eles precisam decidir. E, no meio disso, aparecem discussões muito ricas sobre grupo, responsabilidade, desempenho e convivência.",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Game design",
+      "Psicologia do esporte",
+      "Dinâmica de grupo"
+    ],
+    "aprendizados": [
+      "Transformação de conceitos da psicologia do esporte em experiência prática",
+      "Criação de regras e interações para discutir equipe, liderança e tomada de decisão",
+      "Construção de uma ferramenta leve para uso em contextos reais de clube"
+    ],
+    "status": "Protótipo",
+    "imagens": [
+      {
+        "src": "./assets/imagens/a-temporada-1.png",
+        "alt": "Imagem do projeto A Temporada",
+        "legenda": "Registro visual de A Temporada."
+      },
+      {
+        "src": "./assets/imagens/a-temporada-2.png",
+        "alt": "Imagem do projeto A Temporada",
+        "legenda": "Registro visual de A Temporada."
+      },
+      {
+        "src": "./assets/imagens/a-temporada-3.png",
+        "alt": "Imagem do projeto A Temporada",
+        "legenda": "Registro visual de A Temporada."
+      },
+      {
+        "src": "./assets/imagens/a-temporada-4.png",
+        "alt": "Imagem do projeto A Temporada",
+        "legenda": "Registro visual de A Temporada."
+      }
+    ],
+    "linkRepositorio": "",
+    "linkDemo": ""
+  },
+  {
+    "id": "dashboard-de-controle-de-carga",
+    "titulo": "Dashboard de Controle de Carga",
+    "subtitulo": "O dashboard de controle de carga é uma aplicação web criada para organizar dados de atletas do clube a partir de uma planilha d...",
+    "descricaoCurta": "O dashboard de controle de carga é uma aplicação web criada para organizar dados de atletas do clube a partir de uma planilha do Google Sheets. O sistema consolida check-ins, status atual e indicadores como carga, dor, fadiga, sono e estresse, transformando registros da rotina em visualizações mais claras para acompanhamento esportivo. O projeto também começou a ser expandido para integrar registros da fisioterapia e da psicologia, buscando melhorar o diálogo entre setores e apoiar decisões mais cuidadosas ao longo da temporada",
+    "descricaoCompleta": "O Dashboard Olympico é um projeto que criei para organizar e visualizar informações de atletas do clube a partir de uma planilha do Google Sheets. A ideia surgiu de uma necessidade bem prática: transformar registros que ficam espalhados em planilhas em uma visualização mais clara, rápida e útil para o acompanhamento da rotina esportiva.\n\nO sistema funciona como um dashboard web simples. Ele busca os dados de uma planilha pública, organiza as informações dos atletas e apresenta visualizações sobre check-ins, status atual e indicadores como carga, dor, fadiga, sono e estresse. A proposta não é substituir o trabalho dos profissionais, mas ajudar a enxergar melhor o que está acontecendo com os atletas ao longo da temporada.\n\nUm dos pontos mais importantes do projeto é que ele tenta aproximar tecnologia da realidade do clube. Muitas vezes, as informações já existem, mas ficam difíceis de acompanhar quando estão apenas em planilhas grandes, com muitos nomes, datas e respostas. O dashboard nasce justamente para fazer essa ponte: pegar dados simples, coletados na rotina, e transformar em algo mais acessível para análise e tomada de decisão.\n\nA partir dele, é possível acompanhar os check-ins mais recentes dos atletas, observar sinais de maior carga ou desconforto e pensar em encaminhamentos com mais clareza. Isso pode ajudar a comissão técnica, a fisioterapia, a psicologia e outros setores a conversarem melhor sobre os atletas, com base em informações organizadas.\n\nO projeto também foi pensado para crescer aos poucos. Além do dashboard principal, comecei a estruturar modelos para integração com a fisioterapia e a psicologia, criando planilhas próprias para registrar atletas em tratamento, acompanhamentos, fases, demandas, lesões, observações e histórico de movimentações. A ideia é que, no futuro, esses diferentes registros possam conversar melhor entre si.\n\nUsei tecnologias simples como HTML, CSS, JavaScript e Node.js, justamente porque queria criar algo leve, acessível e possível de adaptar. O objetivo nunca foi fazer um sistema gigante, mas uma ferramenta funcional, que pudesse responder a problemas reais da rotina de trabalho.\n\nPara mim, esse projeto representa uma tentativa de organizar melhor o cuidado com os atletas. No esporte, muita coisa importante acontece nos detalhes: uma dor que aparece com frequência, uma carga que aumenta, um sono ruim, uma queda de disposição, um atleta que entra em tratamento ou acompanhamento. Quando essas informações ficam mais visíveis, a equipe tem mais condições de agir antes que os problemas cresçam.",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "Google Sheets",
+      "Visualização de dados"
+    ],
+    "aprendizados": [
+      "Organização de dados esportivos vindos de planilhas",
+      "Criação de indicadores para acompanhamento de carga, dor, fadiga, sono e estresse",
+      "Integração gradual entre áreas como comissão técnica, fisioterapia e psicologia"
+    ],
+    "status": "Em desenvolvimento",
+    "imagens": [
+      {
+        "src": "./assets/imagens/dashboard-de-controle-de-carga-1.png",
+        "alt": "Imagem do projeto Dashboard de Controle de Carga",
+        "legenda": "Registro visual de Dashboard de Controle de Carga."
+      }
+    ],
+    "linkRepositorio": "",
+    "linkDemo": ""
+  },
+  {
+    "id": "analise-das-acoes-no-futebol",
+    "titulo": "Análise das Ações no Futebol",
+    "subtitulo": "O WorldCup Action Flow é um dashboard local em Streamlit que criei para analisar dados das Copas do Mundo de 2018 e 2022, com f...",
+    "descricaoCurta": "O WorldCup Action Flow é um dashboard local em Streamlit que criei para analisar dados das Copas do Mundo de 2018 e 2022, com foco nas ações de jogo, nas transições entre eventos e na comparação entre jogadores, equipes e seleções.",
+    "descricaoCompleta": "O WorldCup Action Flow é um dashboard local em Streamlit que criei para analisar dados das Copas do Mundo de 2018 e 2022, com foco nas ações de jogo, nas transições entre eventos e na comparação entre jogadores, equipes e seleções.\n\nO projeto surgiu do meu interesse em entender o futebol para além das estatísticas mais tradicionais. Números como posse de bola, finalizações, passes certos e gols são importantes, mas nem sempre mostram como o jogo se constrói. No futebol, uma ação raramente tem sentido sozinha: um passe, uma condução, uma recuperação de bola ou uma finalização fazem parte de uma sequência maior, que muda o contexto da partida e cria novas possibilidades.\n\nA proposta do dashboard é justamente olhar para essas sequências. A partir dos dados de eventos, o sistema permite explorar padrões de ação, comparar seleções, observar similaridades entre equipes e analisar como jogadores participam da construção ofensiva. Para isso, o projeto utiliza modelos como cadeias de Markov, suavização bayesiana, xT e xG futuro.\n\nAs cadeias de Markov ajudam a observar as transições entre estados do jogo, permitindo pensar nas probabilidades de uma ação levar a outra. Já as análises de xT e xG futuro buscam estimar o valor das ações antes da finalização, mostrando como passes, conduções e mudanças de zona podem aumentar a ameaça ofensiva ao longo da posse. Com isso, a análise deixa de olhar apenas para quem finaliza e passa a considerar também quem participa da construção das situações de perigo.\n\nA suavização bayesiana entra como uma forma de tornar as comparações mais cuidadosas, principalmente quando jogadores ou equipes têm quantidades diferentes de eventos. Isso ajuda a evitar interpretações exageradas com base em amostras pequenas e torna os rankings e comparações mais estáveis.\n\nDo ponto de vista técnico, o projeto foi desenvolvido em Python com Streamlit, com uma arquitetura modular para facilitar manutenção e evolução. O dashboard organiza funções de carregamento de dados, pré-processamento, modelos, comparações, visualizações e identidade visual em arquivos separados. Também foram feitos ajustes de performance para lidar melhor com arquivos pesados e permitir que a aplicação funcione localmente a partir dos dados disponíveis no repositório.\n\nPara mim, o WorldCup Action Flow representa uma tentativa de aproximar programação, análise de dados e leitura contextual do futebol. A ideia não é substituir a interpretação do jogo, mas criar uma camada complementar de análise, capaz de transformar eventos registrados em informações úteis para pensar decisões, padrões coletivos e participação dos atletas na construção das jogadas.",
+    "tecnologias": [
+      "Python",
+      "Streamlit",
+      "Análise de dados",
+      "Cadeias de Markov",
+      "xT",
+      "xG futuro",
+      "Suavização bayesiana"
+    ],
+    "aprendizados": [
+      "Análise de sequências de ações no futebol para além de estatísticas isoladas",
+      "Uso de modelos probabilísticos para observar transições e padrões de jogo",
+      "Estruturação modular de um dashboard local com dados esportivos pesados"
+    ],
+    "status": "Em desenvolvimento",
+    "imagens": [
+      {
+        "src": "./assets/imagens/analise-das-acoes-no-futebol-1.png",
+        "alt": "Imagem do projeto Análise das Ações no Futebol",
+        "legenda": "Registro visual de Análise das Ações no Futebol."
+      }
+    ],
+    "linkRepositorio": "",
+    "linkDemo": ""
+  },
+  {
+    "id": "scout-de-volei",
+    "titulo": "Scout de Vôlei",
+    "subtitulo": "Scout Studio é uma aplicação web de scout de voleibol criada para registrar eventos de jogo, controlar placar, saque, rotação e...",
+    "descricaoCurta": "Scout Studio é uma aplicação web de scout de voleibol criada para registrar eventos de jogo, controlar placar, saque, rotação e sets, além de organizar informações por partida e por atleta. O projeto surgiu da minha vivência com o esporte e da percepção de que planilhas, apesar de úteis, têm limitações para registrar, armazenar e analisar dados de jogo de forma prática. A ferramenta busca facilitar o registro sistemático das ações, permitindo ultrapassar impressões apenas subjetivas e transformar o que acontece em quadra em informações mais claras para análise de desempenho e planejamento do treinamento.",
+    "descricaoCompleta": "O Scout Studio é uma aplicação de scout de voleibol que criei para registrar eventos de jogo, controlar partidas e organizar informações de desempenho de forma mais prática.\n\nO projeto surgiu da minha vivência com o esporte e da percepção de que, apesar de planilhas serem ferramentas muito úteis, elas também têm limitações importantes quando usadas para registrar jogos. Durante uma partida, muitas ações acontecem em sequência e precisam ser registradas rapidamente. Depois, esses dados também precisam ser armazenados, organizados, filtrados e transformados em algum tipo de análise. Em muitos casos, a planilha começa simples, mas vai ficando difícil de manter, interpretar e reaproveitar.\n\nA ideia do Scout Studio foi criar uma alternativa mais organizada para esse processo. A ferramenta permite registrar eventos por clique durante a partida, controlar placar, saque, rotação e sets, cadastrar atletas, gerar dashboards por partida e por atleta, exportar dados em CSV e PDF, além de manter as informações salvas localmente no navegador.\n\nMais do que substituir a observação da comissão técnica, o objetivo do scout é ampliar a leitura do jogo. O registro sistemático das ações permite ultrapassar impressões apenas subjetivas e construir análises mais consistentes sobre o desempenho individual e coletivo. Com os dados organizados, fica mais fácil identificar padrões, comparar momentos da partida e transformar aquilo que foi observado em informação útil para o treinamento.\n\nO projeto foi desenvolvido com HTML, CSS e JavaScript, buscando uma solução leve, acessível e possível de usar diretamente no navegador. Para mim, o Scout Studio representa uma tentativa de aproximar tecnologia, análise de desempenho e rotina de quadra, criando uma ferramenta simples, mas pensada a partir de problemas reais do esporte.",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "LocalStorage",
+      "CSV",
+      "PDF",
+      "Análise de desempenho"
+    ],
+    "aprendizados": [
+      "Criação de uma interface de registro rápido para eventos de voleibol",
+      "Organização de dados por partida e por atleta",
+      "Transformação de observações de quadra em informações úteis para análise"
+    ],
+    "status": "Em desenvolvimento",
+    "imagens": [
+      {
+        "src": "./assets/imagens/scout-de-volei-1.png",
+        "alt": "Imagem do projeto Scout de Vôlei",
+        "legenda": "Registro visual de Scout de Vôlei."
+      }
+    ],
+    "linkRepositorio": "",
+    "linkDemo": ""
+  }
+]
