@@ -102,7 +102,7 @@
         "legenda": "Registro visual de Análise das Ações no Futebol."
       }
     ],
-    "linkRepositorio": "",
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/Dashboard-copa-do-mundo-XT-XG",
     "linkDemo": ""
   },
   {
@@ -135,5 +135,83 @@
     ],
     "linkRepositorio": "",
     "linkDemo": ""
+  },
+  {
+    "id": "simulador-procedural-de-gestao-de-rh",
+    "titulo": "Simulador Procedural de Gestão de RH",
+    "subtitulo": "Jogo de gestão em que empresas, funcionários, relações, demandas e riscos organizacionais são gerados proceduralmente.",
+    "descricaoCurta": "Jogo de gestão em que empresas, funcionários, relações, demandas e riscos organizacionais são gerados proceduralmente.",
+    "descricaoCompleta": "O Simulador Procedural de Gestão de RH é um jogo em desenvolvimento que transforma problemas organizacionais em uma experiência de gestão. A proposta é gerar empresas diferentes a cada partida, com setores, funcionários, relações internas, demandas, indicadores e acontecimentos próprios.\n\nO jogador assume o papel de um profissional de Recursos Humanos. Em vez de receber todas as informações prontas, precisa circular pela empresa, conversar com as pessoas, interpretar sinais, analisar dados incompletos e decidir onde investir tempo e energia. Isso permite trabalhar com uma ideia importante do projeto: o RH não possui uma visão mágica da organização e precisa construir conhecimento antes de agir.\n\nA simulação inclui elementos como clima organizacional, carga de trabalho, confiança no RH, conflitos, compliance, demandas invisíveis, finanças, produtividade, relações entre funcionários e consequências das ações tomadas ao longo do tempo. Esses sistemas são conectados para que uma decisão possa produzir efeitos diferentes dependendo do contexto da empresa.\n\nDo ponto de vista técnico, o projeto possui uma arquitetura modular em JavaScript e Node.js, separando geração procedural, regras da simulação, conhecimento imperfeito, ações de RH, relatórios, persistência e testes. A interface principal está sendo construída em Phaser, com um ambiente jogável no qual o profissional pode explorar a empresa e interagir com seus funcionários.\n\nO projeto aproxima psicologia, gestão de pessoas, análise de dados e game design. Mais do que criar um jogo de escolhas prontas, a intenção é construir uma simulação na qual investigar, interpretar e decidir sejam partes centrais da experiência.",
+    "tecnologias": [
+      "JavaScript",
+      "Node.js",
+      "Phaser",
+      "Geração procedural",
+      "Arquitetura modular",
+      "Simulação",
+      "Game design",
+      "People Analytics"
+    ],
+    "aprendizados": [
+      "Construção de sistemas procedurais com empresas e funcionários diferentes a cada partida",
+      "Transformação de conceitos de RH em regras, métricas e consequências simuladas",
+      "Desenvolvimento de uma arquitetura modular com interface jogável e testes automatizados"
+    ],
+    "status": "Em desenvolvimento",
+    "imagens": [],
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/GPRH",
+    "linkDemo": ""
+  },
+  {
+    "id": "plataforma-local-de-inteligencia-esportiva",
+    "titulo": "Plataforma Local de Inteligência Esportiva",
+    "subtitulo": "Sistema local para integrar bases de atletas, revisar inconsistências e consultar informações esportivas com apoio de inteligência artificial.",
+    "descricaoCurta": "Sistema local para integrar bases de atletas, revisar inconsistências e consultar informações esportivas com apoio de inteligência artificial.",
+    "descricaoCompleta": "A Plataforma Local de Inteligência Esportiva é um sistema em desenvolvimento para organizar dados internos de atletas que normalmente ficam distribuídos entre planilhas, relatórios e registros produzidos por diferentes áreas de um clube.\n\nA proposta é criar uma base integrada capaz de receber arquivos de fontes diferentes, normalizar nomes e campos, construir um registro unificado dos atletas e apontar possíveis inconsistências. Um dos exemplos é a detecção de registros duplicados: o sistema pode localizar correspondências prováveis e apresentar os critérios encontrados, mas mantém a confirmação final com o profissional responsável.\n\nA arquitetura também está sendo pensada para permitir consultas em linguagem natural, geração de relatórios, identificação de dados ausentes e criação de alertas. A inteligência artificial funciona como uma camada de organização, cruzamento e sugestão, enquanto a interpretação, o julgamento e a decisão permanecem com a equipe humana.\n\nOutro princípio central é o funcionamento local. A intenção é reduzir a dependência de serviços externos e oferecer maior controle sobre dados sensíveis de atletas, preservando privacidade, autonomia e rastreabilidade. Por isso, o desenvolvimento envolve não apenas o chatbot, mas também importação, validação, modelagem de dados, testes e documentação da arquitetura.\n\nO projeto representa uma tentativa de aproximar análise de dados e inteligência artificial da rotina real de equipes multidisciplinares, sem transformar a tecnologia em substituta do conhecimento profissional.",
+    "tecnologias": [
+      "Python",
+      "Banco de dados local",
+      "ETL",
+      "Modelagem de dados",
+      "Validação de dados",
+      "IA local",
+      "RAG",
+      "Arquitetura modular"
+    ],
+    "aprendizados": [
+      "Integração de planilhas e registros produzidos por diferentes áreas esportivas",
+      "Criação de regras de normalização, validação e detecção de possíveis duplicidades",
+      "Desenvolvimento de uma arquitetura local baseada na colaboração entre inteligência humana e artificial"
+    ],
+    "status": "Em desenvolvimento",
+    "imagens": [],
+    "linkRepositorio": "",
+    "linkDemo": ""
+  },
+  {
+    "id": "mapa-de-valores-imobiliarios-em-belo-horizonte",
+    "titulo": "Mapa de Valores Imobiliários em Belo Horizonte",
+    "subtitulo": "Visualização geográfica construída com dados públicos e coleta web para explorar preços de aluguel, venda e condomínio.",
+    "descricaoCurta": "Visualização geográfica construída com dados públicos e coleta web para explorar preços de aluguel, venda e condomínio.",
+    "descricaoCompleta": "O Mapa de Valores Imobiliários em Belo Horizonte é um projeto de visualização geográfica criado para explorar como os preços dos imóveis se distribuem pela cidade.\n\nA proposta combina informações obtidas por coleta web com bases públicas, organizando valores de aluguel, venda e condomínio de casas e apartamentos. Em vez de apresentar apenas uma tabela de anúncios, o projeto utiliza o território como parte da análise, permitindo observar padrões espaciais e diferenças entre regiões.\n\nO desenvolvimento exige cuidados com limpeza de dados, padronização de endereços, registros repetidos, valores ausentes, anúncios fora do padrão e integração entre fontes que não foram criadas para funcionar juntas. Também envolve uma preocupação com coleta responsável, uso de dados públicos e transparência sobre as limitações da amostra.\n\nEsse projeto amplia meu portfólio para além do esporte e mostra como programação, dados públicos e mapas interativos podem ser usados para transformar informações dispersas da internet em uma leitura mais clara sobre a cidade.",
+    "tecnologias": [
+      "HTML",
+      "JavaScript",
+      "Web scraping",
+      "Dados públicos",
+      "Limpeza de dados",
+      "Geovisualização",
+      "Mapas interativos"
+    ],
+    "aprendizados": [
+      "Combinação de dados coletados na web com bases geográficas públicas",
+      "Tratamento de endereços, valores ausentes, duplicidades e anúncios fora do padrão",
+      "Construção de uma visualização territorial para comparar padrões de preços"
+    ],
+    "status": "Protótipo",
+    "imagens": [],
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh",
+    "linkDemo": ""
   }
-]
+  
+  
