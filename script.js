@@ -4,17 +4,17 @@ const CATEGORIES = [
   {
     id: "esporte",
     titulo: "Projetos ligados ao esporte",
-    descricao: "Ideias que nasceram da quadra, do clube e da vontade de transformar situações do esporte em ferramentas e experiências."
+    descricao: "Foi no esporte que comecei a transformar algumas ideias em projetos. Aqui estão ferramentas e experiências que nasceram da quadra, do clube e das conversas com atletas e profissionais."
   },
   {
     id: "dados",
     titulo: "Organização e leitura de dados",
-    descricao: "Projetos em que tento aproximar informações espalhadas, fazer perguntas melhores e apresentar os dados de um jeito mais claro."
+    descricao: "Meu interesse por dados começou com informações que já existiam, mas estavam espalhadas ou eram difíceis de acompanhar. Estes projetos são tentativas de organizar melhor essas informações e encontrar formas mais claras de olhar para elas."
   },
   {
     id: "trabalho",
     titulo: "Aplicações para estudo e trabalho",
-    descricao: "Programas que criei para aprender, organizar tarefas ou experimentar novas formas de trabalhar com tecnologia."
+    descricao: "Nem todos os projetos vieram do esporte. Alguns começaram com uma curiosidade, uma atividade de estudo ou a vontade de experimentar como um programa de computador é pensado, construído e preparado para uso."
   }
 ];
 
@@ -101,7 +101,8 @@ function renderProjectCategories(projects) {
 }
 
 function renderProjectCard(project) {
-  const cover = Array.isArray(project.imagens) ? project.imagens.find((image) => image?.src) : null;
+  const galleryCover = Array.isArray(project.imagens) ? project.imagens.find((image) => image?.src) : null;
+  const cover = project.capa?.src ? project.capa : galleryCover;
 
   return `
     <button
@@ -268,6 +269,7 @@ function updateDetailsContent(content, animate = true) {
   if (!animate || prefersReducedMotion.matches) {
     projectDetails.innerHTML = content;
     bindBackButton();
+    if (animate) moveToProjectDetails();
     return;
   }
 
@@ -277,7 +279,15 @@ function updateDetailsContent(content, animate = true) {
     projectDetails.classList.remove("is-transitioning");
     bindBackButton();
     projectDetails.focus({ preventScroll: true });
+    moveToProjectDetails();
   }, 170);
+}
+
+function moveToProjectDetails() {
+  projectDetails.scrollIntoView({
+    behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+    block: "start"
+  });
 }
 
 function bindBackButton() {
