@@ -3,36 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta
-    name="description"
-    content="Portfólio pessoal de Lucas Regis com projetos em dados, tecnologia, automações, dashboards, jogos e soluções digitais."
-  >
-  <title>Lucas Regis | Portfólio</title>
+  <meta name="description" content="Portfólio de Lucas Regis com projetos em desenvolvimento de software, análise de dados, automação e sistemas de dados.">
+  <title>Lucas Regis | Desenvolvimento, Dados e Automação</title>
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#projects-title">Ir para os projetos</a>
+
   <div class="site-shell">
+    <header class="site-header">
+      <div>
+        <p class="site-header__kicker">Portfólio profissional</p>
+        <h1>Lucas Regis</h1>
+        <p class="site-header__summary">Desenvolvimento de software, análise de dados e automação aplicados a problemas reais.</p>
+      </div>
+
+      <nav class="category-nav" aria-label="Navegação pelas categorias de projetos">
+        <a href="#software">Software &amp; Aplicações</a>
+        <a href="#dados">Dados &amp; Analytics</a>
+        <a href="#automacao">Automação, IA &amp; Sistemas de Dados</a>
+      </nav>
+    </header>
+
     <main class="portfolio-layout" aria-label="Portfólio de projetos">
       <section class="projects-column" aria-labelledby="projects-title">
         <div class="section-heading">
-          <p class="section-heading__kicker">Seleção inicial</p>
-          <h2 id="projects-title">Projetos</h2>
+          <p class="section-heading__kicker">Projetos selecionados</p>
+          <h2 id="projects-title" tabindex="-1">O que venho construindo</h2>
         </div>
 
-        <div
-          id="projects-list"
-          class="projects-grid"
-          role="list"
-          aria-live="polite"
-          aria-busy="true"
-        >
-          <article class="project-card project-card--loading" role="listitem">
+        <div id="projects-list" class="projects-list" aria-live="polite" aria-busy="true">
+          <article class="project-card project-card--loading">
             <span class="project-card__status">Carregando</span>
             <h3>Buscando projetos...</h3>
-            <p>Os cards serão montados automaticamente a partir de <code>data/projetos.json</code>.</p>
+            <p>Os cards serão montados a partir de <code>data/projetos.json</code>.</p>
           </article>
         </div>
       </section>
@@ -42,17 +50,8 @@
       <aside class="details-column" aria-labelledby="details-title">
         <section id="project-details" class="project-details" tabindex="-1" aria-live="polite">
           <div class="project-details__content">
-            <button
-              id="back-button"
-              type="button"
-              class="back-button"
-              aria-label="Voltar para a apresentação inicial"
-              hidden
-            >
-              Voltar
-            </button>
             <p class="project-details__kicker">Apresentação</p>
-            <h2 id="details-title">Dados, psicologia, esporte e soluções</h2>
+            <h2 id="details-title">Desenvolvimento, dados e automação</h2>
             <p>Carregando apresentação...</p>
           </div>
         </section>

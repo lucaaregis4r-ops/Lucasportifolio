@@ -1,219 +1,128 @@
 [
   {
-    "id": "a-temporada",
-    "titulo": "A Temporada",
-    "subtitulo": "Jogo em HTML criado como atividade coletiva para discutir montagem de equipes, decisões e papéis dentro do esporte.",
-    "descricaoCurta": "Jogo em HTML criado como atividade coletiva para discutir montagem de equipes, decisões e papéis dentro do esporte.",
-    "descricaoCompleta": "A Temporada é um jogo em HTML que criei como uma atividade coletiva para atletas. A ideia era fazer com que eles pudessem viver, de um jeito mais prático e divertido, alguns desafios que aparecem na construção de uma equipe esportiva.\n\nNo jogo, os participantes assumem o papel de uma comissão técnica. Eles precisam montar um elenco, fazer escolhas, pensar nas características dos atletas, equilibrar posições e tentar construir uma equipe que faça sentido para a temporada. A proposta não é só ganhar o jogo, mas discutir o que está por trás das escolhas feitas dentro de uma equipe.\n\nO projeto surgiu muito a partir da minha prática na psicologia do esporte. Em vários momentos, percebo que os atletas entendem o esporte principalmente pelo lugar em que eles estão: querem jogar, querem ser escolhidos, querem ter espaço e reconhecimento. Isso faz parte. Mas também acho importante criar situações em que eles possam olhar para o outro lado, entendendo um pouco melhor como é difícil montar um grupo, pensar em critérios e tomar decisões que nem sempre agradam todo mundo.\n\nA partir dessas escolhas, a atividade permite trabalhar temas como construção de equipe, liderança, comunicação, papéis dentro do grupo, tomada de decisão e compreensão da função da comissão técnica.\n\nEscolhi fazer o jogo em HTML justamente por ser uma ferramenta simples, leve e fácil de usar. Não precisa instalar nada muito complexo e pode ser adaptado para diferentes grupos e modalidades. A ideia era criar algo que pudesse funcionar dentro da rotina real de clube, sem depender de uma estrutura enorme.\n\nMais do que um jogo pronto e fechado, vejo A Temporada como uma tentativa de transformar conceitos da psicologia do esporte em uma experiência concreta. Em vez de só falar sobre equipe, os atletas precisam construir uma. Em vez de só falar sobre decisão, eles precisam decidir. E, no meio disso, aparecem discussões muito ricas sobre grupo, responsabilidade, desempenho e convivência.",
-    "tecnologias": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Game design",
-      "Psicologia do esporte",
-      "Dinâmica de grupo"
-    ],
-    "aprendizados": [
-      "Transformação de conceitos da psicologia do esporte em experiência prática",
-      "Criação de regras e interações para discutir equipe, liderança e tomada de decisão",
-      "Construção de uma ferramenta leve para uso em contextos reais de clube"
-    ],
-    "status": "Protótipo",
-    "imagens": [
-      {
-        "src": "./assets/imagens/a-temporada-1.png",
-        "alt": "Imagem do projeto A Temporada",
-        "legenda": "Registro visual de A Temporada."
-      },
-      {
-        "src": "./assets/imagens/a-temporada-2.png",
-        "alt": "Imagem do projeto A Temporada",
-        "legenda": "Registro visual de A Temporada."
-      },
-      {
-        "src": "./assets/imagens/a-temporada-3.png",
-        "alt": "Imagem do projeto A Temporada",
-        "legenda": "Registro visual de A Temporada."
-      },
-      {
-        "src": "./assets/imagens/a-temporada-4.png",
-        "alt": "Imagem do projeto A Temporada",
-        "legenda": "Registro visual de A Temporada."
-      }
-    ],
-    "linkRepositorio": "",
-    "linkDemo": ""
-  },
-  {
-    "id": "dashboard-de-controle-de-carga",
-    "titulo": "Dashboard de Controle de Carga",
-    "subtitulo": "Aplicação web para organizar dados de atletas e transformar registros de rotina em visualizações mais claras.",
-    "descricaoCurta": "Aplicação web para organizar dados de atletas e transformar registros de rotina em visualizações mais claras.",
-    "descricaoCompleta": "O Dashboard de Controle de Carga é um projeto que criei para organizar e visualizar informações de atletas do clube a partir de uma planilha do Google Sheets. A ideia surgiu de uma necessidade bem prática: transformar registros que ficam espalhados em planilhas em uma visualização mais clara, rápida e útil para o acompanhamento da rotina esportiva.\n\nO sistema funciona como um dashboard web simples. Ele busca os dados de uma planilha pública, organiza as informações dos atletas e apresenta visualizações sobre check-ins, status atual e indicadores como carga, dor, fadiga, sono e estresse. A proposta não é substituir o trabalho dos profissionais, mas ajudar a enxergar melhor o que está acontecendo com os atletas ao longo da temporada.\n\nUm dos pontos mais importantes do projeto é que ele tenta aproximar tecnologia da realidade do clube. Muitas vezes, as informações já existem, mas ficam difíceis de acompanhar quando estão apenas em planilhas grandes, com muitos nomes, datas e respostas. O dashboard nasce justamente para fazer essa ponte: pegar dados simples, coletados na rotina, e transformar isso em algo mais acessível para análise e tomada de decisão.\n\nA partir dele, é possível acompanhar os check-ins mais recentes dos atletas, observar sinais de maior carga ou desconforto e pensar em encaminhamentos com mais clareza. Isso pode ajudar a comissão técnica, a fisioterapia, a psicologia e outros setores a conversarem melhor sobre os atletas, com base em informações organizadas.\n\nO projeto também foi pensado para crescer aos poucos. Além do dashboard principal, comecei a estruturar modelos para integração com a fisioterapia e a psicologia, criando planilhas próprias para registrar atletas em tratamento, acompanhamentos, fases, demandas, lesões, observações e histórico de movimentações. A ideia é que, no futuro, esses diferentes registros possam conversar melhor entre si.\n\nUsei tecnologias simples como HTML, CSS, JavaScript e Node.js, justamente porque queria criar algo leve, acessível e possível de adaptar. O objetivo nunca foi fazer um sistema gigante, mas uma ferramenta funcional, que pudesse responder a problemas reais da rotina de trabalho.\n\nPara mim, esse projeto representa uma tentativa de organizar melhor o cuidado com os atletas. No esporte, muita coisa importante acontece nos detalhes: uma dor que aparece com frequência, uma carga que aumenta, um sono ruim, uma queda de disposição, um atleta que entra em tratamento ou acompanhamento. Quando essas informações ficam mais visíveis, a equipe tem mais condições de agir antes que os problemas cresçam.",
-    "tecnologias": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Node.js",
-      "Google Sheets",
-      "Visualização de dados"
-    ],
-    "aprendizados": [
-      "Organização de dados esportivos vindos de planilhas",
-      "Criação de indicadores para acompanhamento de carga, dor, fadiga, sono e estresse",
-      "Integração gradual entre áreas como comissão técnica, fisioterapia e psicologia"
-    ],
-    "status": "Em desenvolvimento",
-    "imagens": [
-      {
-        "src": "./assets/imagens/dashboard-de-controle-de-carga-1.png",
-        "alt": "Imagem do projeto Dashboard de Controle de Carga",
-        "legenda": "Registro visual de Dashboard de Controle de Carga."
-      }
-    ],
-    "linkRepositorio": "",
-    "linkDemo": ""
-  },
-  {
-    "id": "analise-das-acoes-no-futebol",
-    "titulo": "Análise das Ações no Futebol",
-    "subtitulo": "Dashboard local para analisar ações de jogo, transições entre eventos e padrões ofensivos nas Copas de 2018 e 2022.",
-    "descricaoCurta": "Dashboard local para analisar ações de jogo, transições entre eventos e padrões ofensivos nas Copas de 2018 e 2022.",
-    "descricaoCompleta": "Análise das Ações no Futebol é um dashboard local em Streamlit que criei para analisar dados das Copas do Mundo de 2018 e 2022, com foco nas ações de jogo, nas transições entre eventos e na comparação entre jogadores, equipes e seleções.\n\nO projeto surgiu do meu interesse em entender o futebol para além das estatísticas mais tradicionais. Números como posse de bola, finalizações, passes certos e gols são importantes, mas nem sempre mostram como o jogo se constrói. No futebol, uma ação raramente tem sentido sozinha: um passe, uma condução, uma recuperação de bola ou uma finalização fazem parte de uma sequência maior, que muda o contexto da partida e cria novas possibilidades.\n\nA proposta do dashboard é justamente olhar para essas sequências. A partir dos dados de eventos, o sistema permite explorar padrões de ação, comparar seleções, observar similaridades entre equipes e analisar como jogadores participam da construção ofensiva. Para isso, o projeto utiliza modelos como cadeias de Markov, suavização bayesiana, xT e xG futuro.\n\nAs cadeias de Markov ajudam a observar as transições entre estados do jogo, permitindo pensar nas probabilidades de uma ação levar a outra. Já as análises de xT e xG futuro buscam estimar o valor das ações antes da finalização, mostrando como passes, conduções e mudanças de zona podem aumentar a ameaça ofensiva ao longo da posse. Com isso, a análise deixa de olhar apenas para quem finaliza e passa a considerar também quem participa da construção das situações de perigo.\n\nA suavização bayesiana entra como uma forma de tornar as comparações mais cuidadosas, principalmente quando jogadores ou equipes têm quantidades diferentes de eventos. Isso ajuda a evitar interpretações exageradas com base em amostras pequenas e torna os rankings e comparações mais estáveis.\n\nDo ponto de vista técnico, o projeto foi desenvolvido em Python com Streamlit, com uma arquitetura modular para facilitar manutenção e evolução. O dashboard organiza funções de carregamento de dados, pré-processamento, modelos, comparações, visualizações e identidade visual em arquivos separados. Também foram feitos ajustes de performance para lidar melhor com arquivos pesados e permitir que a aplicação funcione localmente a partir dos dados disponíveis no repositório.\n\nPara mim, Análise das Ações no Futebol representa uma tentativa de aproximar programação, análise de dados e leitura contextual do futebol. A ideia não é substituir a interpretação do jogo, mas criar uma camada complementar de análise, capaz de transformar eventos registrados em informações úteis para pensar decisões, padrões coletivos e participação dos atletas na construção das jogadas.",
-    "tecnologias": [
-      "Python",
-      "Streamlit",
-      "Análise de dados",
-      "Cadeias de Markov",
-      "xT",
-      "xG futuro",
-      "Suavização bayesiana"
-    ],
-    "aprendizados": [
-      "Análise de sequências de ações no futebol para além de estatísticas isoladas",
-      "Uso de modelos probabilísticos para observar transições e padrões de jogo",
-      "Estruturação modular de um dashboard local com dados esportivos pesados"
-    ],
-    "status": "Em desenvolvimento",
-    "imagens": [
-      {
-        "src": "./assets/imagens/analise-das-acoes-no-futebol-1.png",
-        "alt": "Imagem do projeto Análise das Ações no Futebol",
-        "legenda": "Registro visual de Análise das Ações no Futebol."
-      }
-    ],
-    "linkRepositorio": "https://github.com/lucaaregis4r-ops/Dashboard-copa-do-mundo-XT-XG",
-    "linkDemo": ""
-  },
-  {
-    "id": "scout-de-volei",
-    "titulo": "Scout de Vôlei",
-    "subtitulo": "Aplicação web para registrar eventos de jogo, controlar partidas e organizar informações de desempenho no voleibol.",
-    "descricaoCurta": "Aplicação web para registrar eventos de jogo, controlar partidas e organizar informações de desempenho no voleibol.",
-    "descricaoCompleta": "Scout de Vôlei é uma aplicação de scout de voleibol que criei para registrar eventos de jogo, controlar partidas e organizar informações de desempenho de forma mais prática.\n\nO projeto surgiu da minha vivência com o esporte e da percepção de que, apesar de planilhas serem ferramentas muito úteis, elas também têm limitações importantes quando usadas para registrar jogos. Durante uma partida, muitas ações acontecem em sequência e precisam ser registradas rapidamente. Depois, esses dados também precisam ser armazenados, organizados, filtrados e transformados em algum tipo de análise. Em muitos casos, a planilha começa simples, mas vai ficando difícil de manter, interpretar e reaproveitar.\n\nA ideia do Scout de Vôlei foi criar uma alternativa mais organizada para esse processo. A ferramenta permite registrar eventos por clique durante a partida, controlar placar, saque, rotação e sets, cadastrar atletas, gerar dashboards por partida e por atleta, exportar dados em CSV e PDF, além de manter as informações salvas localmente no navegador.\n\nMais do que substituir a observação da comissão técnica, o objetivo do scout é ampliar a leitura do jogo. O registro sistemático das ações permite ultrapassar impressões apenas subjetivas e construir análises mais consistentes sobre o desempenho individual e coletivo. Com os dados organizados, fica mais fácil identificar padrões, comparar momentos da partida e transformar aquilo que foi observado em informação útil para o treinamento.\n\nO projeto foi desenvolvido com HTML, CSS e JavaScript, buscando uma solução leve, acessível e possível de usar diretamente no navegador. Para mim, o Scout de Vôlei representa uma tentativa de aproximar tecnologia, análise de desempenho e rotina de quadra, criando uma ferramenta simples, mas pensada a partir de problemas reais do esporte.",
-    "tecnologias": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "LocalStorage",
-      "CSV",
-      "PDF",
-      "Análise de desempenho"
-    ],
-    "aprendizados": [
-      "Criação de uma interface de registro rápido para eventos de voleibol",
-      "Organização de dados por partida e por atleta",
-      "Transformação de observações de quadra em informações úteis para análise"
-    ],
-    "status": "Em desenvolvimento",
-    "imagens": [
-      {
-        "src": "./assets/imagens/scout-de-volei-1.png",
-        "alt": "Imagem do projeto Scout de Vôlei",
-        "legenda": "Registro visual de Scout de Vôlei."
-      }
-    ],
-    "linkRepositorio": "",
+    "id": "scout-trainer",
+    "titulo": "Scout Trainer",
+    "categoria": "software",
+    "prioridade": 1,
+    "subtitulo": "Aplicação desktop para praticar o registro estatístico de partidas de voleibol.",
+    "descricaoCurta": "Ambiente portátil para entrada contínua de códigos, organização de partidas e análise de scout.",
+    "descricaoCompleta": "Scout Trainer é uma aplicação desktop criada para treinar velocidade, consistência e lógica no registro estatístico de partidas de voleibol. O projeto nasceu como alternativa educacional para praticar scout sem depender de softwares profissionais.\n\nA aplicação permite configurar códigos, registrar ações continuamente e organizar as entradas como dados de uma sessão ou partida. A versão 0.2.0 inclui escalações, rotações e substituições auditáveis, análises por atleta, rotação e posição do levantador, além de exportações em CSV, TXT, JSON e PDF.\n\nOs dados são armazenados localmente e há um executável portátil para Windows 64 bits. É um projeto independente, educacional e em desenvolvimento; não pretende substituir ferramentas profissionais.",
+    "tecnologias": ["Aplicação desktop", "Arquitetura modular", "Persistência local", "JSON", "CSV", "PDF", "Empacotamento para Windows"],
+    "aprendizados": ["Modelagem de eventos esportivos e interpretação de entradas contínuas", "Separação de responsabilidades, validação e configuração dinâmica", "Empacotamento e distribuição de uma aplicação desktop portátil"],
+    "status": "Em desenvolvimento — versão 0.2.0",
+    "imagens": [],
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/Treino-de-estatistica",
+    "linkDownload": "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/releases/download/v0.2.0/Scout-Trainer-0.2.0-Portable.exe",
     "linkDemo": ""
   },
   {
     "id": "simulador-procedural-de-gestao-de-rh",
     "titulo": "Simulador Procedural de Gestão de RH",
-    "subtitulo": "Jogo de gestão em que empresas, funcionários, relações, demandas e riscos organizacionais são gerados proceduralmente.",
-    "descricaoCurta": "Jogo de gestão em que empresas, funcionários, relações, demandas e riscos organizacionais são gerados proceduralmente.",
-    "descricaoCompleta": "O Simulador Procedural de Gestão de RH é um jogo em desenvolvimento que transforma problemas organizacionais em uma experiência de gestão. A proposta é gerar empresas diferentes a cada partida, com setores, funcionários, relações internas, demandas, indicadores e acontecimentos próprios.\n\nO jogador assume o papel de um profissional de Recursos Humanos. Em vez de receber todas as informações prontas, precisa circular pela empresa, conversar com as pessoas, interpretar sinais, analisar dados incompletos e decidir onde investir tempo e energia. Isso permite trabalhar com uma ideia importante do projeto: o RH não possui uma visão mágica da organização e precisa construir conhecimento antes de agir.\n\nA simulação inclui elementos como clima organizacional, carga de trabalho, confiança no RH, conflitos, compliance, demandas invisíveis, finanças, produtividade, relações entre funcionários e consequências das ações tomadas ao longo do tempo. Esses sistemas são conectados para que uma decisão possa produzir efeitos diferentes dependendo do contexto da empresa.\n\nDo ponto de vista técnico, o projeto possui uma arquitetura modular em JavaScript e Node.js, separando geração procedural, regras da simulação, conhecimento imperfeito, ações de RH, relatórios, persistência e testes. A interface principal está sendo construída em Phaser, com um ambiente jogável no qual o profissional pode explorar a empresa e interagir com seus funcionários.\n\nO projeto aproxima psicologia, gestão de pessoas, análise de dados e game design. Mais do que criar um jogo de escolhas prontas, a intenção é construir uma simulação na qual investigar, interpretar e decidir sejam partes centrais da experiência.",
-    "tecnologias": [
-      "JavaScript",
-      "Node.js",
-      "Phaser",
-      "Geração procedural",
-      "Arquitetura modular",
-      "Simulação",
-      "Game design",
-      "People Analytics"
-    ],
-    "aprendizados": [
-      "Construção de sistemas procedurais com empresas e funcionários diferentes a cada partida",
-      "Transformação de conceitos de RH em regras, métricas e consequências simuladas",
-      "Desenvolvimento de uma arquitetura modular com interface jogável e testes automatizados"
-    ],
+    "categoria": "software",
+    "prioridade": 2,
+    "subtitulo": "Jogo de gestão com empresas, equipes, demandas e riscos gerados proceduralmente.",
+    "descricaoCurta": "Simulação em JavaScript, Node.js e Phaser que transforma problemas organizacionais em decisões de gestão.",
+    "descricaoCompleta": "O Simulador Procedural de Gestão de RH é um jogo em desenvolvimento no qual empresas, setores, funcionários, relações internas, demandas e indicadores variam a cada partida.\n\nO jogador assume a função de um profissional de RH e precisa construir conhecimento sobre a organização antes de agir: circular pela empresa, conversar, interpretar sinais e analisar informações incompletas. Clima, carga de trabalho, confiança, conflitos, compliance, finanças e produtividade formam sistemas conectados.\n\nA arquitetura modular separa geração procedural, regras, conhecimento imperfeito, ações, relatórios, persistência e testes. A interface jogável é construída com Phaser.",
+    "tecnologias": ["JavaScript", "Node.js", "Phaser", "Geração procedural", "Arquitetura modular", "Testes automatizados"],
+    "aprendizados": ["Construção de cenários diferentes a cada partida", "Transformação de conceitos de RH em regras e consequências", "Organização de uma simulação em módulos testáveis"],
     "status": "Em desenvolvimento",
     "imagens": [],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/GPRH",
     "linkDemo": ""
   },
   {
-    "id": "plataforma-local-de-inteligencia-esportiva",
-    "titulo": "Plataforma Local de Inteligência Esportiva",
-    "subtitulo": "Sistema local para integrar bases de atletas, revisar inconsistências e consultar informações esportivas com apoio de inteligência artificial.",
-    "descricaoCurta": "Sistema local para integrar bases de atletas, revisar inconsistências e consultar informações esportivas com apoio de inteligência artificial.",
-    "descricaoCompleta": "A Plataforma Local de Inteligência Esportiva é um sistema em desenvolvimento para organizar dados internos de atletas que normalmente ficam distribuídos entre planilhas, relatórios e registros produzidos por diferentes áreas de um clube.\n\nA proposta é criar uma base integrada capaz de receber arquivos de fontes diferentes, normalizar nomes e campos, construir um registro unificado dos atletas e apontar possíveis inconsistências. Um dos exemplos é a detecção de registros duplicados: o sistema pode localizar correspondências prováveis e apresentar os critérios encontrados, mas mantém a confirmação final com o profissional responsável.\n\nA arquitetura também está sendo pensada para permitir consultas em linguagem natural, geração de relatórios, identificação de dados ausentes e criação de alertas. A inteligência artificial funciona como uma camada de organização, cruzamento e sugestão, enquanto a interpretação, o julgamento e a decisão permanecem com a equipe humana.\n\nOutro princípio central é o funcionamento local. A intenção é reduzir a dependência de serviços externos e oferecer maior controle sobre dados sensíveis de atletas, preservando privacidade, autonomia e rastreabilidade. Por isso, o desenvolvimento envolve não apenas o chatbot, mas também importação, validação, modelagem de dados, testes e documentação da arquitetura.\n\nO projeto representa uma tentativa de aproximar análise de dados e inteligência artificial da rotina real de equipes multidisciplinares, sem transformar a tecnologia em substituta do conhecimento profissional.",
-    "tecnologias": [
-      "Python",
-      "Banco de dados local",
-      "ETL",
-      "Modelagem de dados",
-      "Validação de dados",
-      "IA local",
-      "RAG",
-      "Arquitetura modular"
+    "id": "a-temporada",
+    "titulo": "A Temporada",
+    "categoria": "software",
+    "prioridade": 3,
+    "subtitulo": "Jogo web para discutir montagem de equipes, papéis e tomada de decisão no esporte.",
+    "descricaoCurta": "Experiência em HTML, CSS e JavaScript voltada à construção coletiva de uma equipe esportiva.",
+    "descricaoCompleta": "A Temporada é um jogo web criado como atividade coletiva para atletas. Os participantes assumem o papel de uma comissão técnica, montam um elenco, equilibram posições e discutem os critérios por trás das decisões.\n\nO projeto transforma temas da psicologia do esporte — liderança, comunicação, papéis no grupo e responsabilidade — em uma experiência prática. A solução usa tecnologias web para ser leve, acessível e adaptável à rotina de diferentes grupos e modalidades.",
+    "tecnologias": ["HTML", "CSS", "JavaScript", "Game design", "Psicologia do esporte"],
+    "aprendizados": ["Transformação de conceitos em uma experiência interativa", "Criação de regras para discutir equipe e liderança", "Construção de uma ferramenta leve para uso em clube"],
+    "status": "Protótipo",
+    "imagens": [
+      {"src": "./assets/imagens/a-temporada-1.png", "alt": "Tela do jogo A Temporada", "legenda": "Etapa da experiência de montagem da equipe."},
+      {"src": "./assets/imagens/a-temporada-2.png", "alt": "Interface de escolhas do jogo A Temporada", "legenda": "Decisões apresentadas durante a atividade."},
+      {"src": "./assets/imagens/a-temporada-3.png", "alt": "Tela de composição da equipe em A Temporada", "legenda": "Composição do elenco durante a experiência."},
+      {"src": "./assets/imagens/a-temporada-4.png", "alt": "Resultado de uma etapa do jogo A Temporada", "legenda": "Retorno apresentado aos participantes."}
     ],
-    "aprendizados": [
-      "Integração de planilhas e registros produzidos por diferentes áreas esportivas",
-      "Criação de regras de normalização, validação e detecção de possíveis duplicidades",
-      "Desenvolvimento de uma arquitetura local baseada na colaboração entre inteligência humana e artificial"
-    ],
-    "status": "Em desenvolvimento",
-    "imagens": [],
     "linkRepositorio": "",
+    "linkDemo": ""
+  },
+  {
+    "id": "scout-de-volei",
+    "titulo": "Scout de Vôlei",
+    "categoria": "software",
+    "prioridade": 4,
+    "subtitulo": "Aplicação web anterior para registrar eventos e organizar partidas de voleibol.",
+    "descricaoCurta": "Projeto web de registro por clique, controle de partidas e visualização de desempenho.",
+    "descricaoCompleta": "Scout de Vôlei é uma aplicação web para registrar eventos por clique, controlar placar, saque, rotação e sets, cadastrar atletas e organizar informações de desempenho. Os dados ficam armazenados localmente no navegador e podem ser exportados em CSV e PDF.\n\nO projeto permanece no portfólio por representar uma etapa distinta de desenvolvimento. A relação exata com o Scout Trainer ainda precisa ser confirmada antes de qualquer consolidação ou remoção.",
+    "tecnologias": ["HTML", "CSS", "JavaScript", "LocalStorage", "CSV", "PDF"],
+    "aprendizados": ["Interface de registro rápido para eventos de voleibol", "Organização de dados por partida e atleta", "Transformação de observações em dados estruturados"],
+    "status": "Projeto anterior — vínculo com Scout Trainer a confirmar",
+    "imagens": [{"src": "./assets/imagens/scout-de-volei-1.png", "alt": "Interface do projeto Scout de Vôlei", "legenda": "Aplicação web de registro de partidas."}],
+    "linkRepositorio": "",
+    "linkDemo": ""
+  },
+  {
+    "id": "analise-das-acoes-no-futebol",
+    "titulo": "Análise das Ações no Futebol",
+    "categoria": "dados",
+    "prioridade": 1,
+    "subtitulo": "Dashboard local para investigar eventos e padrões ofensivos nas Copas de 2018 e 2022.",
+    "descricaoCurta": "Análise em Python e Streamlit com cadeias de Markov, xT, xG futuro e suavização bayesiana.",
+    "descricaoCompleta": "Análise das Ações no Futebol é um dashboard local em Streamlit voltado aos dados das Copas do Mundo de 2018 e 2022. O projeto explora sequências de eventos, compara jogadores e seleções e investiga a participação na construção ofensiva.\n\nCadeias de Markov observam transições entre ações; xT e xG futuro estimam como passes, conduções e mudanças de zona aumentam a ameaça; e a suavização bayesiana torna comparações com tamanhos de amostra diferentes mais cuidadosas.\n\nO código em Python separa carregamento, pré-processamento, modelos, comparações e visualizações, com ajustes para execução local sobre arquivos esportivos de maior volume.",
+    "tecnologias": ["Python", "Streamlit", "Cadeias de Markov", "xT", "xG futuro", "Suavização bayesiana"],
+    "aprendizados": ["Análise de sequências para além de estatísticas isoladas", "Uso de modelos probabilísticos no esporte", "Estruturação modular de um dashboard local"],
+    "status": "Em desenvolvimento",
+    "imagens": [{"src": "./assets/imagens/analise-das-acoes-no-futebol-1.png", "alt": "Dashboard do projeto Análise das Ações no Futebol", "legenda": "Visualização de eventos e padrões de jogo."}],
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/Dashboard-copa-do-mundo-XT-XG",
     "linkDemo": ""
   },
   {
     "id": "mapa-de-valores-imobiliarios-em-belo-horizonte",
     "titulo": "Mapa de Valores Imobiliários em Belo Horizonte",
-    "subtitulo": "Visualização geográfica construída com dados públicos e coleta web para explorar preços de aluguel, venda e condomínio.",
-    "descricaoCurta": "Visualização geográfica construída com dados públicos e coleta web para explorar preços de aluguel, venda e condomínio.",
-    "descricaoCompleta": "O Mapa de Valores Imobiliários em Belo Horizonte é um projeto de visualização geográfica criado para explorar como os preços dos imóveis se distribuem pela cidade.\n\nA proposta combina informações obtidas por coleta web com bases públicas, organizando valores de aluguel, venda e condomínio de casas e apartamentos. Em vez de apresentar apenas uma tabela de anúncios, o projeto utiliza o território como parte da análise, permitindo observar padrões espaciais e diferenças entre regiões.\n\nO desenvolvimento exige cuidados com limpeza de dados, padronização de endereços, registros repetidos, valores ausentes, anúncios fora do padrão e integração entre fontes que não foram criadas para funcionar juntas. Também envolve uma preocupação com coleta responsável, uso de dados públicos e transparência sobre as limitações da amostra.\n\nEsse projeto amplia meu portfólio para além do esporte e mostra como programação, dados públicos e mapas interativos podem ser usados para transformar informações dispersas da internet em uma leitura mais clara sobre a cidade.",
-    "tecnologias": [
-      "HTML",
-      "JavaScript",
-      "Web scraping",
-      "Dados públicos",
-      "Limpeza de dados",
-      "Geovisualização",
-      "Mapas interativos"
-    ],
-    "aprendizados": [
-      "Combinação de dados coletados na web com bases geográficas públicas",
-      "Tratamento de endereços, valores ausentes, duplicidades e anúncios fora do padrão",
-      "Construção de uma visualização territorial para comparar padrões de preços"
-    ],
+    "categoria": "dados",
+    "prioridade": 2,
+    "subtitulo": "Visualização geográfica de preços de imóveis com coleta web e dados públicos.",
+    "descricaoCurta": "Limpeza, integração e geovisualização de valores de aluguel, venda e condomínio em Belo Horizonte.",
+    "descricaoCompleta": "O Mapa de Valores Imobiliários em Belo Horizonte explora como preços de aluguel, venda e condomínio se distribuem pela cidade. A solução combina coleta web e bases públicas para transformar anúncios dispersos em uma leitura territorial.\n\nO trabalho envolve limpeza e padronização de endereços, tratamento de ausências e duplicidades, integração de fontes e transparência sobre as limitações da amostra. O mapa interativo permite observar padrões espaciais e comparar regiões.",
+    "tecnologias": ["HTML", "JavaScript", "Web scraping", "Dados públicos", "Limpeza de dados", "Geovisualização"],
+    "aprendizados": ["Integração de dados web e bases geográficas", "Tratamento de endereços e duplicidades", "Visualização territorial para comparar preços"],
     "status": "Protótipo",
     "imagens": [],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh",
     "linkDemo": ""
+  },
+  {
+    "id": "dashboard-de-controle-de-carga",
+    "titulo": "Dashboard de Controle de Carga",
+    "categoria": "dados",
+    "prioridade": 3,
+    "subtitulo": "Aplicação web para organizar check-ins e indicadores da rotina de atletas.",
+    "descricaoCurta": "Dados do Google Sheets apresentados para acompanhar carga, dor, fadiga, sono e estresse.",
+    "descricaoCompleta": "O Dashboard de Controle de Carga organiza informações de atletas registradas em uma planilha do Google Sheets e as apresenta em uma interface web mais clara para acompanhamento da rotina esportiva.\n\nA aplicação reúne check-ins, status atuais e indicadores como carga, dor, fadiga, sono e estresse. Foi construída com HTML, CSS, JavaScript e Node.js como ferramenta leve e adaptável. Seu objetivo é apoiar a leitura conjunta dos dados, sem substituir avaliação ou decisão humana.\n\nNenhum repositório público ou endereço de demonstração foi confirmado; por isso, o card permanece sem link.",
+    "tecnologias": ["HTML", "CSS", "JavaScript", "Node.js", "Google Sheets", "Visualização de dados"],
+    "aprendizados": ["Organização de dados esportivos de planilhas", "Criação de indicadores de rotina", "Apresentação para colaboração multidisciplinar"],
+    "status": "Em desenvolvimento — link público não confirmado",
+    "imagens": [{"src": "./assets/imagens/dashboard-de-controle-de-carga-1.png", "alt": "Interface do Dashboard de Controle de Carga", "legenda": "Indicadores de acompanhamento dos atletas."}],
+    "linkRepositorio": "",
+    "linkDemo": ""
+  },
+  {
+    "id": "registro-do-atleta",
+    "titulo": "Registro do Atleta",
+    "categoria": "automacao",
+    "prioridade": 1,
+    "subtitulo": "Sistema local para integrar fontes esportivas em um histórico longitudinal, auditável e revisável.",
+    "descricaoCurta": "Pipeline com SQLite, API e dashboard para ingestão, identidade, qualidade, alertas e revisão humana.",
+    "descricaoCompleta": "Registro do Atleta organiza fontes esportivas dispersas em uma base longitudinal, auditável e revisável. O núcleo preserva as fontes, calcula hashes, cria snapshots idempotentes em SQLite e normaliza dados de PSR, fisioterapia e avaliações físicas.\n\nA resolução de identidade mantém trilha de auditoria e encaminha ambiguidades para revisão humana. Regras determinísticas identificam problemas de qualidade, possíveis duplicidades e alertas; uma API local em FastAPI e um dashboard responsivo apoiam consulta, revisão e relatórios.\n\nA integração com modelos de linguagem é opcional, fica desabilitada por padrão e não tem autoridade sobre persistência crítica. A edição pública usa somente dados sintéticos e não é uma ferramenta de decisão clínica.",
+    "tecnologias": ["Python 3.12+", "SQLite", "FastAPI", "HTML", "CSS", "JavaScript", "Pytest", "ETL"],
+    "aprendizados": ["Ingestão idempotente e rastreabilidade das fontes", "Identidade auditável e revisão humana", "Operação local resiliente e limites explícitos para IA"],
+    "status": "Em desenvolvimento — demonstração técnica",
+    "imagens": [],
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/registro-do-atleta",
+    "linkDemo": ""
   }
-
-
-]  
-  
+]
