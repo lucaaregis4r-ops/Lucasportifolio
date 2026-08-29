@@ -10,23 +10,71 @@
     "tecnologias": ["Aplicação desktop", "Arquitetura modular", "Persistência local", "JSON", "CSV", "PDF", "Empacotamento para Windows"],
     "aprendizados": ["Modelagem de eventos esportivos e interpretação de entradas contínuas", "Separação de responsabilidades, validação e configuração dinâmica", "Empacotamento e distribuição de uma aplicação desktop portátil"],
     "status": "Em desenvolvimento — versão 0.2.0",
-    "imagens": [],
+    "imagens": [
+      {
+        "src": "./assets/imagens/scout-trainer-home.png",
+        "alt": "Tela inicial do Scout Trainer com atalhos para nova partida, treino, perfis e manual",
+        "legenda": "Tela inicial real da versão 0.2.0 do Scout Trainer."
+      }
+    ],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/Treino-de-estatistica",
     "linkDownload": "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/releases/download/v0.2.0/Scout-Trainer-0.2.0-Portable.exe",
+    "linkDemo": ""
+  },
+  {
+    "id": "marca",
+    "titulo": "Marca",
+    "categoria": "software",
+    "prioridade": 2,
+    "subtitulo": "Leitor desktop de PDFs locais com continuidade de leitura, zoom, grifos e funcionamento sem dependência de rede.",
+    "descricaoCurta": "Aplicação desktop em Tauri e TypeScript para leitura calma, local e persistente de documentos PDF.",
+    "descricaoCompleta": "Marca é um leitor desktop leve para abrir, ler, grifar e continuar PDFs armazenados no computador. A aplicação renderiza documentos com PDF.js, virtualiza páginas para manter o desempenho e memoriza página, posição e zoom de cada arquivo.\n\nA experiência inclui documentos recentes, retomada de leitura, seleção de texto, grifos em quatro cores e atalhos de teclado. Os dados permanecem localmente e o PDF.js é empacotado com o aplicativo, sem dependência de rede durante o uso.\n\nO projeto foi construído com Tauri 2, TypeScript, HTML, CSS e Vite. A versão atual possui executável standalone e instalador NSIS gerados; a validação manual final do release candidate permanece pendente.",
+    "tecnologias": ["Tauri 2", "TypeScript", "PDF.js", "Vite", "Rust", "Vitest", "LocalStorage"],
+    "aprendizados": ["Renderização e virtualização eficiente de documentos PDF", "Persistência de posição, zoom, histórico e grifos por documento", "Empacotamento desktop com executável e instalador para Windows"],
+    "status": "Release candidate — validação manual pendente",
+    "imagens": [
+      {
+        "src": "./assets/imagens/marca-home.png",
+        "alt": "Tela inicial do Marca com opções para continuar a leitura ou abrir um PDF",
+        "legenda": "Tela inicial real do leitor desktop Marca."
+      },
+      {
+        "src": "./assets/imagens/marca-pena.png",
+        "alt": "Símbolo de pena utilizado na identidade visual do Marca",
+        "legenda": "Símbolo da identidade visual do aplicativo."
+      }
+    ],
+    "linkRepositorio": "",
     "linkDemo": ""
   },
   {
     "id": "simulador-procedural-de-gestao-de-rh",
     "titulo": "Simulador Procedural de Gestão de RH",
     "categoria": "software",
-    "prioridade": 2,
+    "prioridade": 3,
     "subtitulo": "Jogo de gestão com empresas, equipes, demandas e riscos gerados proceduralmente.",
     "descricaoCurta": "Simulação em JavaScript, Node.js e Phaser que transforma problemas organizacionais em decisões de gestão.",
     "descricaoCompleta": "O Simulador Procedural de Gestão de RH é um jogo em desenvolvimento no qual empresas, setores, funcionários, relações internas, demandas e indicadores variam a cada partida.\n\nO jogador assume a função de um profissional de RH e precisa construir conhecimento sobre a organização antes de agir: circular pela empresa, conversar, interpretar sinais e analisar informações incompletas. Clima, carga de trabalho, confiança, conflitos, compliance, finanças e produtividade formam sistemas conectados.\n\nA arquitetura modular separa geração procedural, regras, conhecimento imperfeito, ações, relatórios, persistência e testes. A interface jogável é construída com Phaser.",
     "tecnologias": ["JavaScript", "Node.js", "Phaser", "Geração procedural", "Arquitetura modular", "Testes automatizados"],
     "aprendizados": ["Construção de cenários diferentes a cada partida", "Transformação de conceitos de RH em regras e consequências", "Organização de uma simulação em módulos testáveis"],
     "status": "Em desenvolvimento",
-    "imagens": [],
+    "imagens": [
+      {
+        "src": "./assets/imagens/gprh-tela-inicial.png",
+        "alt": "Referência visual da tela inicial do Simulador Procedural de Gestão de RH",
+        "legenda": "Referência visual planejada para a tela inicial do simulador."
+      },
+      {
+        "src": "./assets/imagens/gprh-empresa-gerada.png",
+        "alt": "Referência visual de uma empresa gerada no simulador de RH",
+        "legenda": "Referência visual da etapa de geração procedural da empresa."
+      },
+      {
+        "src": "./assets/imagens/gprh-mapa-empresa.png",
+        "alt": "Referência visual do mapa da empresa no simulador de RH",
+        "legenda": "Referência visual do mapa usado para explorar os setores."
+      }
+    ],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/GPRH",
     "linkDemo": ""
   },
@@ -34,7 +82,7 @@
     "id": "a-temporada",
     "titulo": "A Temporada",
     "categoria": "software",
-    "prioridade": 3,
+    "prioridade": 4,
     "subtitulo": "Jogo web para discutir montagem de equipes, papéis e tomada de decisão no esporte.",
     "descricaoCurta": "Experiência em HTML, CSS e JavaScript voltada à construção coletiva de uma equipe esportiva.",
     "descricaoCompleta": "A Temporada é um jogo web criado como atividade coletiva para atletas. Os participantes assumem o papel de uma comissão técnica, montam um elenco, equilibram posições e discutem os critérios por trás das decisões.\n\nO projeto transforma temas da psicologia do esporte — liderança, comunicação, papéis no grupo e responsabilidade — em uma experiência prática. A solução usa tecnologias web para ser leve, acessível e adaptável à rotina de diferentes grupos e modalidades.",
@@ -54,7 +102,7 @@
     "id": "scout-de-volei",
     "titulo": "Scout de Vôlei",
     "categoria": "software",
-    "prioridade": 4,
+    "prioridade": 5,
     "subtitulo": "Aplicação web anterior para registrar eventos e organizar partidas de voleibol.",
     "descricaoCurta": "Projeto web de registro por clique, controle de partidas e visualização de desempenho.",
     "descricaoCompleta": "Scout de Vôlei é uma aplicação web para registrar eventos por clique, controlar placar, saque, rotação e sets, cadastrar atletas e organizar informações de desempenho. Os dados ficam armazenados localmente no navegador e podem ser exportados em CSV e PDF.\n\nO projeto permanece no portfólio por representar uma etapa distinta de desenvolvimento. A relação exata com o Scout Trainer ainda precisa ser confirmada antes de qualquer consolidação ou remoção.",
