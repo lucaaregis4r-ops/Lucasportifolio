@@ -367,6 +367,24 @@ button, input, textarea, select { font: inherit; }
   background: var(--color-bg-soft);
 }
 
+.intro-quote {
+  margin: 1.5rem 0;
+  padding: 0.15rem 0 0.15rem 1.1rem;
+  border-left: 3px solid var(--color-accent);
+}
+
+.intro-quote p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.02rem;
+}
+
+.intro-quote footer {
+  margin-top: 0.55rem;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
 .contact-block p { margin: 0; }
 .contact-block a { color: var(--color-accent-strong); font-weight: 700; }
 

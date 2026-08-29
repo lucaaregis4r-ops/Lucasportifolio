@@ -20,15 +20,21 @@ const CATEGORIES = [
 
 const introContent = {
   kicker: "Apresentação",
-  titulo: "Projetos que nasceram de problemas reais",
+  titulo: "Olá, meu nome é Lucas Regis.",
   foto: { src: "./assets/imagens/foto-lucas.jpg", alt: "Foto de Lucas Regis" },
   paragrafos: [
-    "Olá, meu nome é Lucas Regis.",
+    "Sempre fui muito curioso e gosto de aprender sobre quase tudo. Ao longo da minha trajetória, escolher uma única coisa para seguir nunca foi simples. Com o tempo, percebi que talvez isso não fosse apenas uma dificuldade: para mim, não faz muito sentido imaginar que uma pessoa precise fazer uma única coisa pelo resto da vida.",
+    "Conhecimentos diferentes mudam a forma como a gente observa o mundo. A psicologia, o esporte, os dados e a programação me fazem perceber coisas distintas e, quando esses aprendizados se encontram, surgem outras maneiras de pensar e de trabalhar.",
     "Sou psicólogo formado pela UFMG e trabalho no contexto esportivo. Minha aproximação com a programação aconteceu de um jeito muito prático: eu encontrava uma dificuldade na rotina, tinha uma ideia e começava a pensar se conseguiria construir alguma coisa para ajudar.",
-    "Foi assim que apareceram projetos de scout, jogos para trabalhar com atletas, formas de organizar planilhas e também aplicações que não têm relação direta com o esporte. No caminho, fui aprendendo a programar, testar, documentar, criar identidades visuais e dar continuidade às ideias em vez de deixá-las apenas como experimentos soltos.",
-    "Nem tudo aqui está pronto, e acho importante mostrar isso. Alguns projetos já possuem versões que podem ser usadas; outros ainda estão em construção. Este portfólio é uma forma de reunir esse processo e mostrar o que venho aprendendo ao tentar resolver problemas que fazem sentido para mim.",
-    "Também estou buscando oportunidades para continuar aprendendo e trabalhar com tecnologia, organização de dados e desenvolvimento de aplicações."
+    "Foi assim que apareceram projetos de scout, jogos para trabalhar com atletas, formas de organizar planilhas e também aplicações que não têm relação direta com o esporte. No caminho, fui aprendendo a programar, testar, documentar e criar identidades visuais. Também venho tentando dar mais continuidade às ideias em vez de deixá-las como experimentos soltos — e, sendo honesto, isso ainda é uma dificuldade que estou aprendendo a enfrentar.",
+    "Nem tudo aqui está pronto, e acho importante mostrar isso. Alguns projetos já possuem versões que podem ser usadas; outros ainda estão em construção. Este portfólio é uma forma de reunir esse processo e mostrar o que venho aprendendo enquanto tento transformar interesses diferentes em projetos que façam sentido para mim.",
+    "Estou aberto a oportunidades que conversem com essa forma de trabalhar: com espaço para aprender, aproximar conhecimentos diferentes e construir junto com outras pessoas. Tenho interesse especial em tecnologia, organização de dados e desenvolvimento de aplicações, sem querer apagar o que aprendi — e continuo aprendendo — na psicologia e no esporte."
   ],
+  citacao: {
+    texto: "É preciso substituir um pensamento que isola e separa por um pensamento que distingue e une.",
+    autor: "Edgar Morin",
+    obra: "A cabeça bem-feita"
+  },
   contato: { label: "Contato", email: "lucaaregis4r@gmail.com" }
 };
 
@@ -176,13 +182,25 @@ function renderIntro() {
       <p class="project-details__kicker">${escapeHtml(introContent.kicker)}</p>
       <img class="profile-photo" src="${escapeAttribute(introContent.foto.src)}" alt="${escapeAttribute(introContent.foto.alt)}" loading="eager">
       <h2 id="details-title">${escapeHtml(introContent.titulo)}</h2>
-      ${introContent.paragrafos.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+      ${introContent.paragrafos.map((paragraph, index) => `
+        <p>${escapeHtml(paragraph)}</p>
+        ${index === 1 ? renderIntroQuote() : ""}
+      `).join("")}
       <div class="contact-block"><p><strong>${escapeHtml(introContent.contato.label)}:</strong> <a href="mailto:${escapeAttribute(introContent.contato.email)}">${escapeHtml(introContent.contato.email)}</a></p></div>
     </div>
   `;
 
   document.body.classList.remove("has-selected-project");
   updateDetailsContent(content, false);
+}
+
+function renderIntroQuote() {
+  return `
+    <blockquote class="intro-quote">
+      <p>“${escapeHtml(introContent.citacao.texto)}”</p>
+      <footer>— ${escapeHtml(introContent.citacao.autor)}, <cite>${escapeHtml(introContent.citacao.obra)}</cite></footer>
+    </blockquote>
+  `;
 }
 
 function renderProjectsError(error) {
