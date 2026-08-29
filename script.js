@@ -2,33 +2,39 @@ const PROJECTS_URL = "./data/projetos.json";
 
 const CATEGORIES = [
   {
-    id: "software",
-    titulo: "Desenvolvimento de Software & Aplicações",
-    descricao: "Produtos, jogos e ferramentas construídos para experiências e fluxos de trabalho específicos."
+    id: "esporte",
+    titulo: "Projetos ligados ao esporte",
+    descricao: "Foi no esporte que comecei a transformar algumas ideias em projetos. Aqui estão ferramentas e experiências que nasceram da quadra, do clube e das conversas com atletas e profissionais."
   },
   {
     id: "dados",
-    titulo: "Dados & Analytics",
-    descricao: "Projetos de tratamento, modelagem e visualização de dados para apoiar análises."
+    titulo: "Organização e leitura de dados",
+    descricao: "Meu interesse por dados começou com informações que já existiam, mas estavam espalhadas ou eram difíceis de acompanhar. Estes projetos são tentativas de organizar melhor essas informações e encontrar formas mais claras de olhar para elas."
   },
   {
-    id: "automacao",
-    titulo: "Automação, IA & Sistemas de Dados",
-    descricao: "Sistemas locais e pipelines que integram fontes, regras, revisão humana e automação."
+    id: "trabalho",
+    titulo: "Aplicações para estudo e trabalho",
+    descricao: "Nem todos os projetos vieram do esporte. Alguns começaram com uma curiosidade, uma atividade de estudo ou a vontade de experimentar como um programa de computador é pensado, construído e preparado para uso."
   }
 ];
 
 const introContent = {
   kicker: "Apresentação",
-  titulo: "Desenvolvimento, dados e automação",
+  titulo: "Olá, meu nome é Lucas Regis.",
   foto: { src: "./assets/imagens/foto-lucas.jpg", alt: "Foto de Lucas Regis" },
   paragrafos: [
-    "Olá, meu nome é Lucas Regis.",
-    "Sou psicólogo formado pela UFMG e venho direcionando minha trajetória profissional para tecnologia, desenvolvimento de software e análise de dados.",
-    "Construo aplicações, visualizações e sistemas de dados a partir de problemas concretos. Minha experiência no esporte aparece em parte dos projetos, mas o foco do portfólio está nas competências transferíveis: programação, modelagem, integração de fontes, automação, análise e comunicação de informações.",
-    "Neste espaço, reúno projetos em diferentes estágios de desenvolvimento e documento com clareza o que já está implementado, o que está em evolução e quais decisões técnicas orientaram cada solução.",
-    "Estou aberto a oportunidades em TI, desenvolvimento de software e dados."
+    "Sempre fui muito curioso e gosto de aprender sobre quase tudo. Ao longo da minha trajetória, escolher uma única coisa para seguir nunca foi simples. Com o tempo, percebi que talvez isso não fosse apenas uma dificuldade: para mim, não faz muito sentido imaginar que uma pessoa precise fazer uma única coisa pelo resto da vida.",
+    "Conhecimentos diferentes mudam a forma como a gente observa o mundo. A psicologia, o esporte, os dados e a programação me fazem perceber coisas distintas e, quando esses aprendizados se encontram, surgem outras maneiras de pensar e de trabalhar.",
+    "Sou psicólogo formado pela UFMG e trabalho no contexto esportivo. Minha aproximação com a programação aconteceu de um jeito muito prático: eu encontrava uma dificuldade na rotina, tinha uma ideia e começava a pensar se conseguiria construir alguma coisa para ajudar.",
+    "Foi assim que apareceram projetos de scout, jogos para trabalhar com atletas, formas de organizar planilhas e também aplicações que não têm relação direta com o esporte. No caminho, fui aprendendo a programar, testar, documentar e criar identidades visuais. Também venho tentando dar mais continuidade às ideias em vez de deixá-las como experimentos soltos — e, sendo honesto, isso ainda é uma dificuldade que estou aprendendo a enfrentar.",
+    "Nem tudo aqui está pronto, e acho importante mostrar isso. Alguns projetos já possuem versões que podem ser usadas; outros ainda estão em construção. Este portfólio é uma forma de reunir esse processo e mostrar o que venho aprendendo enquanto tento transformar interesses diferentes em projetos que façam sentido para mim.",
+    "Estou aberto a oportunidades que conversem com essa forma de trabalhar: com espaço para aprender, aproximar conhecimentos diferentes e construir junto com outras pessoas. Tenho interesse especial em tecnologia, organização de dados e desenvolvimento de aplicações, sem querer apagar o que aprendi — e continuo aprendendo — na psicologia e no esporte."
   ],
+  citacao: {
+    texto: "É preciso substituir um pensamento que isola e separa por um pensamento que distingue e une.",
+    autor: "Edgar Morin",
+    obra: "A cabeça bem-feita"
+  },
   contato: { label: "Contato", email: "lucaaregis4r@gmail.com" }
 };
 
@@ -95,19 +101,29 @@ function renderProjectCategories(projects) {
 }
 
 function renderProjectCard(project) {
+  const galleryCover = Array.isArray(project.imagens) ? project.imagens.find((image) => image?.src) : null;
+  const cover = project.capa?.src ? project.capa : galleryCover;
+
   return `
     <button
       type="button"
-      class="project-card"
+      class="project-card${cover ? " project-card--with-cover" : ""}"
       role="listitem"
       aria-label="Abrir detalhes do projeto ${escapeAttribute(project.titulo)}"
       aria-pressed="false"
       data-project-id="${escapeAttribute(project.id)}"
     >
-      <span class="project-card__status">${escapeHtml(project.status || "Projeto")}</span>
-      <h4>${escapeHtml(project.titulo)}</h4>
-      <p class="project-card__summary">${escapeHtml(project.descricaoCurta || project.subtitulo || "")}</p>
-      <span class="project-card__footer">Ver detalhes <span aria-hidden="true">→</span></span>
+      ${cover ? `
+        <span class="project-card__media" aria-hidden="true">
+          <img src="${escapeAttribute(cover.src)}" alt="" loading="lazy">
+        </span>
+      ` : ""}
+      <span class="project-card__content">
+        <span class="project-card__status">${escapeHtml(project.status || "Projeto")}</span>
+        <h4>${escapeHtml(project.titulo)}</h4>
+        <span class="project-card__summary">${escapeHtml(project.descricaoCurta || project.subtitulo || "")}</span>
+        <span class="project-card__footer">Conhecer o projeto <span aria-hidden="true">→</span></span>
+      </span>
     </button>
   `;
 }
@@ -134,23 +150,23 @@ function renderProjectDetails(project) {
 
       ${technologies.length ? `
         <section aria-labelledby="technologies-title">
-          <h3 id="technologies-title">Tecnologias e conceitos</h3>
+          <h3 id="technologies-title">O que usei no projeto</h3>
           <ul class="technology-list">${technologies.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
         </section>
       ` : ""}
 
       ${learnings.length ? `
         <section aria-labelledby="learnings-title">
-          <h3 id="learnings-title">Aprendizados e frentes de estudo</h3>
+          <h3 id="learnings-title">O que fui aprendendo</h3>
           <ul>${learnings.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
         </section>
       ` : ""}
 
-      ${actions ? `<section aria-labelledby="links-title"><h3 id="links-title">Links</h3><div class="actions-list">${actions}</div></section>` : ""}
+      ${actions ? `<section aria-labelledby="links-title"><h3 id="links-title">Onde ver</h3><div class="actions-list">${actions}</div></section>` : ""}
 
       ${images.length ? `
         <section aria-labelledby="gallery-title">
-          <h3 id="gallery-title">Imagens do projeto</h3>
+          <h3 id="gallery-title">Algumas imagens</h3>
           <div class="gallery">${images.map(renderImageItem).join("")}</div>
         </section>
       ` : ""}
@@ -167,13 +183,25 @@ function renderIntro() {
       <p class="project-details__kicker">${escapeHtml(introContent.kicker)}</p>
       <img class="profile-photo" src="${escapeAttribute(introContent.foto.src)}" alt="${escapeAttribute(introContent.foto.alt)}" loading="eager">
       <h2 id="details-title">${escapeHtml(introContent.titulo)}</h2>
-      ${introContent.paragrafos.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+      ${introContent.paragrafos.map((paragraph, index) => `
+        <p>${escapeHtml(paragraph)}</p>
+        ${index === 1 ? renderIntroQuote() : ""}
+      `).join("")}
       <div class="contact-block"><p><strong>${escapeHtml(introContent.contato.label)}:</strong> <a href="mailto:${escapeAttribute(introContent.contato.email)}">${escapeHtml(introContent.contato.email)}</a></p></div>
     </div>
   `;
 
   document.body.classList.remove("has-selected-project");
   updateDetailsContent(content, false);
+}
+
+function renderIntroQuote() {
+  return `
+    <blockquote class="intro-quote">
+      <p>“${escapeHtml(introContent.citacao.texto)}”</p>
+      <footer>— ${escapeHtml(introContent.citacao.autor)}, <cite>${escapeHtml(introContent.citacao.obra)}</cite></footer>
+    </blockquote>
+  `;
 }
 
 function renderProjectsError(error) {
@@ -241,6 +269,7 @@ function updateDetailsContent(content, animate = true) {
   if (!animate || prefersReducedMotion.matches) {
     projectDetails.innerHTML = content;
     bindBackButton();
+    if (animate) moveToProjectDetails();
     return;
   }
 
@@ -250,7 +279,15 @@ function updateDetailsContent(content, animate = true) {
     projectDetails.classList.remove("is-transitioning");
     bindBackButton();
     projectDetails.focus({ preventScroll: true });
+    moveToProjectDetails();
   }, 170);
+}
+
+function moveToProjectDetails() {
+  projectDetails.scrollIntoView({
+    behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+    block: "start"
+  });
 }
 
 function bindBackButton() {
