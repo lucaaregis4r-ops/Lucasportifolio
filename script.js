@@ -95,19 +95,28 @@ function renderProjectCategories(projects) {
 }
 
 function renderProjectCard(project) {
+  const cover = Array.isArray(project.imagens) ? project.imagens.find((image) => image?.src) : null;
+
   return `
     <button
       type="button"
-      class="project-card"
+      class="project-card${cover ? " project-card--with-cover" : ""}"
       role="listitem"
       aria-label="Abrir detalhes do projeto ${escapeAttribute(project.titulo)}"
       aria-pressed="false"
       data-project-id="${escapeAttribute(project.id)}"
     >
-      <span class="project-card__status">${escapeHtml(project.status || "Projeto")}</span>
-      <h4>${escapeHtml(project.titulo)}</h4>
-      <p class="project-card__summary">${escapeHtml(project.descricaoCurta || project.subtitulo || "")}</p>
-      <span class="project-card__footer">Ver detalhes <span aria-hidden="true">→</span></span>
+      ${cover ? `
+        <span class="project-card__media" aria-hidden="true">
+          <img src="${escapeAttribute(cover.src)}" alt="" loading="lazy">
+        </span>
+      ` : ""}
+      <span class="project-card__content">
+        <span class="project-card__status">${escapeHtml(project.status || "Projeto")}</span>
+        <h4>${escapeHtml(project.titulo)}</h4>
+        <span class="project-card__summary">${escapeHtml(project.descricaoCurta || project.subtitulo || "")}</span>
+        <span class="project-card__footer">Ver detalhes <span aria-hidden="true">→</span></span>
+      </span>
     </button>
   `;
 }
