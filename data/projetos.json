@@ -2,19 +2,19 @@
   {
     "id": "scout-trainer",
     "titulo": "Scout Trainer",
-    "categoria": "software",
+    "categoria": "esporte",
     "prioridade": 1,
-    "subtitulo": "Aplicação desktop para praticar o registro estatístico de partidas de voleibol.",
-    "descricaoCurta": "Ambiente portátil para entrada contínua de códigos, organização de partidas e análise de scout.",
-    "descricaoCompleta": "Scout Trainer é uma aplicação desktop criada para treinar velocidade, consistência e lógica no registro estatístico de partidas de voleibol. O projeto nasceu como alternativa educacional para praticar scout sem depender de softwares profissionais.\n\nA aplicação permite configurar códigos, registrar ações continuamente e organizar as entradas como dados de uma sessão ou partida. A versão 0.2.0 inclui escalações, rotações e substituições auditáveis, análises por atleta, rotação e posição do levantador, além de exportações em CSV, TXT, JSON e PDF.\n\nOs dados são armazenados localmente e há um executável portátil para Windows 64 bits. É um projeto independente, educacional e em desenvolvimento; não pretende substituir ferramentas profissionais.",
-    "tecnologias": ["Aplicação desktop", "Arquitetura modular", "Persistência local", "JSON", "CSV", "PDF", "Empacotamento para Windows"],
-    "aprendizados": ["Modelagem de eventos esportivos e interpretação de entradas contínuas", "Separação de responsabilidades, validação e configuração dinâmica", "Empacotamento e distribuição de uma aplicação desktop portátil"],
-    "status": "Em desenvolvimento — versão 0.2.0",
+    "subtitulo": "Uma aplicação para praticar o registro de partidas de voleibol sem depender de softwares caros.",
+    "descricaoCurta": "Criei este ambiente para treinar scout de voleibol e, ao mesmo tempo, aprender a levar um software do começo até uma versão distribuível.",
+    "descricaoCompleta": "Como parte do meu desenvolvimento em programação e também para entender melhor as possibilidades do vibecoding, resolvi partir para uma aplicação que tenta preencher uma lacuna muito real para quem trabalha com voleibol. Aprender a usar os principais softwares da modalidade costuma ser caro: são ferramentas específicas, difíceis de praticar sem acesso, e as licenças têm um custo alto.\n\nMinha ideia não é monetizar ou substituir esses programas. O Scout Trainer virou uma forma de estudar, praticar e aprender a conduzir um projeto com mais continuidade: organizar versões, escrever changelogs, propor uma identidade visual, testar mudanças e preparar um programa que outra pessoa consiga baixar e usar.\n\nA aplicação permite configurar códigos, registrar as ações de uma partida de forma contínua e organizar tudo por sessão. A versão 0.2.0 inclui escalações, rotações, substituições, análises por atleta e posição do levantador, além de exportações em CSV, TXT, JSON e PDF. Os dados ficam no próprio computador e existe uma versão portátil para Windows.",
+    "tecnologias": ["React", "TypeScript", "Electron", "Armazenamento local", "JSON", "CSV", "PDF"],
+    "aprendizados": ["Dar continuidade a um projeto dividido em versões", "Transformar a lógica rápida do scout em regras que o programa consegue entender", "Testar, documentar e preparar um aplicativo para outras pessoas usarem"],
+    "status": "Em desenvolvimento · versão 0.2.0",
     "imagens": [
       {
         "src": "./assets/imagens/scout-trainer-home.png",
         "alt": "Tela inicial do Scout Trainer com atalhos para nova partida, treino, perfis e manual",
-        "legenda": "Tela inicial real da versão 0.2.0 do Scout Trainer."
+        "legenda": "Tela inicial da versão 0.2.0 do Scout Trainer."
       }
     ],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/Treino-de-estatistica",
@@ -22,75 +22,18 @@
     "linkDemo": ""
   },
   {
-    "id": "marca",
-    "titulo": "Marca",
-    "categoria": "software",
-    "prioridade": 2,
-    "subtitulo": "Leitor desktop de PDFs locais com continuidade de leitura, zoom, grifos e funcionamento sem dependência de rede.",
-    "descricaoCurta": "Aplicação desktop em Tauri e TypeScript para leitura calma, local e persistente de documentos PDF.",
-    "descricaoCompleta": "Marca é um leitor desktop leve para abrir, ler, grifar e continuar PDFs armazenados no computador. A aplicação renderiza documentos com PDF.js, virtualiza páginas para manter o desempenho e memoriza página, posição e zoom de cada arquivo.\n\nA experiência inclui documentos recentes, retomada de leitura, seleção de texto, grifos em quatro cores e atalhos de teclado. Os dados permanecem localmente e o PDF.js é empacotado com o aplicativo, sem dependência de rede durante o uso.\n\nO projeto foi construído com Tauri 2, TypeScript, HTML, CSS e Vite. A versão atual possui executável standalone e instalador NSIS gerados; a validação manual final do release candidate permanece pendente.",
-    "tecnologias": ["Tauri 2", "TypeScript", "PDF.js", "Vite", "Rust", "Vitest", "LocalStorage"],
-    "aprendizados": ["Renderização e virtualização eficiente de documentos PDF", "Persistência de posição, zoom, histórico e grifos por documento", "Empacotamento desktop com executável e instalador para Windows"],
-    "status": "Release candidate — validação manual pendente",
-    "imagens": [
-      {
-        "src": "./assets/imagens/marca-home.png",
-        "alt": "Tela inicial do Marca com opções para continuar a leitura ou abrir um PDF",
-        "legenda": "Tela inicial real do leitor desktop Marca."
-      },
-      {
-        "src": "./assets/imagens/marca-pena.png",
-        "alt": "Símbolo de pena utilizado na identidade visual do Marca",
-        "legenda": "Símbolo da identidade visual do aplicativo."
-      }
-    ],
-    "linkRepositorio": "",
-    "linkDemo": ""
-  },
-  {
-    "id": "simulador-procedural-de-gestao-de-rh",
-    "titulo": "Simulador Procedural de Gestão de RH",
-    "categoria": "software",
-    "prioridade": 3,
-    "subtitulo": "Jogo de gestão com empresas, equipes, demandas e riscos gerados proceduralmente.",
-    "descricaoCurta": "Simulação em JavaScript, Node.js e Phaser que transforma problemas organizacionais em decisões de gestão.",
-    "descricaoCompleta": "O Simulador Procedural de Gestão de RH é um jogo em desenvolvimento no qual empresas, setores, funcionários, relações internas, demandas e indicadores variam a cada partida.\n\nO jogador assume a função de um profissional de RH e precisa construir conhecimento sobre a organização antes de agir: circular pela empresa, conversar, interpretar sinais e analisar informações incompletas. Clima, carga de trabalho, confiança, conflitos, compliance, finanças e produtividade formam sistemas conectados.\n\nA arquitetura modular separa geração procedural, regras, conhecimento imperfeito, ações, relatórios, persistência e testes. A interface jogável é construída com Phaser.",
-    "tecnologias": ["JavaScript", "Node.js", "Phaser", "Geração procedural", "Arquitetura modular", "Testes automatizados"],
-    "aprendizados": ["Construção de cenários diferentes a cada partida", "Transformação de conceitos de RH em regras e consequências", "Organização de uma simulação em módulos testáveis"],
-    "status": "Em desenvolvimento",
-    "imagens": [
-      {
-        "src": "./assets/imagens/gprh-tela-inicial.png",
-        "alt": "Referência visual da tela inicial do Simulador Procedural de Gestão de RH",
-        "legenda": "Referência visual planejada para a tela inicial do simulador."
-      },
-      {
-        "src": "./assets/imagens/gprh-empresa-gerada.png",
-        "alt": "Referência visual de uma empresa gerada no simulador de RH",
-        "legenda": "Referência visual da etapa de geração procedural da empresa."
-      },
-      {
-        "src": "./assets/imagens/gprh-mapa-empresa.png",
-        "alt": "Referência visual do mapa da empresa no simulador de RH",
-        "legenda": "Referência visual do mapa usado para explorar os setores."
-      }
-    ],
-    "linkRepositorio": "https://github.com/lucaaregis4r-ops/GPRH",
-    "linkDemo": ""
-  },
-  {
     "id": "a-temporada",
     "titulo": "A Temporada",
-    "categoria": "software",
-    "prioridade": 4,
-    "subtitulo": "Jogo web para discutir montagem de equipes, papéis e tomada de decisão no esporte.",
-    "descricaoCurta": "Experiência em HTML, CSS e JavaScript voltada à construção coletiva de uma equipe esportiva.",
-    "descricaoCompleta": "A Temporada é um jogo web criado como atividade coletiva para atletas. Os participantes assumem o papel de uma comissão técnica, montam um elenco, equilibram posições e discutem os critérios por trás das decisões.\n\nO projeto transforma temas da psicologia do esporte — liderança, comunicação, papéis no grupo e responsabilidade — em uma experiência prática. A solução usa tecnologias web para ser leve, acessível e adaptável à rotina de diferentes grupos e modalidades.",
-    "tecnologias": ["HTML", "CSS", "JavaScript", "Game design", "Psicologia do esporte"],
-    "aprendizados": ["Transformação de conceitos em uma experiência interativa", "Criação de regras para discutir equipe e liderança", "Construção de uma ferramenta leve para uso em clube"],
+    "categoria": "esporte",
+    "prioridade": 2,
+    "subtitulo": "Um jogo para conversar sobre escolhas, papéis e construção de equipes no esporte.",
+    "descricaoCurta": "Em vez de apenas falar sobre trabalho em equipe, quis criar uma atividade em que os atletas precisassem montar uma equipe e sustentar suas escolhas.",
+    "descricaoCompleta": "A Temporada nasceu do meu trabalho com psicologia do esporte. Muitas vezes falamos com os atletas sobre grupo, liderança e tomada de decisão, mas eu queria transformar essa conversa em algo que eles pudessem experimentar.\n\nNo jogo, os participantes deixam por um momento o lugar de atletas e assumem o papel de uma comissão técnica. Eles precisam montar um elenco, equilibrar posições, escolher critérios e lidar com decisões que nem sempre agradam todo mundo. A parte mais interessante não é simplesmente chegar ao final, mas conversar sobre o caminho e sobre o que cada escolha revela.\n\nFiz a atividade com HTML, CSS e JavaScript para que ela fosse leve e fácil de abrir na rotina do clube. Foi uma forma de aproximar minha experiência na psicologia de algo que eu também queria aprender: criar experiências interativas com programação.",
+    "tecnologias": ["HTML", "CSS", "JavaScript", "Criação de jogos", "Psicologia do esporte"],
+    "aprendizados": ["Transformar uma conversa abstrata em uma experiência prática", "Criar escolhas que ajudam um grupo a conversar sobre liderança e responsabilidade", "Fazer uma ferramenta simples o bastante para funcionar na rotina real"],
     "status": "Protótipo",
     "imagens": [
-      {"src": "./assets/imagens/a-temporada-1.png", "alt": "Tela do jogo A Temporada", "legenda": "Etapa da experiência de montagem da equipe."},
+      {"src": "./assets/imagens/a-temporada-1.png", "alt": "Tela do jogo A Temporada", "legenda": "Uma das etapas de montagem da equipe."},
       {"src": "./assets/imagens/a-temporada-2.png", "alt": "Interface de escolhas do jogo A Temporada", "legenda": "Decisões apresentadas durante a atividade."},
       {"src": "./assets/imagens/a-temporada-3.png", "alt": "Tela de composição da equipe em A Temporada", "legenda": "Composição do elenco durante a experiência."},
       {"src": "./assets/imagens/a-temporada-4.png", "alt": "Resultado de uma etapa do jogo A Temporada", "legenda": "Retorno apresentado aos participantes."}
@@ -101,15 +44,17 @@
   {
     "id": "scout-de-volei",
     "titulo": "Scout de Vôlei",
-    "categoria": "software",
-    "prioridade": 5,
-    "subtitulo": "Aplicação web anterior para registrar eventos e organizar partidas de voleibol.",
-    "descricaoCurta": "Projeto web de registro por clique, controle de partidas e visualização de desempenho.",
-    "descricaoCompleta": "Scout de Vôlei é uma aplicação web para registrar eventos por clique, controlar placar, saque, rotação e sets, cadastrar atletas e organizar informações de desempenho. Os dados ficam armazenados localmente no navegador e podem ser exportados em CSV e PDF.\n\nO projeto permanece no portfólio por representar uma etapa distinta de desenvolvimento. A relação exata com o Scout Trainer ainda precisa ser confirmada antes de qualquer consolidação ou remoção.",
-    "tecnologias": ["HTML", "CSS", "JavaScript", "LocalStorage", "CSV", "PDF"],
-    "aprendizados": ["Interface de registro rápido para eventos de voleibol", "Organização de dados por partida e atleta", "Transformação de observações em dados estruturados"],
-    "status": "Projeto anterior — vínculo com Scout Trainer a confirmar",
-    "imagens": [{"src": "./assets/imagens/scout-de-volei-1.png", "alt": "Interface do projeto Scout de Vôlei", "legenda": "Aplicação web de registro de partidas."}],
+    "categoria": "esporte",
+    "prioridade": 3,
+    "subtitulo": "Uma tentativa anterior de organizar o registro de partidas diretamente pelo navegador.",
+    "descricaoCurta": "Este projeto veio antes do Scout Trainer e mostra uma etapa anterior do meu aprendizado com programação e dados do voleibol.",
+    "descricaoCompleta": "O Scout de Vôlei foi uma das minhas primeiras tentativas de transformar o registro de uma partida em uma ferramenta própria. A ideia era usar cliques para acompanhar placar, saque, rotação, sets e ações dos atletas, deixando as informações salvas no navegador.\n\nHoje eu consigo enxergar várias limitações nessa versão, principalmente quando comparo com o que aprendi construindo o Scout Trainer. Mesmo assim, preferi manter o projeto no portfólio porque ele ajuda a mostrar o caminho: as primeiras decisões, o que não funcionou tão bem e como uma ideia foi ganhando mais estrutura com o tempo.\n\nAinda quero revisar com calma o que deve ser aproveitado, separado ou incorporado ao projeto mais novo. Por isso, não tratei os dois automaticamente como se fossem a mesma coisa.",
+    "tecnologias": ["HTML", "CSS", "JavaScript", "Armazenamento no navegador", "CSV", "PDF"],
+    "aprendizados": ["Criar uma interface de registro rápido", "Organizar informações por partida e atleta", "Perceber limites de uma primeira versão e usar isso para orientar o projeto seguinte"],
+    "status": "Projeto anterior",
+    "imagens": [
+      {"src": "./assets/imagens/scout-de-volei-1.png", "alt": "Interface do projeto Scout de Vôlei", "legenda": "Uma das telas da aplicação web de registro de partidas."}
+    ],
     "linkRepositorio": "",
     "linkDemo": ""
   },
@@ -118,59 +63,100 @@
     "titulo": "Análise das Ações no Futebol",
     "categoria": "dados",
     "prioridade": 1,
-    "subtitulo": "Dashboard local para investigar eventos e padrões ofensivos nas Copas de 2018 e 2022.",
-    "descricaoCurta": "Análise em Python e Streamlit com cadeias de Markov, xT, xG futuro e suavização bayesiana.",
-    "descricaoCompleta": "Análise das Ações no Futebol é um dashboard local em Streamlit voltado aos dados das Copas do Mundo de 2018 e 2022. O projeto explora sequências de eventos, compara jogadores e seleções e investiga a participação na construção ofensiva.\n\nCadeias de Markov observam transições entre ações; xT e xG futuro estimam como passes, conduções e mudanças de zona aumentam a ameaça; e a suavização bayesiana torna comparações com tamanhos de amostra diferentes mais cuidadosas.\n\nO código em Python separa carregamento, pré-processamento, modelos, comparações e visualizações, com ajustes para execução local sobre arquivos esportivos de maior volume.",
+    "subtitulo": "Uma forma de olhar para o futebol pelas sequências do jogo, e não apenas pelos números finais.",
+    "descricaoCurta": "Usei dados das Copas de 2018 e 2022 para estudar como as ações se conectam e como uma jogada vai ganhando perigo.",
+    "descricaoCompleta": "Este projeto nasceu da vontade de entender o futebol para além das estatísticas que normalmente aparecem depois do jogo. Posse de bola, finalizações e passes certos ajudam, mas muitas vezes não contam como uma jogada foi construída.\n\nPor isso, comecei a olhar para as sequências: o que acontece depois de uma recuperação, como um passe muda a situação da jogada e de que forma diferentes jogadores participam antes da finalização. O dashboard usa dados das Copas do Mundo de 2018 e 2022 e permite comparar equipes, seleções e atletas.\n\nAo longo do projeto, fui estudando cadeias de Markov, xT, xG futuro e suavização bayesiana. Mais do que aplicar nomes técnicos, meu objetivo foi entender quando cada ideia ajuda de verdade e como apresentar os resultados sem tirar o jogo de contexto.",
     "tecnologias": ["Python", "Streamlit", "Cadeias de Markov", "xT", "xG futuro", "Suavização bayesiana"],
-    "aprendizados": ["Análise de sequências para além de estatísticas isoladas", "Uso de modelos probabilísticos no esporte", "Estruturação modular de um dashboard local"],
+    "aprendizados": ["Olhar para sequências em vez de analisar cada ação isoladamente", "Ter mais cuidado ao comparar amostras de tamanhos diferentes", "Organizar um projeto de dados que precisa lidar com arquivos maiores"],
     "status": "Em desenvolvimento",
-    "imagens": [{"src": "./assets/imagens/analise-das-acoes-no-futebol-1.png", "alt": "Dashboard do projeto Análise das Ações no Futebol", "legenda": "Visualização de eventos e padrões de jogo."}],
+    "imagens": [
+      {"src": "./assets/imagens/analise-das-acoes-no-futebol-1.png", "alt": "Dashboard do projeto Análise das Ações no Futebol", "legenda": "Uma das visualizações usadas para explorar ações e padrões de jogo."}
+    ],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/Dashboard-copa-do-mundo-XT-XG",
-    "linkDemo": ""
-  },
-  {
-    "id": "mapa-de-valores-imobiliarios-em-belo-horizonte",
-    "titulo": "Mapa de Valores Imobiliários em Belo Horizonte",
-    "categoria": "dados",
-    "prioridade": 2,
-    "subtitulo": "Visualização geográfica de preços de imóveis com coleta web e dados públicos.",
-    "descricaoCurta": "Limpeza, integração e geovisualização de valores de aluguel, venda e condomínio em Belo Horizonte.",
-    "descricaoCompleta": "O Mapa de Valores Imobiliários em Belo Horizonte explora como preços de aluguel, venda e condomínio se distribuem pela cidade. A solução combina coleta web e bases públicas para transformar anúncios dispersos em uma leitura territorial.\n\nO trabalho envolve limpeza e padronização de endereços, tratamento de ausências e duplicidades, integração de fontes e transparência sobre as limitações da amostra. O mapa interativo permite observar padrões espaciais e comparar regiões.",
-    "tecnologias": ["HTML", "JavaScript", "Web scraping", "Dados públicos", "Limpeza de dados", "Geovisualização"],
-    "aprendizados": ["Integração de dados web e bases geográficas", "Tratamento de endereços e duplicidades", "Visualização territorial para comparar preços"],
-    "status": "Protótipo",
-    "imagens": [],
-    "linkRepositorio": "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh",
     "linkDemo": ""
   },
   {
     "id": "dashboard-de-controle-de-carga",
     "titulo": "Dashboard de Controle de Carga",
     "categoria": "dados",
-    "prioridade": 3,
-    "subtitulo": "Aplicação web para organizar check-ins e indicadores da rotina de atletas.",
-    "descricaoCurta": "Dados do Google Sheets apresentados para acompanhar carga, dor, fadiga, sono e estresse.",
-    "descricaoCompleta": "O Dashboard de Controle de Carga organiza informações de atletas registradas em uma planilha do Google Sheets e as apresenta em uma interface web mais clara para acompanhamento da rotina esportiva.\n\nA aplicação reúne check-ins, status atuais e indicadores como carga, dor, fadiga, sono e estresse. Foi construída com HTML, CSS, JavaScript e Node.js como ferramenta leve e adaptável. Seu objetivo é apoiar a leitura conjunta dos dados, sem substituir avaliação ou decisão humana.\n\nNenhum repositório público ou endereço de demonstração foi confirmado; por isso, o card permanece sem link.",
+    "prioridade": 2,
+    "subtitulo": "Uma maneira mais simples de acompanhar informações que antes ficavam espalhadas em planilhas.",
+    "descricaoCurta": "O projeto nasceu de uma necessidade do clube: tornar check-ins e indicadores dos atletas mais fáceis de acompanhar no dia a dia.",
+    "descricaoCompleta": "O Dashboard de Controle de Carga surgiu de um problema muito prático. As informações dos atletas já existiam, mas estavam em planilhas grandes e difíceis de acompanhar na rotina. Minha tentativa foi criar uma forma mais direta de enxergar os check-ins e perceber quando alguma informação merecia atenção.\n\nO dashboard reúne indicadores como carga, dor, fadiga, sono e estresse. Ele não foi pensado para decidir nada sozinho ou substituir a conversa entre os profissionais. A ideia é organizar melhor o que já foi registrado para que comissão técnica, preparação física, fisioterapia e psicologia consigam conversar com mais clareza.\n\nEsse projeto também me ajudou a entender que criar uma ferramenta não é apenas montar gráficos. É preciso pensar em nomes, fontes, dados ausentes, atualização e no modo como alguém realmente vai usar aquilo durante o trabalho.",
     "tecnologias": ["HTML", "CSS", "JavaScript", "Node.js", "Google Sheets", "Visualização de dados"],
-    "aprendizados": ["Organização de dados esportivos de planilhas", "Criação de indicadores de rotina", "Apresentação para colaboração multidisciplinar"],
-    "status": "Em desenvolvimento — link público não confirmado",
-    "imagens": [{"src": "./assets/imagens/dashboard-de-controle-de-carga-1.png", "alt": "Interface do Dashboard de Controle de Carga", "legenda": "Indicadores de acompanhamento dos atletas."}],
+    "aprendizados": ["Transformar uma planilha grande em uma leitura mais direta", "Pensar indicadores sem perder o contexto de cada atleta", "Construir uma ferramenta a partir da rotina de quem vai utilizá-la"],
+    "status": "Em desenvolvimento",
+    "imagens": [
+      {"src": "./assets/imagens/dashboard-de-controle-de-carga-1.png", "alt": "Interface do Dashboard de Controle de Carga", "legenda": "Uma das telas de acompanhamento dos atletas."}
+    ],
     "linkRepositorio": "",
     "linkDemo": ""
   },
   {
     "id": "registro-do-atleta",
     "titulo": "Registro do Atleta",
-    "categoria": "automacao",
-    "prioridade": 1,
-    "subtitulo": "Sistema local para integrar fontes esportivas em um histórico longitudinal, auditável e revisável.",
-    "descricaoCurta": "Pipeline com SQLite, API e dashboard para ingestão, identidade, qualidade, alertas e revisão humana.",
-    "descricaoCompleta": "Registro do Atleta organiza fontes esportivas dispersas em uma base longitudinal, auditável e revisável. O núcleo preserva as fontes, calcula hashes, cria snapshots idempotentes em SQLite e normaliza dados de PSR, fisioterapia e avaliações físicas.\n\nA resolução de identidade mantém trilha de auditoria e encaminha ambiguidades para revisão humana. Regras determinísticas identificam problemas de qualidade, possíveis duplicidades e alertas; uma API local em FastAPI e um dashboard responsivo apoiam consulta, revisão e relatórios.\n\nA integração com modelos de linguagem é opcional, fica desabilitada por padrão e não tem autoridade sobre persistência crítica. A edição pública usa somente dados sintéticos e não é uma ferramenta de decisão clínica.",
-    "tecnologias": ["Python 3.12+", "SQLite", "FastAPI", "HTML", "CSS", "JavaScript", "Pytest", "ETL"],
-    "aprendizados": ["Ingestão idempotente e rastreabilidade das fontes", "Identidade auditável e revisão humana", "Operação local resiliente e limites explícitos para IA"],
-    "status": "Em desenvolvimento — demonstração técnica",
+    "categoria": "dados",
+    "prioridade": 3,
+    "subtitulo": "Um projeto para aproximar informações que chegam de áreas e planilhas diferentes.",
+    "descricaoCurta": "A ideia é construir um histórico mais confiável dos atletas sem esconder dúvidas, diferenças de nomes ou problemas nas fontes.",
+    "descricaoCompleta": "O Registro do Atleta começou com uma dificuldade que aparece bastante no esporte: cada área produz informações importantes, mas nem sempre elas chegam com os mesmos nomes, datas ou formatos. Quando tudo fica separado, acompanhar a trajetória de um atleta se torna mais difícil do que deveria.\n\nO projeto tenta organizar esse caminho sem apagar a origem das informações. Ele guarda cópias das fontes, ajuda a perceber possíveis registros duplicados e separa os casos duvidosos para revisão de uma pessoa. Também reúne dados de PSR, fisioterapia e avaliações físicas em um histórico comum.\n\nExiste uma parte opcional de inteligência artificial, mas fiz questão de limitar seu papel. Ela pode ajudar a resumir ou explicar; não pode decidir sozinha o que vira verdade no banco. A versão pública usa apenas dados inventados para demonstração e não é uma ferramenta de decisão clínica.",
+    "tecnologias": ["Python", "SQLite", "FastAPI", "HTML", "CSS", "JavaScript", "Testes automatizados"],
+    "aprendizados": ["Preservar a origem de uma informação mesmo depois de organizá-la", "Lidar com nomes, datas e registros que não combinam perfeitamente", "Definir limites claros para o uso de inteligência artificial"],
+    "status": "Em desenvolvimento",
     "imagens": [],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/registro-do-atleta",
+    "linkDemo": ""
+  },
+  {
+    "id": "mapa-de-valores-imobiliarios-em-belo-horizonte",
+    "titulo": "Mapa de Valores Imobiliários em Belo Horizonte",
+    "categoria": "dados",
+    "prioridade": 4,
+    "subtitulo": "Um exercício para entender como preços de imóveis se distribuem pela cidade.",
+    "descricaoCurta": "Neste projeto, saí um pouco do esporte para aprender coleta, limpeza e visualização usando anúncios e dados públicos de Belo Horizonte.",
+    "descricaoCompleta": "Quis fazer um projeto de dados que não estivesse ligado ao esporte. A ideia foi reunir anúncios de imóveis e bases públicas para observar como valores de aluguel, venda e condomínio aparecem em diferentes partes de Belo Horizonte.\n\nO mapa é a parte mais visível, mas boa parte do trabalho aconteceu antes dele: endereços escritos de formas diferentes, anúncios repetidos, valores ausentes e informações que não foram criadas para funcionar juntas. Foi um exercício importante para entender que dados encontrados na internet quase nunca chegam prontos para análise.\n\nO resultado ainda é um protótipo e precisa ser lido com cuidado, porque os anúncios não representam todos os imóveis da cidade. Mesmo assim, o projeto me ajudou a sair de um tema conhecido e aplicar o que eu vinha estudando em outro contexto.",
+    "tecnologias": ["HTML", "JavaScript", "Coleta de dados na web", "Dados públicos", "Limpeza de dados", "Mapas interativos"],
+    "aprendizados": ["Juntar fontes que foram criadas de maneiras diferentes", "Tratar endereços, repetições e informações ausentes", "Apresentar um mapa sem esconder os limites dos dados"],
+    "status": "Protótipo",
+    "imagens": [],
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh",
+    "linkDemo": ""
+  },
+  {
+    "id": "marca",
+    "titulo": "Marca",
+    "categoria": "trabalho",
+    "prioridade": 1,
+    "subtitulo": "Um leitor de PDFs pensado para ler com calma e continuar exatamente de onde parei.",
+    "descricaoCurta": "Quis criar uma aplicação de computador simples, bonita e focada no que mais importa: abrir, ler, marcar e retomar um documento.",
+    "descricaoCompleta": "O Marca começou com uma vontade simples: criar um leitor de PDF que não parecesse cheio de distrações. Eu queria abrir um documento local, ler com calma, fazer grifos e, quando voltasse depois, continuar do mesmo ponto.\n\nAos poucos, o projeto ganhou páginas renderizadas sob demanda, controle de zoom, memória da posição de leitura, documentos recentes e grifos em quatro cores. Tudo funciona localmente no computador e os arquivos não precisam ser enviados para um serviço externo.\n\nEste foi um projeto importante para aprender sobre aplicações desktop. Trabalhei tanto a parte de funcionamento quanto a identidade visual, os estados de erro, os atalhos e a preparação de um executável e de um instalador para Windows. A versão atual está nos ajustes finais de validação.",
+    "tecnologias": ["Tauri", "TypeScript", "PDF.js", "Vite", "Rust", "Testes automatizados"],
+    "aprendizados": ["Criar uma aplicação de computador, e não apenas uma página web", "Guardar o progresso de leitura e os grifos de cada documento", "Pensar a identidade visual junto com o funcionamento do produto"],
+    "status": "Versão 0.1.0 · ajustes finais",
+    "imagens": [
+      {"src": "./assets/imagens/marca-home.png", "alt": "Tela inicial do Marca com opções para continuar a leitura ou abrir um PDF", "legenda": "Tela inicial do leitor Marca."},
+      {"src": "./assets/imagens/marca-pena.png", "alt": "Símbolo de pena utilizado na identidade visual do Marca", "legenda": "Símbolo criado para a identidade visual do aplicativo."}
+    ],
+    "linkRepositorio": "",
+    "linkDemo": ""
+  },
+  {
+    "id": "simulador-procedural-de-gestao-de-rh",
+    "titulo": "Simulador Procedural de Gestão de RH",
+    "categoria": "trabalho",
+    "prioridade": 2,
+    "subtitulo": "Um jogo em que trabalhar com RH exige conhecer as pessoas e entender a empresa antes de decidir.",
+    "descricaoCurta": "A proposta é transformar situações de trabalho em uma simulação na qual cada empresa, equipe e problema pode aparecer de um jeito diferente.",
+    "descricaoCompleta": "Este projeto junta duas áreas que fazem parte da minha trajetória: psicologia e programação. A ideia foi criar um jogo de gestão de RH em que o jogador não recebe todas as respostas prontas e precisa conhecer a empresa antes de tomar decisões.\n\nCada partida gera uma organização diferente, com seus setores, funcionários, relações, demandas e dificuldades. O jogador circula pelos espaços, conversa com as pessoas e tenta entender o que está acontecendo. Uma decisão pode funcionar em uma empresa e produzir outro efeito em uma situação diferente.\n\nAinda é um projeto em desenvolvimento. Além de programar as regras, venho aprendendo a organizar uma simulação grande em partes menores e a transformar conceitos como clima, confiança, conflitos, carga de trabalho e produtividade em elementos que possam aparecer durante o jogo.",
+    "tecnologias": ["JavaScript", "Node.js", "Phaser", "Geração procedural", "Testes automatizados"],
+    "aprendizados": ["Transformar conceitos de RH em situações que podem acontecer dentro de um jogo", "Gerar empresas e equipes diferentes a cada partida", "Dividir um projeto maior em partes que possam ser testadas e revistas"],
+    "status": "Em desenvolvimento",
+    "imagens": [
+      {"src": "./assets/imagens/gprh-tela-inicial.png", "alt": "Referência visual da tela inicial do Simulador Procedural de Gestão de RH", "legenda": "Referência visual planejada para a tela inicial."},
+      {"src": "./assets/imagens/gprh-empresa-gerada.png", "alt": "Referência visual de uma empresa gerada no simulador de RH", "legenda": "Referência visual da geração de uma nova empresa."},
+      {"src": "./assets/imagens/gprh-mapa-empresa.png", "alt": "Referência visual do mapa da empresa no simulador de RH", "legenda": "Referência visual do mapa usado para explorar os setores."}
+    ],
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/GPRH",
     "linkDemo": ""
   }
 ]

@@ -1,14 +1,16 @@
 # Portfólio Lucas Regis
 
-Portfólio profissional de Lucas Regis, com foco em oportunidades de tecnologia, desenvolvimento de software e análise de dados.
+Este é o espaço onde reúno projetos que nasceram de dificuldades da rotina, ideias ligadas ao esporte ou simplesmente da vontade de aprender a construir alguma coisa com programação.
 
-O site preserva uma interface clara, minimalista e responsiva. Os projetos aparecem como cards organizados em três categorias e, ao selecionar um card, suas informações são exibidas na coluna lateral.
+Sou psicólogo formado pela UFMG e trabalho no contexto esportivo. Aos poucos, fui usando a programação para criar ferramentas, organizar informações e experimentar outras formas de apresentar uma ideia. Alguns projetos já possuem versões utilizáveis; outros ainda fazem parte do meu processo de estudo.
+
+No site, cada projeto aparece em um card. Ao selecionar um deles, conto um pouco sobre o motivo de ele existir, o que já consegui fazer e o que fui aprendendo no caminho.
 
 ## Categorias
 
-1. **Desenvolvimento de Software & Aplicações**
-2. **Dados & Analytics**
-3. **Automação, IA & Sistemas de Dados**
+1. **Projetos ligados ao esporte**
+2. **Organização e leitura de dados**
+3. **Aplicações para estudo e trabalho**
 
 A ordem dos projetos dentro de cada categoria é definida pelo campo `prioridade` em `data/projetos.json`.
 
@@ -50,7 +52,7 @@ Edite `data/projetos.json` e mantenha os campos principais:
 {
   "id": "identificador-unico",
   "titulo": "Nome do projeto",
-  "categoria": "software",
+  "categoria": "esporte",
   "prioridade": 1,
   "descricaoCurta": "Resumo para o card",
   "descricaoCompleta": "Texto do painel lateral",
@@ -63,7 +65,7 @@ Edite `data/projetos.json` e mantenha os campos principais:
 }
 ```
 
-Categorias aceitas: `software`, `dados` e `automacao`. O campo `linkDownload` pode ser usado quando houver um arquivo público confirmado.
+Categorias aceitas: `esporte`, `dados` e `trabalho`. O campo `linkDownload` pode ser usado quando houver um arquivo público confirmado.
 
 Não adicione links estimados. Se um repositório ou demonstração não estiver confirmado, mantenha o campo vazio.
 

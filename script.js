@@ -2,32 +2,32 @@ const PROJECTS_URL = "./data/projetos.json";
 
 const CATEGORIES = [
   {
-    id: "software",
-    titulo: "Desenvolvimento de Software & Aplicações",
-    descricao: "Produtos, jogos e ferramentas construídos para experiências e fluxos de trabalho específicos."
+    id: "esporte",
+    titulo: "Projetos ligados ao esporte",
+    descricao: "Ideias que nasceram da quadra, do clube e da vontade de transformar situações do esporte em ferramentas e experiências."
   },
   {
     id: "dados",
-    titulo: "Dados & Analytics",
-    descricao: "Projetos de tratamento, modelagem e visualização de dados para apoiar análises."
+    titulo: "Organização e leitura de dados",
+    descricao: "Projetos em que tento aproximar informações espalhadas, fazer perguntas melhores e apresentar os dados de um jeito mais claro."
   },
   {
-    id: "automacao",
-    titulo: "Automação, IA & Sistemas de Dados",
-    descricao: "Sistemas locais e pipelines que integram fontes, regras, revisão humana e automação."
+    id: "trabalho",
+    titulo: "Aplicações para estudo e trabalho",
+    descricao: "Programas que criei para aprender, organizar tarefas ou experimentar novas formas de trabalhar com tecnologia."
   }
 ];
 
 const introContent = {
   kicker: "Apresentação",
-  titulo: "Desenvolvimento, dados e automação",
+  titulo: "Projetos que nasceram de problemas reais",
   foto: { src: "./assets/imagens/foto-lucas.jpg", alt: "Foto de Lucas Regis" },
   paragrafos: [
     "Olá, meu nome é Lucas Regis.",
-    "Sou psicólogo formado pela UFMG e venho direcionando minha trajetória profissional para tecnologia, desenvolvimento de software e análise de dados.",
-    "Construo aplicações, visualizações e sistemas de dados a partir de problemas concretos. Minha experiência no esporte aparece em parte dos projetos, mas o foco do portfólio está nas competências transferíveis: programação, modelagem, integração de fontes, automação, análise e comunicação de informações.",
-    "Neste espaço, reúno projetos em diferentes estágios de desenvolvimento e documento com clareza o que já está implementado, o que está em evolução e quais decisões técnicas orientaram cada solução.",
-    "Estou aberto a oportunidades em TI, desenvolvimento de software e dados."
+    "Sou psicólogo formado pela UFMG e trabalho no contexto esportivo. Minha aproximação com a programação aconteceu de um jeito muito prático: eu encontrava uma dificuldade na rotina, tinha uma ideia e começava a pensar se conseguiria construir alguma coisa para ajudar.",
+    "Foi assim que apareceram projetos de scout, jogos para trabalhar com atletas, formas de organizar planilhas e também aplicações que não têm relação direta com o esporte. No caminho, fui aprendendo a programar, testar, documentar, criar identidades visuais e dar continuidade às ideias em vez de deixá-las apenas como experimentos soltos.",
+    "Nem tudo aqui está pronto, e acho importante mostrar isso. Alguns projetos já possuem versões que podem ser usadas; outros ainda estão em construção. Este portfólio é uma forma de reunir esse processo e mostrar o que venho aprendendo ao tentar resolver problemas que fazem sentido para mim.",
+    "Também estou buscando oportunidades para continuar aprendendo e trabalhar com tecnologia, organização de dados e desenvolvimento de aplicações."
   ],
   contato: { label: "Contato", email: "lucaaregis4r@gmail.com" }
 };
@@ -115,7 +115,7 @@ function renderProjectCard(project) {
         <span class="project-card__status">${escapeHtml(project.status || "Projeto")}</span>
         <h4>${escapeHtml(project.titulo)}</h4>
         <span class="project-card__summary">${escapeHtml(project.descricaoCurta || project.subtitulo || "")}</span>
-        <span class="project-card__footer">Ver detalhes <span aria-hidden="true">→</span></span>
+        <span class="project-card__footer">Conhecer o projeto <span aria-hidden="true">→</span></span>
       </span>
     </button>
   `;
@@ -143,23 +143,23 @@ function renderProjectDetails(project) {
 
       ${technologies.length ? `
         <section aria-labelledby="technologies-title">
-          <h3 id="technologies-title">Tecnologias e conceitos</h3>
+          <h3 id="technologies-title">O que usei no projeto</h3>
           <ul class="technology-list">${technologies.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
         </section>
       ` : ""}
 
       ${learnings.length ? `
         <section aria-labelledby="learnings-title">
-          <h3 id="learnings-title">Aprendizados e frentes de estudo</h3>
+          <h3 id="learnings-title">O que fui aprendendo</h3>
           <ul>${learnings.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
         </section>
       ` : ""}
 
-      ${actions ? `<section aria-labelledby="links-title"><h3 id="links-title">Links</h3><div class="actions-list">${actions}</div></section>` : ""}
+      ${actions ? `<section aria-labelledby="links-title"><h3 id="links-title">Onde ver</h3><div class="actions-list">${actions}</div></section>` : ""}
 
       ${images.length ? `
         <section aria-labelledby="gallery-title">
-          <h3 id="gallery-title">Imagens do projeto</h3>
+          <h3 id="gallery-title">Algumas imagens</h3>
           <div class="gallery">${images.map(renderImageItem).join("")}</div>
         </section>
       ` : ""}
