@@ -1,309 +1,180 @@
 const PROJECTS_URL = "./data/projetos.json";
+const CATEGORY_LABELS = { esporte: "Esporte", dados: "Dados", trabalho: "Aplicações" };
+const CATEGORY_ORDER = ["esporte", "dados", "trabalho"];
+const FEATURED_IDS = ["modelo-de-chatbot-configuravel", "scout-trainer", "mapa-de-valores-imobiliarios-em-belo-horizonte"];
 
-const CATEGORIES = [
-  {
-    id: "esporte",
-    titulo: "Projetos ligados ao esporte",
-    descricao: "Foi no esporte que comecei a transformar algumas ideias em projetos. Aqui estão ferramentas e experiências que nasceram da quadra, do clube e das conversas com atletas e profissionais."
-  },
-  {
-    id: "dados",
-    titulo: "Organização e leitura de dados",
-    descricao: "Meu interesse por dados começou com informações que já existiam, mas estavam espalhadas ou eram difíceis de acompanhar. Estes projetos são tentativas de organizar melhor essas informações e encontrar formas mais claras de olhar para elas."
-  },
-  {
-    id: "trabalho",
-    titulo: "Aplicações para estudo e trabalho",
-    descricao: "Nem todos os projetos vieram do esporte. Alguns começaram com uma curiosidade, uma atividade de estudo ou a vontade de experimentar como um programa de computador é pensado, construído e preparado para uso."
-  }
-];
+const grid = document.querySelector("#projects-grid");
+const countLabel = document.querySelector("#project-count");
+const dialog = document.querySelector("#project-dialog");
+const dialogContent = document.querySelector("#project-dialog-content");
+const filterButtons = [...document.querySelectorAll("[data-filter]")];
+let projects = [];
+let activeFilter = "todos";
 
-const introContent = {
-  kicker: "Apresentação",
-  titulo: "Olá, meu nome é Lucas Regis.",
-  foto: { src: "./assets/imagens/foto-lucas.jpg", alt: "Foto de Lucas Regis" },
-  paragrafos: [
-    "Sempre fui muito curioso e gosto de aprender sobre quase tudo. Ao longo da minha trajetória, escolher uma única coisa para seguir nunca foi simples. Com o tempo, percebi que talvez isso não fosse apenas uma dificuldade: para mim, não faz muito sentido imaginar que uma pessoa precise fazer uma única coisa pelo resto da vida.",
-    "Conhecimentos diferentes mudam a forma como a gente observa o mundo. A psicologia, o esporte, os dados e a programação me fazem perceber coisas distintas e, quando esses aprendizados se encontram, surgem outras maneiras de pensar e de trabalhar.",
-    "Sou psicólogo formado pela UFMG e trabalho no contexto esportivo. Minha aproximação com a programação aconteceu de um jeito muito prático: eu encontrava uma dificuldade na rotina, tinha uma ideia e começava a pensar se conseguiria construir alguma coisa para ajudar.",
-    "Foi assim que apareceram projetos de scout, jogos para trabalhar com atletas, formas de organizar planilhas e também aplicações que não têm relação direta com o esporte. No caminho, fui aprendendo a programar, testar, documentar e criar identidades visuais. Também venho tentando dar mais continuidade às ideias em vez de deixá-las como experimentos soltos — e, sendo honesto, isso ainda é uma dificuldade que estou aprendendo a enfrentar.",
-    "Nem tudo aqui está pronto, e acho importante mostrar isso. Alguns projetos já possuem versões que podem ser usadas; outros ainda estão em construção. Este portfólio é uma forma de reunir esse processo e mostrar o que venho aprendendo enquanto tento transformar interesses diferentes em projetos que façam sentido para mim.",
-    "Estou aberto a oportunidades que conversem com essa forma de trabalhar: com espaço para aprender, aproximar conhecimentos diferentes e construir junto com outras pessoas. Tenho interesse especial em tecnologia, organização de dados e desenvolvimento de aplicações, sem querer apagar o que aprendi — e continuo aprendendo — na psicologia e no esporte."
-  ],
-  citacao: {
-    texto: "É preciso substituir um pensamento que isola e separa por um pensamento que distingue e une.",
-    autor: "Edgar Morin",
-    obra: "A cabeça bem-feita"
-  },
-  contato: { label: "Contato", email: "lucaaregis4r@gmail.com" }
-};
+createPortfolio();
+document.querySelector("#year").textContent = new Date().getFullYear();
 
-const projectsList = document.querySelector("#projects-list");
-const projectDetails = document.querySelector("#project-details");
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-document.addEventListener("DOMContentLoaded", () => {
-  renderIntro();
-  loadProjects();
-});
-
-async function loadProjects() {
+async function createPortfolio() {
   try {
     const response = await fetch(PROJECTS_URL);
-    if (!response.ok) throw new Error(`Falha ao carregar os projetos (${response.status}).`);
-
-    const projects = await response.json();
-    validateProjects(projects);
-    renderProjectCategories(projects);
+    if (!response.ok) throw new Error(`Erro ${response.status} ao carregar os projetos.`);
+    const data = await response.json();
+    if (!Array.isArray(data) || !data.length) throw new Error("A lista de projetos está vazia.");
+    const ids = new Set();
+    data.forEach((project) => {
+      if (!project.id || !project.titulo || !CATEGORY_LABELS[project.categoria] || ids.has(project.id)) {
+        throw new Error("Há um projeto com dados incompletos ou identificador repetido.");
+      }
+      ids.add(project.id);
+    });
+    projects = data.sort((a, b) => CATEGORY_ORDER.indexOf(a.categoria) - CATEGORY_ORDER.indexOf(b.categoria) || Number(a.prioridade ?? 99) - Number(b.prioridade ?? 99));
+    updateCounts();
+    renderProjects();
   } catch (error) {
-    renderProjectsError(error);
+    grid.innerHTML = `<div class="load-error"><h3>Não foi possível carregar os projetos</h3><p>${escapeHtml(error.message)}</p><p>Se você abriu os arquivos no computador, use um servidor HTTP local.</p></div>`;
+    countLabel.textContent = "Projetos indisponíveis";
     console.error(error);
   } finally {
-    projectsList.setAttribute("aria-busy", "false");
+    grid.setAttribute("aria-busy", "false");
   }
 }
 
-function validateProjects(projects) {
-  if (!Array.isArray(projects) || projects.length === 0) {
-    throw new Error("O arquivo JSON não contém uma lista válida de projetos.");
-  }
-
-  const allowedCategories = new Set(CATEGORIES.map((category) => category.id));
-  const invalidProject = projects.find((project) => !project.id || !project.titulo || !allowedCategories.has(project.categoria));
-  if (invalidProject) throw new Error("Há um projeto sem título, identificador ou categoria válida.");
-}
-
-function renderProjectCategories(projects) {
-  projectsList.innerHTML = CATEGORIES.map((category) => {
-    const categoryProjects = projects
-      .filter((project) => project.categoria === category.id)
-      .sort((a, b) => Number(a.prioridade ?? 999) - Number(b.prioridade ?? 999));
-
-    if (!categoryProjects.length) return "";
-
-    return `
-      <section id="${category.id}" class="project-category" aria-labelledby="${category.id}-title">
-        <div class="category-heading">
-          <p class="category-heading__count">${categoryProjects.length} ${categoryProjects.length === 1 ? "projeto" : "projetos"}</p>
-          <h3 id="${category.id}-title">${escapeHtml(category.titulo)}</h3>
-          <p>${escapeHtml(category.descricao)}</p>
-        </div>
-        <div class="projects-grid" role="list">
-          ${categoryProjects.map((project) => renderProjectCard(project)).join("")}
-        </div>
-      </section>
-    `;
-  }).join("");
-
-  projectsList.querySelectorAll(".project-card").forEach((card) => {
-    card.addEventListener("click", () => selectProject(card.dataset.projectId, projects));
+function updateCounts() {
+  document.querySelectorAll("[data-count]").forEach((element) => {
+    const category = element.dataset.count;
+    element.textContent = category === "todos" ? projects.length : projects.filter((project) => project.categoria === category).length;
   });
 }
 
+function renderProjects() {
+  const visible = activeFilter === "todos"
+    ? [...projects].sort((a, b) => featuredRank(a) - featuredRank(b))
+    : projects.filter((project) => project.categoria === activeFilter);
+  grid.innerHTML = visible.map(renderProjectCard).join("");
+  countLabel.textContent = `${visible.length} ${visible.length === 1 ? "projeto" : "projetos"}`;
+}
+
+function featuredRank(project) {
+  const index = FEATURED_IDS.indexOf(project.id);
+  return index === -1 ? FEATURED_IDS.length : index;
+}
+
 function renderProjectCard(project) {
-  const galleryCover = Array.isArray(project.imagens) ? project.imagens.find((image) => image?.src) : null;
-  const cover = project.capa?.src ? project.capa : galleryCover;
-
+  const cover = getCover(project);
+  const technologies = Array.isArray(project.tecnologias) ? project.tecnologias.slice(0, 3) : [];
+  const imageCount = Array.isArray(project.imagens) ? project.imagens.filter((item) => item?.src).length : 0;
   return `
-    <button
-      type="button"
-      class="project-card${cover ? " project-card--with-cover" : ""}"
-      role="listitem"
-      aria-label="Abrir detalhes do projeto ${escapeAttribute(project.titulo)}"
-      aria-pressed="false"
-      data-project-id="${escapeAttribute(project.id)}"
-    >
-      ${cover ? `
-        <span class="project-card__media" aria-hidden="true">
-          <img src="${escapeAttribute(cover.src)}" alt="" loading="lazy">
+    <article class="project-card">
+      <button type="button" class="project-card__button" data-project-id="${escapeAttribute(project.id)}" aria-label="Conhecer o projeto ${escapeAttribute(project.titulo)}">
+        <span class="project-card__media">
+          ${cover ? `<img src="${escapeAttribute(cover.src)}" alt="" loading="lazy" decoding="async">` : `<span class="project-card__placeholder" aria-hidden="true">${escapeHtml(project.titulo.slice(0, 2).toUpperCase())}</span>`}
+          ${imageCount > 1 ? `<span class="project-card__image-count">${imageCount} imagens</span>` : ""}
         </span>
-      ` : ""}
-      <span class="project-card__content">
-        <span class="project-card__status">${escapeHtml(project.status || "Projeto")}</span>
-        <h4>${escapeHtml(project.titulo)}</h4>
-        <span class="project-card__summary">${escapeHtml(project.descricaoCurta || project.subtitulo || "")}</span>
-        <span class="project-card__footer">Conhecer o projeto <span aria-hidden="true">→</span></span>
-      </span>
-    </button>
-  `;
+        <span class="project-card__body">
+          <span class="project-card__meta"><span>${escapeHtml(CATEGORY_LABELS[project.categoria])}</span><span class="project-card__meta-separator" aria-hidden="true">•</span><span>${escapeHtml(project.status || "Projeto")}</span></span>
+          <span class="project-card__title">${escapeHtml(project.titulo)}</span>
+          <span class="project-card__description">${escapeHtml(project.descricaoCurta || project.subtitulo || "")}</span>
+          <span class="project-card__tags">${technologies.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</span>
+          <span class="project-card__footer">Conhecer projeto <span aria-hidden="true">↗</span></span>
+        </span>
+      </button>
+    </article>`;
 }
 
-function selectProject(projectId, projects) {
-  const project = projects.find((item) => item.id === projectId);
-  if (!project) return;
-  setActiveCard(projectId);
-  renderProjectDetails(project);
+function getCover(project) {
+  if (project.capa?.src && isSafeMediaUrl(project.capa.src)) return project.capa;
+  return Array.isArray(project.imagens) ? project.imagens.find((item) => item?.src && isSafeMediaUrl(item.src)) : null;
 }
 
-function renderProjectDetails(project) {
-  const learnings = Array.isArray(project.aprendizados) ? project.aprendizados : [];
+filterButtons.forEach((button) => button.addEventListener("click", () => {
+  activeFilter = button.dataset.filter;
+  filterButtons.forEach((item) => {
+    const active = item === button;
+    item.classList.toggle("is-active", active);
+    item.setAttribute("aria-pressed", String(active));
+  });
+  renderProjects();
+}));
+
+grid.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-project-id]");
+  if (!button) return;
+  const project = projects.find((item) => item.id === button.dataset.projectId);
+  if (project) openProject(project);
+});
+
+function openProject(project) {
+  const images = Array.isArray(project.imagens) ? project.imagens.filter((item) => item?.src && isSafeMediaUrl(item.src)) : [];
+  if (!images.length && getCover(project)) images.push(getCover(project));
   const technologies = Array.isArray(project.tecnologias) ? project.tecnologias : [];
-  const images = Array.isArray(project.imagens) ? project.imagens : [];
-  const actions = buildActionButtons(project);
-
-  const content = `
-    <div class="project-details__content">
-      <button id="back-button" type="button" class="back-button" aria-label="Voltar para a apresentação inicial">Voltar</button>
-      <p class="project-details__kicker">${escapeHtml(project.status || "Projeto selecionado")}</p>
-      <h2 id="details-title">${escapeHtml(project.titulo)}</h2>
-      <div class="project-details__intro">${renderParagraphs(project.descricaoCompleta || project.descricaoCurta || "")}</div>
-
-      ${technologies.length ? `
-        <section aria-labelledby="technologies-title">
-          <h3 id="technologies-title">O que usei no projeto</h3>
-          <ul class="technology-list">${technologies.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
-        </section>
-      ` : ""}
-
-      ${learnings.length ? `
-        <section aria-labelledby="learnings-title">
-          <h3 id="learnings-title">O que fui aprendendo</h3>
-          <ul>${learnings.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
-        </section>
-      ` : ""}
-
-      ${actions ? `<section aria-labelledby="links-title"><h3 id="links-title">Onde ver</h3><div class="actions-list">${actions}</div></section>` : ""}
-
-      ${images.length ? `
-        <section aria-labelledby="gallery-title">
-          <h3 id="gallery-title">Algumas imagens</h3>
-          <div class="gallery">${images.map(renderImageItem).join("")}</div>
-        </section>
-      ` : ""}
-    </div>
-  `;
-
-  document.body.classList.add("has-selected-project");
-  updateDetailsContent(content);
-}
-
-function renderIntro() {
-  const content = `
-    <div class="project-details__content">
-      <p class="project-details__kicker">${escapeHtml(introContent.kicker)}</p>
-      <img class="profile-photo" src="${escapeAttribute(introContent.foto.src)}" alt="${escapeAttribute(introContent.foto.alt)}" loading="eager">
-      <h2 id="details-title">${escapeHtml(introContent.titulo)}</h2>
-      ${introContent.paragrafos.map((paragraph, index) => `
-        <p>${escapeHtml(paragraph)}</p>
-        ${index === 1 ? renderIntroQuote() : ""}
-      `).join("")}
-      <div class="contact-block"><p><strong>${escapeHtml(introContent.contato.label)}:</strong> <a href="mailto:${escapeAttribute(introContent.contato.email)}">${escapeHtml(introContent.contato.email)}</a></p></div>
-    </div>
-  `;
-
-  document.body.classList.remove("has-selected-project");
-  updateDetailsContent(content, false);
-}
-
-function renderIntroQuote() {
-  return `
-    <blockquote class="intro-quote">
-      <p>“${escapeHtml(introContent.citacao.texto)}”</p>
-      <footer>— ${escapeHtml(introContent.citacao.autor)}, <cite>${escapeHtml(introContent.citacao.obra)}</cite></footer>
-    </blockquote>
-  `;
-}
-
-function renderProjectsError(error) {
-  projectsList.innerHTML = `
-    <article class="project-card project-card--error">
-      <h3>Não foi possível carregar os projetos</h3>
-      <p>${escapeHtml(error.message)}</p>
-      <p>A apresentação continua disponível. Para ver os cards localmente, abra o site por um servidor HTTP.</p>
-    </article>
-  `;
-}
-
-function buildActionButtons(project) {
+  const learnings = Array.isArray(project.aprendizados) ? project.aprendizados : [];
   const links = [
-    { url: project.linkRepositorio, label: "Ver repositório", className: "action-button--ghost" },
-    { url: project.linkDemo, label: "Ver demonstração", className: "" },
-    { url: project.linkDownload, label: "Baixar versão portátil", className: "" }
-  ];
+    { url: project.linkDemo, label: "Abrir demonstração", primary: true },
+    { url: project.linkDownload, label: project.linkDownloadLabel || "Baixar versão", primary: true },
+    { url: project.linkRepositorio, label: "Ver código no GitHub", primary: false }
+  ].filter((link) => isSafeExternalUrl(link.url));
 
-  return links
-    .filter((link) => isSafeExternalUrl(link.url))
-    .map((link) => `
-      <a class="action-button ${link.className}" href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer noopener" aria-label="${escapeAttribute(link.label)} de ${escapeAttribute(project.titulo)} em nova aba">
-        ${escapeHtml(link.label)}
-      </a>
-    `).join("");
+  dialogContent.innerHTML = `
+    <div class="detail-header"><p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span> ${escapeHtml(CATEGORY_LABELS[project.categoria])}</p><p class="detail-header__status">${escapeHtml(project.status || "Projeto")}</p><h2 id="dialog-title">${escapeHtml(project.titulo)}</h2><p class="detail-header__lead">${escapeHtml(project.subtitulo || project.descricaoCurta || "")}</p></div>
+    ${renderGallery(images, project)}
+    <div class="detail-content"><div class="detail-content__main"><section aria-labelledby="story-title"><h3 id="story-title">Sobre o projeto</h3>${renderParagraphs(project.descricaoCompleta || project.descricaoCurta || "")}</section>${learnings.length ? `<section aria-labelledby="learnings-title"><h3 id="learnings-title">O que aprendi</h3><ul class="learning-list">${learnings.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>` : ""}</div><aside class="detail-content__aside">${technologies.length ? `<section aria-labelledby="tech-title"><h3 id="tech-title">Tecnologias e métodos</h3><div class="detail-tags">${technologies.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div></section>` : ""}${links.length ? `<section aria-labelledby="links-title"><h3 id="links-title">Explore</h3><div class="detail-links">${links.map((link) => `<a class="button ${link.primary ? "button--primary" : "button--outline"}" href="${escapeAttribute(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)} <span aria-hidden="true">↗</span></a>`).join("")}</div></section>` : ""}</aside></div>`;
+
+  dialog._galleryImages = images;
+  dialog.showModal();
+  document.body.classList.add("dialog-open");
+}
+
+
+function renderGallery(images, project) {
+  if (!images.length) return "";
+  const first = images[0];
+  const thumbs = images.length > 1
+    ? `<div class="detail-gallery__thumbs" role="group" aria-label="Selecionar imagem">${images.map((image, index) => `<button type="button" class="gallery-thumb${index === 0 ? " is-active" : ""}" data-image-index="${index}" aria-label="Mostrar imagem ${index + 1}: ${escapeAttribute(image.legenda || image.alt || project.titulo)}" aria-pressed="${index === 0}"><img src="${escapeAttribute(displayMediaSrc(image))}" alt="" loading="lazy"></button>`).join("")}</div>`
+    : "";
+  return `<section class="detail-gallery" aria-label="Imagens do projeto"><figure class="detail-gallery__main"><img id="gallery-main-image" src="${escapeAttribute(displayMediaSrc(first))}" alt="${escapeAttribute(first.alt || project.titulo)}"><figcaption id="gallery-caption">${escapeHtml(first.legenda || "Imagem do projeto")}</figcaption></figure>${thumbs}<a id="gallery-open" class="gallery-open" href="${escapeAttribute(first.src)}" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho original ↗</a></section>`;
+}
+
+function displayMediaSrc(image) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches && image.src.toLowerCase().endsWith(".gif") && isSafeMediaUrl(image.poster)) return image.poster;
+  return image.src;
+}
+
+dialogContent.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-image-index]");
+  if (!button) return;
+  const image = dialog._galleryImages?.[Number(button.dataset.imageIndex)];
+  if (!image) return;
+  const main = document.querySelector("#gallery-main-image");
+  main.src = displayMediaSrc(image);
+  main.alt = image.alt || "Imagem do projeto";
+  document.querySelector("#gallery-caption").textContent = image.legenda || "Imagem do projeto";
+  document.querySelector("#gallery-open").href = image.src;
+  dialogContent.querySelectorAll("[data-image-index]").forEach((item) => {
+    const active = item === button;
+    item.classList.toggle("is-active", active);
+    item.setAttribute("aria-pressed", String(active));
+  });
+});
+
+document.querySelector("#dialog-close").addEventListener("click", () => dialog.close());
+dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+dialog.addEventListener("close", () => { document.body.classList.remove("dialog-open"); dialogContent.innerHTML = ""; });
+
+function renderParagraphs(value) {
+  return String(value).replace(/\\n/g, "\n").split(/\n\s*\n/).map((paragraph) => paragraph.trim()).filter(Boolean).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
 }
 
 function isSafeExternalUrl(value) {
   if (!value) return false;
-  try {
-    return new URL(value).protocol === "https:";
-  } catch {
-    return false;
-  }
+  try { return new URL(value).protocol === "https:"; } catch { return false; }
 }
 
-function renderImageItem(image) {
-  if (!image?.src) return "";
-  const alt = image.alt || "Imagem do projeto";
-  const caption = image.legenda ? `<figcaption>${escapeHtml(image.legenda)}</figcaption>` : "";
-  return `<figure class="gallery__item"><img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(alt)}" loading="lazy">${caption}</figure>`;
-}
-
-function renderParagraphs(value) {
-  return String(value).split(/\n{2,}/).map((paragraph) => paragraph.trim()).filter(Boolean).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
-}
-
-function setActiveCard(projectId) {
-  projectsList.querySelectorAll(".project-card").forEach((card) => {
-    const isActive = card.dataset.projectId === projectId;
-    card.classList.toggle("project-card--active", isActive);
-    card.setAttribute("aria-pressed", String(isActive));
-  });
-}
-
-function clearActiveCards() {
-  projectsList.querySelectorAll(".project-card").forEach((card) => {
-    card.classList.remove("project-card--active");
-    card.setAttribute("aria-pressed", "false");
-  });
-}
-
-function updateDetailsContent(content, animate = true) {
-  if (!animate || prefersReducedMotion.matches) {
-    projectDetails.innerHTML = content;
-    bindBackButton();
-    if (animate) moveToProjectDetails();
-    return;
-  }
-
-  projectDetails.classList.add("is-transitioning");
-  window.setTimeout(() => {
-    projectDetails.innerHTML = content;
-    projectDetails.classList.remove("is-transitioning");
-    bindBackButton();
-    projectDetails.focus({ preventScroll: true });
-    moveToProjectDetails();
-  }, 170);
-}
-
-function moveToProjectDetails() {
-  projectDetails.scrollIntoView({
-    behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-    block: "start"
-  });
-}
-
-function bindBackButton() {
-  const backButton = projectDetails.querySelector("#back-button");
-  if (!backButton) return;
-  backButton.addEventListener("click", () => {
-    clearActiveCards();
-    renderIntro();
-    document.querySelector("#projects-title")?.focus?.({ preventScroll: true });
-  });
+function isSafeMediaUrl(value) {
+  if (!value) return false;
+  try { const url = new URL(value, location.href); return url.protocol === "https:" || url.origin === location.origin; } catch { return false; }
 }
 
 function escapeHtml(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
 }
-
-function escapeAttribute(value) {
-  return escapeHtml(value).replaceAll("`", "&#96;");
-}
+function escapeAttribute(value) { return escapeHtml(value).replaceAll("`", "&#96;"); }

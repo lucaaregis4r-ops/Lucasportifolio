@@ -1,64 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Lucas Regis com projetos que nasceram do esporte, da organização de dados, dos estudos e da rotina de trabalho.">
-  <title>Lucas Regis | Projetos e aprendizados</title>
-  <link rel="icon" href="data:,">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171124">
+  <meta name="description" content="Projetos de Lucas Regis em programação, esporte e dados, com imagens e descrições do que foi feito.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucas Regis | Tecnologia, esporte e dados">
+  <meta property="og:description" content="Projetos que venho fazendo em programação, esporte e dados.">
+  <meta property="og:url" content="https://lucaaregis4r-ops.github.io/Lucasportifolio/">
+  <meta property="og:image" content="https://lucaaregis4r-ops.github.io/Lucasportifolio/assets/imagens/foto-lucas.jpg">
+  <title>Lucas Regis | Tecnologia, esporte e dados</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23171124'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='32' font-weight='bold' text-anchor='middle' fill='%23ceb6ff'%3ELR%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#projects-title">Ir para os projetos</a>
-
-  <div class="site-shell">
-    <header class="site-header">
-      <div>
-        <p class="site-header__kicker">Projetos e aprendizados</p>
-        <h1>Lucas Regis</h1>
-        <p class="site-header__summary">Ideias que começaram com uma dúvida, uma dificuldade da rotina ou simplesmente a vontade de aprender a construir alguma coisa.</p>
+  <a class="skip-link" href="#projetos">Ir para os projetos</a>
+  <header class="site-header">
+    <div class="site-header__inner container">
+      <a class="brand" href="#inicio" aria-label="Lucas Regis, voltar ao início"><span class="brand__mark">LR<span>.</span></span><span class="brand__name">Lucas Regis</span></a>
+      <nav class="site-nav" aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+      <a class="header-link" href="https://github.com/lucaaregis4r-ops" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Lucas Regis no GitHub, abre em nova aba">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main>
+    <section class="hero container" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span> Psicologia, esporte e programação</p>
+        <h1 id="hero-title">Oi, sou o <em>Lucas</em>. Aqui estão meus projetos<span class="accent-dot">.</span></h1>
+        <p class="hero__description">Sou psicólogo formado pela UFMG e trabalho no esporte. Comecei a programar para resolver dificuldades da rotina e acabei gostando de criar ferramentas, jogos e análises.</p>
+        <div class="hero__actions"><a class="button button--primary" href="#projetos">Explorar projetos <span aria-hidden="true">↗</span></a><a class="button button--text" href="#sobre">Sobre mim <span aria-hidden="true">→</span></a></div>
+        <div class="hero__facts" aria-label="Áreas dos projetos"><span>Esporte</span><span aria-hidden="true">/</span><span>Dados</span><span aria-hidden="true">/</span><span>Aplicações</span></div>
       </div>
-
-      <nav class="category-nav" aria-label="Navegação pelas categorias de projetos">
-        <a href="#esporte">Projetos ligados ao esporte</a>
-        <a href="#dados">Organização e leitura de dados</a>
-        <a href="#trabalho">Aplicações para estudo e trabalho</a>
-      </nav>
-    </header>
-
-    <main class="portfolio-layout" aria-label="Portfólio de projetos">
-      <section class="projects-column" aria-labelledby="projects-title">
-        <div class="section-heading">
-          <p class="section-heading__kicker">Um pouco do caminho</p>
-          <h2 id="projects-title" tabindex="-1">Projetos que venho construindo</h2>
-        </div>
-
-        <div id="projects-list" class="projects-list" aria-live="polite" aria-busy="true">
-          <article class="project-card project-card--loading">
-            <span class="project-card__status">Carregando</span>
-            <h3>Buscando projetos...</h3>
-            <p>Os cards serão montados a partir de <code>data/projetos.json</code>.</p>
-          </article>
-        </div>
-      </section>
-
-      <div class="timeline-divider" aria-hidden="true"></div>
-
-      <aside class="details-column" aria-labelledby="details-title">
-        <section id="project-details" class="project-details" tabindex="-1" aria-live="polite">
-          <div class="project-details__content">
-            <p class="project-details__kicker">Apresentação</p>
-            <h2 id="details-title">Olá, meu nome é Lucas Regis.</h2>
-            <p>Carregando apresentação...</p>
-          </div>
-        </section>
-      </aside>
-    </main>
-  </div>
-
-  <script src="script.js"></script>
+      <div class="hero__portrait"><div class="hero__portrait-frame"><img src="assets/imagens/foto-lucas.jpg" alt="Lucas Regis" width="600" height="600" fetchpriority="high"><div class="hero__portrait-caption"><span class="hero__caption-dot" aria-hidden="true"></span><span>Meus projetos e<br>o que aprendi com eles</span></div></div><span class="hero__orbit hero__orbit--one" aria-hidden="true"></span><span class="hero__orbit hero__orbit--two" aria-hidden="true"></span></div>
+    </section>
+    <section class="portfolio-section" id="projetos" aria-labelledby="projects-title"><div class="container">
+      <div class="section-intro"><div><p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span> Portfólio</p><h2 id="projects-title">Projetos<span class="accent-dot">.</span></h2></div><p>Alguns projetos já podem ser usados; outros ainda estão em construção. Em cada um, mostro imagens, explico o que fiz e conto o que aprendi.</p></div>
+      <div class="project-toolbar"><div class="project-filters" role="group" aria-label="Filtrar projetos por área"><button class="filter-button is-active" type="button" data-filter="todos" aria-pressed="true">Todos <span data-count="todos">0</span></button><button class="filter-button" type="button" data-filter="esporte" aria-pressed="false">Esporte <span data-count="esporte">0</span></button><button class="filter-button" type="button" data-filter="dados" aria-pressed="false">Dados <span data-count="dados">0</span></button><button class="filter-button" type="button" data-filter="trabalho" aria-pressed="false">Aplicações <span data-count="trabalho">0</span></button></div><p class="project-toolbar__total" id="project-count" aria-live="polite">Carregando projetos…</p></div>
+      <div class="projects-grid" id="projects-grid" aria-busy="true"><p class="loading-message">Buscando projetos…</p></div>
+    </div></section>
+    <section class="about-section container" id="sobre" aria-labelledby="about-title"><div class="about-section__label"><p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span> Sobre mim</p><span class="about-section__index">01 / trajetória</span></div><div class="about-section__body"><h2 id="about-title">Como comecei a programar<span class="accent-dot">.</span></h2><p>No trabalho com atletas, eu sentia falta de maneiras mais simples de registrar partidas, acompanhar informações e conversar sobre decisões em equipe. Fui criando protótipos para testar essas ideias.</p><p>Aprendi a programar enquanto fazia esses projetos. Hoje também crio aplicações fora do esporte. Gosto de entender o problema, fazer uma primeira versão e melhorá-la depois de testar.</p><details class="about-more"><summary>Leia mais sobre minha trajetória <span aria-hidden="true">+</span></summary><div class="about-more__content"><p>Sempre gostei de aprender assuntos diferentes. A psicologia e o esporte continuam presentes no meu trabalho, mesmo quando estou estudando dados ou escrevendo código.</p><p>Nem tudo neste site está pronto. Deixei os projetos em andamento porque também quero mostrar o processo, inclusive as versões que precisei refazer.</p><p>Tenho interesse em trabalhar com tecnologia e dados, especialmente em projetos nos quais eu possa continuar aprendendo com outras pessoas.</p></div></details></div></section>
+    <section class="contact-section" id="contato" aria-labelledby="contact-title"><div class="container contact-section__inner"><div><p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span> Vamos conversar</p><h2 id="contact-title">Quer falar sobre algum projeto?<span class="accent-dot">.</span></h2><p>Pode me escrever para trocar ideias, dar um feedback ou conversar sobre trabalho.</p></div><div class="contact-section__actions"><a class="button button--primary" href="mailto:lucaaregis4r@gmail.com">Enviar um e-mail <span aria-hidden="true">↗</span></a><a class="contact-section__email" href="mailto:lucaaregis4r@gmail.com">lucaaregis4r@gmail.com</a></div></div></section>
+  </main>
+  <footer class="site-footer container"><p>© <span id="year">2026</span> Lucas Regis</p><p>Atualizo este site conforme os projetos avançam.</p><a href="#inicio">Voltar ao topo ↑</a></footer>
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title"><div class="project-dialog__shell"><button class="project-dialog__close" id="dialog-close" type="button" aria-label="Fechar detalhes do projeto">×</button><div id="project-dialog-content"></div></div></dialog>
 </body>
 </html>

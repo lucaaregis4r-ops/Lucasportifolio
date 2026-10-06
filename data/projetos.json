@@ -28,11 +28,27 @@
         "src": "./assets/imagens/scout-trainer-home.png",
         "alt": "Tela inicial do Scout Trainer com atalhos para nova partida, treino, perfis e manual",
         "legenda": "Uma das interfaces do Scout Trainer ao longo do desenvolvimento do projeto."
+      },
+      {
+        "src": "./assets/imagens/scout-trainer-menu-atual.png",
+        "alt": "Área de trabalho atual do Scout Trainer",
+        "legenda": "Área de trabalho da aplicação local, antes de iniciar uma partida."
+      },
+      {
+        "src": "./assets/imagens/scout-trainer-treino.png",
+        "alt": "Seleção de treino de códigos no Scout Trainer",
+        "legenda": "Opções de treino para praticar o registro de ações de voleibol."
+      },
+      {
+        "src": "./assets/imagens/scout-trainer-exercicio.png",
+        "alt": "Exercício de conversão de situação em código no Scout Trainer",
+        "legenda": "Uma situação de treino de scout, com entrada de código pelo usuário."
       }
     ],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/Treino-de-estatistica",
-    "linkDownload": "",
-    "linkDemo": ""
+    "linkDownload": "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/releases/tag/v0.3.0",
+    "linkDemo": "",
+    "linkDownloadLabel": "Versão publicada (0.3.0)"
   },
   {
     "id": "a-temporada",
@@ -184,13 +200,17 @@
     "status": "Em desenvolvimento",
     "imagens": [
       {
-        "src": "./assets/imagens/dashboard-de-controle-de-carga-1.png",
-        "alt": "Interface do Dashboard de Controle de Carga",
-        "legenda": "Uma das telas de acompanhamento dos atletas."
+        "src": "./assets/imagens/dashboard-olympico-demo.png",
+        "alt": "Interface atual do Dashboard Olympico com indicadores e gráfico de um atleta fictício",
+        "legenda": "Interface atual do dashboard. A captura usa somente dados fictícios de demonstração."
       }
     ],
     "linkRepositorio": "",
-    "linkDemo": ""
+    "linkDemo": "",
+    "capa": {
+      "src": "./assets/imagens/dashboard-olympico-capa.png",
+      "alt": "Painel atual do Dashboard Olympico com dados fictícios"
+    }
   },
   {
     "id": "registro-do-atleta",
@@ -215,9 +235,41 @@
       "Definir limites claros para o uso de inteligência artificial"
     ],
     "status": "Em desenvolvimento",
-    "imagens": [],
+    "imagens": [
+      {
+        "src": "./assets/imagens/registro-atleta-demo-visao-geral.png",
+        "alt": "Painel de visão geral do Registro do Atleta com dados fictícios",
+        "legenda": "Visão geral da demo sintética: indicadores e andamento das revisões."
+      },
+      {
+        "src": "./assets/imagens/registro-atleta-demo.gif",
+        "alt": "Demonstração animada da navegação entre as abas do Registro do Atleta usando dados fictícios",
+        "legenda": "Navegação real entre as abas da demo sintética, com dados inteiramente fictícios.",
+        "poster": "./assets/imagens/registro-atleta-demo-visao-geral.png"
+      },
+      {
+        "src": "./assets/imagens/registro-atleta-demo-macrociclo.png",
+        "alt": "Tela de macrociclo da demo sintética do Registro do Atleta",
+        "legenda": "Visualização do macrociclo na demo sintética."
+      },
+      {
+        "src": "./assets/imagens/registro-atleta-demo-atletas.png",
+        "alt": "Lista de atletas fictícios na demo sintética do Registro do Atleta",
+        "legenda": "Registros fictícios de atletas usados para demonstrar a interface."
+      },
+      {
+        "src": "./assets/imagens/registro-atleta-demo-revisoes.png",
+        "alt": "Tela de revisões da demo sintética do Registro do Atleta",
+        "legenda": "Casos separados para revisão humana na demo sintética."
+      }
+    ],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/registro-do-atleta",
-    "linkDemo": ""
+    "linkDemo": "",
+    "capa": {
+      "src": "./assets/imagens/registro-atleta-demo-visao-geral.png",
+      "alt": "Visão geral da demo sintética do Registro do Atleta",
+      "legenda": ""
+    }
   },
   {
     "id": "mapa-de-valores-imobiliarios-em-belo-horizonte",
@@ -241,15 +293,42 @@
       "Apresentar um mapa sem esconder os limites dos dados"
     ],
     "status": "Protótipo",
-    "imagens": [],
+    "imagens": [
+      {
+        "src": "./assets/imagens/mapa-valores-bh-visao-geral.png",
+        "alt": "Mapa interativo de Belo Horizonte com comparação de preços por bairro",
+        "legenda": "Visão geral da camada de diferenças entre a base de 2021 e anúncios de 2026."
+      },
+      {
+        "src": "./assets/imagens/mapa-valores-bh-demo.gif",
+        "alt": "Demonstração animada de filtros e zoom no mapa de valores imobiliários",
+        "legenda": "Interações reais com camadas, métricas e zoom do mapa público.",
+        "poster": "./assets/imagens/mapa-valores-bh-visao-geral.png"
+      },
+      {
+        "src": "./assets/imagens/mapa-valores-bh-anuncios-2026.png",
+        "alt": "Mapa da camada de anúncios de imóveis de 2026",
+        "legenda": "Camada de anúncios de venda coletados em 2026."
+      },
+      {
+        "src": "./assets/imagens/mapa-valores-bh-aluguel.png",
+        "alt": "Mapa dos valores de aluguel de imóveis de Belo Horizonte",
+        "legenda": "Visualização dos preços de aluguel no mapa."
+      }
+    ],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh",
-    "linkDemo": ""
+    "linkDemo": "https://lucaaregis4r-ops.github.io/Valor-de-Casas-em-bh/",
+    "capa": {
+      "src": "./assets/imagens/mapa-valores-bh-visao-geral.png",
+      "alt": "Mapa de valores imobiliários em Belo Horizonte",
+      "legenda": ""
+    }
   },
   {
     "id": "marca",
     "titulo": "Marca",
     "categoria": "trabalho",
-    "prioridade": 1,
+    "prioridade": 2,
     "subtitulo": "Um leitor de PDFs pensado para ler com calma e continuar exatamente de onde parei.",
     "descricaoCurta": "Eu queria um leitor de PDF mais calmo: abrir um documento, fazer grifos e continuar do mesmo lugar quando voltasse depois.",
     "descricaoCompleta": "O Marca começou com uma vontade simples: criar um leitor de PDF que não parecesse cheio de distrações. Eu queria abrir um documento local, ler com calma, fazer grifos e, quando voltasse depois, continuar do mesmo ponto.\n\nAos poucos, o projeto ganhou páginas renderizadas sob demanda, controle de zoom, memória da posição de leitura, documentos recentes e grifos em quatro cores. Tudo funciona localmente no computador e os arquivos não precisam ser enviados para um serviço externo.\n\nEste foi um projeto importante para aprender sobre aplicações desktop. Trabalhei tanto a parte de funcionamento quanto a identidade visual, os estados de erro, os atalhos e a preparação de um executável e de um instalador para Windows. A versão atual está nos ajustes finais de validação.",
@@ -286,7 +365,7 @@
     "id": "simulador-procedural-de-gestao-de-rh",
     "titulo": "Simulador Procedural de Gestão de RH",
     "categoria": "trabalho",
-    "prioridade": 2,
+    "prioridade": 3,
     "subtitulo": "Um jogo em que trabalhar com RH exige conhecer as pessoas e entender a empresa antes de decidir.",
     "descricaoCurta": "Neste jogo, cada empresa aparece de um jeito diferente e o profissional de RH precisa conhecer as pessoas antes de decidir o que fazer.",
     "descricaoCompleta": "Este projeto junta duas áreas que fazem parte da minha trajetória: psicologia e programação. A ideia foi criar um jogo de gestão de RH em que o jogador não recebe todas as respostas prontas e precisa conhecer a empresa antes de tomar decisões.\n\nCada partida gera uma organização diferente, com seus setores, funcionários, relações, demandas e dificuldades. O jogador circula pelos espaços, conversa com as pessoas e tenta entender o que está acontecendo. Uma decisão pode funcionar em uma empresa e produzir outro efeito em uma situação diferente.\n\nAinda é um projeto em desenvolvimento. Além de programar as regras, venho aprendendo a organizar uma simulação grande em partes menores e a transformar conceitos como clima, confiança, conflitos, carga de trabalho e produtividade em elementos que possam aparecer durante o jogo.",
@@ -302,8 +381,23 @@
       "Gerar empresas e equipes diferentes a cada partida",
       "Dividir um projeto maior em partes que possam ser testadas e revistas"
     ],
-    "status": "Em desenvolvimento",
+    "status": "Protótipo jogável · versão 0.2.0",
     "imagens": [
+      {
+        "src": "./assets/imagens/gprh-real-menu.png",
+        "alt": "Menu de criação de empresa do jogo GPRH",
+        "legenda": "Menu do protótipo jogável, com opções para gerar uma nova empresa."
+      },
+      {
+        "src": "./assets/imagens/gprh-real-escritorio.png",
+        "alt": "Mapa jogável do escritório no GPRH",
+        "legenda": "O jogador explora os setores e conversa com pessoas da empresa."
+      },
+      {
+        "src": "./assets/imagens/gprh-real-caderno.png",
+        "alt": "Caderno do RH do jogo GPRH com resumo do expediente",
+        "legenda": "O caderno reúne informações e decisões do expediente."
+      },
       {
         "src": "./assets/imagens/gprh-tela-inicial.png",
         "alt": "Referência visual da tela inicial do Simulador Procedural de Gestão de RH",
@@ -321,6 +415,57 @@
       }
     ],
     "linkRepositorio": "https://github.com/lucaaregis4r-ops/GPRH",
+    "linkDemo": "",
+    "capa": {
+      "src": "./assets/imagens/gprh-real-caderno.png",
+      "alt": "Caderno do RH no simulador procedural de gestão de RH",
+      "legenda": ""
+    }
+  },
+  {
+    "id": "modelo-de-chatbot-configuravel",
+    "titulo": "Chatbot Configurável",
+    "categoria": "trabalho",
+    "prioridade": 1,
+    "subtitulo": "Um app para montar assistentes diferentes e conversar com documentos.",
+    "descricaoCurta": "Posso mudar as instruções do assistente, anexar documentos e ver as fontes usadas nas respostas.",
+    "descricaoCompleta": "Eu queria testar assistentes para tarefas diferentes sem reescrever a aplicação a cada vez. Fiz uma tela para configurar o nome, as instruções, o provedor e o modo de conversa. Há modos de consulta, tutor e avaliação.\n\nTambém adicionei uma base de conhecimento que aceita arquivos TXT, MD, PDF, DOCX, CSV e XLSX. O app procura trechos relevantes desses documentos e mostra as fontes junto das respostas. Posso testar o fluxo com um provedor local, sem chave, ou configurar OpenRouter e Gemini.\n\nO histórico guarda as conversas, e as configurações podem ser importadas ou exportadas em JSON. A primeira versão está pronta; ainda quero melhorar a forma de conferir se uma resposta realmente está apoiada nas fontes.",
+    "tecnologias": [
+      "Next.js",
+      "TypeScript",
+      "SQLite",
+      "RAG",
+      "Busca em documentos",
+      "Testes automatizados"
+    ],
+    "aprendizados": [
+      "Desenhar um assistente configurável sem prender a interface a um único modelo",
+      "Recuperar trechos de documentos e mostrar as fontes ao usuário",
+      "Organizar histórico, importação e exportação das configurações"
+    ],
+    "status": "Primeira versão concluída",
+    "capa": {
+      "src": "./assets/imagens/chatbot-capa.png",
+      "alt": "Detalhe da configuração do assistente fictício no Chatbot Configurável"
+    },
+    "imagens": [
+      {
+        "src": "./assets/imagens/chatbot-inicio.png",
+        "alt": "Formulário de configuração de assistente no Chatbot Configurável",
+        "legenda": "Configuração inicial do assistente em modo local de teste."
+      },
+      {
+        "src": "./assets/imagens/chatbot-configuracao.png",
+        "alt": "Assistente de estudos configurado no app de chatbot",
+        "legenda": "Configuração de um assistente de estudos fictício, usando o provedor local de teste."
+      },
+      {
+        "src": "./assets/imagens/chatbot-historico.png",
+        "alt": "Histórico de conversas do assistente configurável",
+        "legenda": "Histórico e conversa de demonstração no provedor local de teste."
+      }
+    ],
+    "linkRepositorio": "https://github.com/lucaaregis4r-ops/Modelo-de-chatbot-configuravel",
     "linkDemo": ""
   }
 ]

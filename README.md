@@ -1,85 +1,28 @@
 # Portfólio Lucas Regis
 
-Este é o espaço onde reúno projetos que nasceram de dificuldades da rotina, ideias ligadas ao esporte ou simplesmente da vontade de aprender a construir alguma coisa com programação.
+Site pessoal de Lucas Regis, psicólogo formado pela UFMG, com projetos em esporte, dados e desenvolvimento de aplicações. Foi feito em HTML, CSS e JavaScript, sem dependências de build. O conteúdo dos dez projetos fica em `data/projetos.json`.
 
-Sou psicólogo formado pela UFMG e trabalho no contexto esportivo. Aos poucos, fui usando a programação para criar ferramentas, organizar informações e experimentar outras formas de apresentar uma ideia. Alguns projetos já possuem versões utilizáveis; outros ainda fazem parte do meu processo de estudo.
+## O que há no site
 
-No site, cada projeto aparece em um card. Ao selecionar um deles, conto um pouco sobre o motivo de ele existir, o que já consegui fazer e o que fui aprendendo no caminho.
+- Grade visual com filtros por área e cartões com imagem, resumo, status e tecnologias.
+- Galeria por projeto, com capturas reais e dois GIFs de interações reais. As imagens do Registro do Atleta e do Dashboard Olympico usam **somente dados fictícios**.
+- Descrições completas sobre origem, funcionamento e aprendizados, além de links para código, demonstração ou versão publicada quando confirmados.
+- Layout responsivo, navegação por teclado, diálogo nativo de detalhes, textos alternativos e redução de movimento quando solicitada pelo navegador.
 
-## Categorias
-
-1. **Projetos ligados ao esporte**
-2. **Organização e leitura de dados**
-3. **Aplicações para estudo e trabalho**
-
-A ordem dos projetos dentro de cada categoria é definida pelo campo `prioridade` em `data/projetos.json`.
-
-## Tecnologias do portfólio
-
-- HTML semântico;
-- CSS responsivo;
-- JavaScript sem frameworks;
-- JSON como fonte de dados dos projetos.
-
-## Estrutura
-
-```text
-.
-├── assets/imagens/       # Foto e capturas usadas nas galerias
-├── data/projetos.json    # Conteúdo, categoria, prioridade e links
-├── index.html            # Estrutura e navegação principal
-├── script.js             # Carregamento, agrupamento e painel de detalhes
-└── style.css             # Identidade visual e responsividade
-```
+Os GIFs de `registro-atleta-demo.gif` e `mapa-valores-bh-demo.gif` foram montados a partir de quadros capturados após interações reais nas respectivas aplicações. Eles não simulam recursos inexistentes.
 
 ## Executar localmente
 
-O JSON é carregado por `fetch`, por isso o site deve ser aberto por um servidor HTTP local, e não diretamente pelo sistema de arquivos.
-
-Com Python instalado:
+O JSON é carregado por `fetch`, por isso abra o site por um servidor HTTP local:
 
 ```bash
-python -m http.server 8000
+python3 -m http.server 8000
 ```
 
-Depois, acesse `http://localhost:8000`.
+Acesse `http://localhost:8000/`.
 
-## Adicionar ou atualizar um projeto
+## Adicionar um projeto
 
-Edite `data/projetos.json` e mantenha os campos principais:
+Edite `data/projetos.json`. Cada item precisa de `id`, `titulo` e `categoria` (`esporte`, `dados` ou `trabalho`). Os campos `prioridade`, `subtitulo`, `descricaoCurta`, `descricaoCompleta`, `status`, `tecnologias`, `aprendizados`, `capa`, `imagens`, `linkRepositorio`, `linkDemo` e `linkDownload` controlam o cartão e o painel de detalhes. Imagens devem ter `src`, `alt` e `legenda` descritivos. `linkDownloadLabel` personaliza o texto de uma versão publicada.
 
-```json
-{
-  "id": "identificador-unico",
-  "titulo": "Nome do projeto",
-  "categoria": "esporte",
-  "prioridade": 1,
-  "descricaoCurta": "Resumo para o card",
-  "descricaoCompleta": "Texto do painel lateral",
-  "tecnologias": [],
-  "aprendizados": [],
-  "status": "Em desenvolvimento",
-  "imagens": [],
-  "linkRepositorio": "",
-  "linkDemo": ""
-}
-```
-
-Categorias aceitas: `esporte`, `dados` e `trabalho`. O campo `linkDownload` pode ser usado quando houver um arquivo público confirmado.
-
-Não adicione links estimados. Se um repositório ou demonstração não estiver confirmado, mantenha o campo vazio.
-
-## Acessibilidade e experiência
-
-- navegação por âncoras entre categorias;
-- link para pular diretamente aos projetos;
-- cards acionáveis por teclado, com estado selecionado comunicado por `aria-pressed`;
-- foco visível e rótulos descritivos;
-- painel de detalhes com atualização anunciada por `aria-live`;
-- imagens com texto alternativo e carregamento tardio;
-- respeito a `prefers-reduced-motion`;
-- layout adaptado para telas menores.
-
-## Conteúdo e privacidade
-
-As descrições devem refletir apenas funcionalidades documentadas nos projetos. O portfólio não publica dados operacionais de atletas. No Registro do Atleta, a demonstração pública utiliza exclusivamente dados sintéticos e não representa uma ferramenta de decisão clínica.
+Use apenas links verificados e imagens que possam ser divulgadas. O Dashboard de Controle de Carga não aponta para a versão publicada porque os repositórios correspondentes alertam que a edição estática pode conter dados de atletas. Não inclua capturas dessa edição no portfólio.
