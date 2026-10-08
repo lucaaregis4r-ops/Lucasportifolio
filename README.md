@@ -1,28 +1,49 @@
-# Portfólio Lucas Regis
+# Lucas Regis — Projetos e investigações
 
-Site pessoal de Lucas Regis, psicólogo formado pela UFMG, com projetos em esporte, dados e desenvolvimento de aplicações. Foi feito em HTML, CSS e JavaScript, sem dependências de build. O conteúdo dos dez projetos fica em `data/projetos.json`.
+Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. A apresentação parte dos problemas e das decisões de cada projeto, com identidade editorial em roxo, grafite e papel claro.
 
-## O que há no site
+## Estrutura
 
-- Grade visual com filtros por área e cartões com imagem, resumo, status e tecnologias.
-- Galeria por projeto, com capturas reais e dois GIFs de interações reais. As imagens do Registro do Atleta e do Dashboard Olympico usam **somente dados fictícios**.
-- Descrições completas sobre origem, funcionamento e aprendizados, além de links para código, demonstração ou versão publicada quando confirmados.
-- Layout responsivo, navegação por teclado, diálogo nativo de detalhes, textos alternativos e redução de movimento quando solicitada pelo navegador.
+- Abertura, três trabalhos selecionados, percurso do Scout, laboratório, trajetória e contato.
+- Páginas próprias para os dez projetos, com endereço compartilhável, contexto, ferramentas e documentação visual.
+- Scout Trainer, Registro do Atleta e o mapa de BH têm relatos sobre origem, escolhas, funcionamento atual, limites e aprendizados.
+- O Scout de Vôlei é apresentado como experimento anterior, conectado ao Scout Trainer.
+- Navegação e conteúdo independem de JavaScript. Os filtros do laboratório e controles das galerias são melhorias opcionais.
+- Os dois GIFs só carregam após clicar em **Reproduzir demonstração** e podem ser interrompidos. São capturas de interações reais, não simulações de recursos.
 
-Os GIFs de `registro-atleta-demo.gif` e `mapa-valores-bh-demo.gif` foram montados a partir de quadros capturados após interações reais nas respectivas aplicações. Eles não simulam recursos inexistentes.
-
-## Executar localmente
-
-O JSON é carregado por `fetch`, por isso abra o site por um servidor HTTP local:
+## Abrir localmente
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8791 --bind 127.0.0.1
 ```
 
-Acesse `http://localhost:8000/`.
+Abra `http://127.0.0.1:8791/`. Os HTMLs gerados estão versionados; servir e publicar o site não exige instalação nem build.
 
-## Adicionar um projeto
+## Editar
 
-Edite `data/projetos.json`. Cada item precisa de `id`, `titulo` e `categoria` (`esporte`, `dados` ou `trabalho`). Os campos `prioridade`, `subtitulo`, `descricaoCurta`, `descricaoCompleta`, `status`, `tecnologias`, `aprendizados`, `capa`, `imagens`, `linkRepositorio`, `linkDemo` e `linkDownload` controlam o cartão e o painel de detalhes. Imagens devem ter `src`, `alt` e `legenda` descritivos. `linkDownloadLabel` personaliza o texto de uma versão publicada.
+- `data/projetos.json`: cadastro dos projetos, descrições, tecnologias, situação, imagens e links.
+- `data/editorial.json`: chamadas e relatos dos três projetos selecionados.
+- `scripts/build.py`: estrutura das páginas e textos gerais.
+- `style.css`: identidade e layout responsivo.
+- `script.js`: filtros, troca de imagens e reprodução explícita dos GIFs.
 
-Use apenas links verificados e imagens que possam ser divulgadas. O Dashboard de Controle de Carga não aponta para a versão publicada porque os repositórios correspondentes alertam que a edição estática pode conter dados de atletas. Não inclua capturas dessa edição no portfólio.
+Depois de alterar os textos ou a estrutura, gere novamente o HTML. O gerador usa Python 3 e Pillow para ler as dimensões reais das imagens:
+
+```bash
+python3 -m pip install Pillow
+python3 scripts/build.py
+python3 scripts/check.py
+node --check script.js
+```
+
+O verificador confere arquivos, âncoras, títulos principais e atributos alternativos. Antes de publicar, revise também a aparência em telas grandes e pequenas e os controles por teclado.
+
+## Mídia e cuidado com os dados
+
+As imagens do Registro do Atleta e do Dashboard Olympico usam **apenas dados fictícios**. O dashboard utiliza a captura atualizada, não a imagem antiga.
+
+O Dashboard não aponta para as versões públicas das aplicações porque os repositórios correspondentes alertam para a presença de dados de atletas. Não inclua capturas dessas versões.
+
+As imagens conceituais do simulador de RH permanecem identificadas como referências planejadas. A galeria abre com capturas do protótipo jogável. No Chatbot Configurável, as telas identificam o provedor local de teste.
+
+A versão 0.5 do Scout Trainer está em desenvolvimento. O download público indicado corresponde à versão 0.3.0; o texto mantém essa diferença explícita.

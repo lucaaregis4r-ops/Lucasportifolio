@@ -1,0 +1,50 @@
+{
+  "scout-trainer": {
+    "numero": "01",
+    "area": "Observação de jogo / aplicação local",
+    "chamada": "O que dá para observar com os recursos que temos?",
+    "resumo": "Comecei querendo praticar o registro de partidas. A ferramenta cresceu quando passei a experimentar outras formas de observar o jogo, do código digitado ao desenho da jogada.",
+    "capa": "scout-trainer-exercicio.png",
+    "legenda": "Um exercício de registro: transformar o que acontece na quadra em um código.",
+    "secoes": [
+      ["De onde veio", "Praticar scout sem ter acesso aos programas usados no esporte profissional era difícil. Comecei construindo uma ferramenta para treinar os códigos do voleibol. Queria poder repetir, errar e entender a lógica do registro."],
+      ["O que tentei construir", "Um aplicativo local para treinar, registrar e consultar partidas. O treino de códigos foi ganhando companhia: registro visual na quadra, trajetórias, filtros e relatórios. Hoje o projeto também inclui futebol."],
+      ["Uma escolha que mudou o projeto", "Uma pessoa não consegue observar tudo ao mesmo tempo. No futebol, passei a trabalhar com níveis de detalhe: registrar a bola e a equipe em posse já é um começo; ações, jogadores e pressão entram quando é possível observá-los. Isso também exigiu distinguir ausência de pressão de pressão não observada. Um campo vazio não pode virar uma certeza."],
+      ["O que funciona hoje", "A versão em desenvolvimento reúne treino de códigos, scout digitado e visual de voleibol, coleta de futebol, mapas, trajetórias e análises de sequências com cadeias de Markov. Os registros ficam no computador e podem ser exportados. Há relatórios editáveis em PDF para o voleibol e backup em JSON."],
+      ["O que ainda falta", "A versão 0.5 precisa de mais testes de uso e de um piloto com pessoas. A validação global ainda tem pendências. A coleta manual é parcial e não reconstrói o posicionamento de todos os jogadores. As estimativas de probabilidade também precisam de calibração com mais partidas. A versão publicada para download é a 0.3.0, anterior aos recursos mais recentes."],
+      ["O que levei daqui", "A forma de coletar determina o que posso dizer depois. Um gráfico pode parecer preciso mesmo quando a observação não foi. Construir o Scout tem me feito cuidar dessa distância e também aprender a manter versões, testes, documentação e dados locais enquanto o programa cresce."]
+    ]
+  },
+  "registro-do-atleta": {
+    "numero": "02",
+    "area": "Organização de dados / revisão humana",
+    "chamada": "Quando os registros não contam a mesma história.",
+    "resumo": "Nomes diferentes, datas incompletas, planilhas de várias áreas. Tentei reunir o histórico de um atleta sem apagar de onde veio cada informação — nem esconder o que ainda precisa ser conferido.",
+    "capa": "registro-atleta-demo-revisoes.png",
+    "legenda": "Fila de revisão: os casos duvidosos ficam visíveis. Todos os dados desta demonstração são fictícios.",
+    "secoes": [
+      ["De onde veio", "No esporte, cada área registra uma parte do acompanhamento. Os nomes, as datas e os formatos nem sempre combinam. Juntar essas informações para entender a trajetória de um atleta pode dar mais trabalho do que deveria."],
+      ["O que tentei construir", "Um lugar para aproximar registros de PSR, fisioterapia e avaliações físicas, preservando as fontes. A aplicação guarda cópias dos dados recebidos, aponta possíveis duplicidades e reúne o histórico para consulta."],
+      ["Uma decisão importante", "Quando dois nomes parecem ser da mesma pessoa, isso ainda é uma hipótese. Preferi separar os casos duvidosos para revisão humana e guardar a origem dos registros. A parte opcional de IA pode ajudar a resumir ou explicar, mas a decisão sobre o que entra no banco continua sujeita à revisão."],
+      ["O que funciona hoje", "A demonstração permite navegar pela visão geral, pelos atletas, pelo macrociclo e pela fila de revisões. O projeto usa Python, FastAPI e SQLite para organizar os registros. As telas deste portfólio mostram exclusivamente dados fictícios."],
+      ["O que ainda falta", "O projeto continua em desenvolvimento. Uma demonstração com dados inventados permite conferir o fluxo, mas não comprova que todos os formatos e ambiguidades encontrados no trabalho estão resolvidos. A aplicação não é uma ferramenta de decisão clínica."],
+      ["O que levei daqui", "Organizar dados também é decidir quais dúvidas precisam continuar visíveis. Passei a dar mais atenção à origem de uma informação, às correções e ao caminho que alguém precisa percorrer para conferir um registro."]
+    ]
+  },
+  "mapa-de-valores-imobiliarios-em-belo-horizonte": {
+    "numero": "03",
+    "area": "Dados públicos / exploração geográfica",
+    "chamada": "O que os anúncios deixam ver sobre uma cidade?",
+    "resumo": "Saí de um assunto conhecido para investigar os preços de imóveis em Belo Horizonte. Antes de chegar ao mapa, precisei lidar com endereços, anúncios repetidos e fontes que não foram feitas para conversar entre si.",
+    "capa": "mapa-valores-bh-visao-geral.png",
+    "legenda": "Mapa de Belo Horizonte com comparação entre a base de 2021 e anúncios de 2026.",
+    "secoes": [
+      ["De onde veio", "Quis fazer um projeto de dados fora do esporte. Os anúncios de imóveis de Belo Horizonte me deram uma pergunta concreta: como valores de venda, aluguel e condomínio aparecem em diferentes partes da cidade?"],
+      ["O que tentei construir", "Um mapa para explorar anúncios e bases públicas por bairro e tipo de valor. A interface permite alternar camadas, consultar métricas e aproximar regiões para olhar os dados com mais detalhe."],
+      ["O trabalho antes do mapa", "Os dados chegaram com endereços escritos de formas diferentes, repetições e valores ausentes. Foi preciso tratar essas diferenças antes de colocar pontos e comparações na tela. A parte visual depende de escolhas que acontecem bem antes dela."],
+      ["O que funciona hoje", "O protótipo está publicado e pode ser aberto no navegador. Há camadas da base de 2021 e de anúncios de 2026, com filtros para explorar venda, aluguel e outros valores. As imagens e a demonstração mostram interações com esse mapa."],
+      ["Como ler os resultados", "Anúncios não representam todos os imóveis de Belo Horizonte, e um preço anunciado não é necessariamente o preço de uma negociação. As bases de períodos diferentes também têm coberturas diferentes. A comparação ajuda a formular perguntas; sozinha, não mede a valorização de toda a cidade."],
+      ["O que levei daqui", "Aprendi bastante ao trabalhar com fontes que não chegaram prontas para análise. O projeto me fez pensar tanto no tratamento dos dados quanto no cuidado necessário para mostrar uma comparação sem prometer mais do que a amostra permite."]
+    ]
+  }
+}
