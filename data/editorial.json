@@ -2,49 +2,239 @@
   "scout-trainer": {
     "numero": "01",
     "area": "Observação de jogo / aplicação local",
-    "chamada": "O que dá para observar com os recursos que temos?",
-    "resumo": "Comecei querendo praticar o registro de partidas. A ferramenta cresceu quando passei a experimentar outras formas de observar o jogo, do código digitado ao desenho da jogada.",
-    "capa": "scout-trainer-exercicio.png",
-    "legenda": "Um exercício de registro: transformar o que acontece na quadra em um código.",
+    "chamada": "Uma tentativa de construir meu próprio scout.",
+    "resumo": "Quem trabalha com esporte sabe que programas de scout nem sempre são baratos. Comecei pensando se conseguiria construir uma alternativa open source para os esportes que mais acompanho no trabalho. No começo era um treino de códigos de vôlei; depois vieram registro de partidas, coleta visual, mapas e futebol.",
+    "capa": "scout-trainer-registro-visual.png",
+    "legenda": "Registro visual na versão em desenvolvimento: ação, trajetória, qualidade e atleta. Partida preparada com o elenco demonstrativo, ainda sem ações registradas.",
     "secoes": [
-      ["De onde veio", "Praticar scout sem ter acesso aos programas usados no esporte profissional era difícil. Comecei construindo uma ferramenta para treinar os códigos do voleibol. Queria poder repetir, errar e entender a lógica do registro."],
-      ["O que tentei construir", "Um aplicativo local para treinar, registrar e consultar partidas. O treino de códigos foi ganhando companhia: registro visual na quadra, trajetórias, filtros e relatórios. Hoje o projeto também inclui futebol."],
-      ["Uma escolha que mudou o projeto", "Uma pessoa não consegue observar tudo ao mesmo tempo. No futebol, passei a trabalhar com níveis de detalhe: registrar a bola e a equipe em posse já é um começo; ações, jogadores e pressão entram quando é possível observá-los. Isso também exigiu distinguir ausência de pressão de pressão não observada. Um campo vazio não pode virar uma certeza."],
-      ["O que funciona hoje", "A versão em desenvolvimento reúne treino de códigos, scout digitado e visual de voleibol, coleta de futebol, mapas, trajetórias e análises de sequências com cadeias de Markov. Os registros ficam no computador e podem ser exportados. Há relatórios editáveis em PDF para o voleibol e backup em JSON."],
-      ["O que ainda falta", "A versão 0.5 precisa de mais testes de uso e de um piloto com pessoas. A validação global ainda tem pendências. A coleta manual é parcial e não reconstrói o posicionamento de todos os jogadores. As estimativas de probabilidade também precisam de calibração com mais partidas. A versão publicada para download é a 0.3.0, anterior aos recursos mais recentes."],
-      ["O que levei daqui", "A forma de coletar determina o que posso dizer depois. Um gráfico pode parecer preciso mesmo quando a observação não foi. Construir o Scout tem me feito cuidar dessa distância e também aprender a manter versões, testes, documentação e dados locais enquanto o programa cresce."]
+      [
+        "Como comecei",
+        "Quem trabalha com esporte sabe que programas de scout nem sempre são baratos. Comecei pensando se conseguiria construir uma alternativa open source para os esportes que mais acompanho no trabalho.\n\nNo começo, o Scout Trainer servia principalmente para treinar códigos de voleibol. Depois fui acrescentando registro de partidas, coleta visual, mapas, trajetórias e futebol. O projeto continua mudando conforme vou testando essas formas de registrar o jogo.\n\nO programa funciona localmente. Partidas, cadastros e eventos ficam em IndexedDB, no computador, sem exigir um servidor para registrar o jogo. O backup em JSON permite levar esses registros para outra instalação."
+      ],
+      [
+        "Voleibol: registro digitado e visual",
+        "Há duas formas de registrar: digitar o código ou indicar a ação na quadra. A entrada visual permite marcar origem e destino, atleta e qualidade da ação. Depois é possível filtrar os registros por ação, jogador, set e posição do levantador.\n\nAs duas entradas convergem para a mesma representação de evento, mantendo a indicação de como ele foi coletado. Isso permite consultar as ações com os mesmos filtros, sem precisar converter um gesto em um código digitado para salvá-lo."
+      ],
+      [
+        "Futebol: níveis de observação",
+        "A coleta pode começar pela bola e pela equipe em posse. Passes, conduções, jogadores e finalizações recebem mais detalhes quando há condições de observá-los. O estado da bola também distingue controle, disputa, parada e situação desconhecida.\n\nNo registro de pressão, “não houve pressão” e “não consegui observar se houve pressão” são valores diferentes. Se eu não observei, esse trecho não pode entrar na análise como uma jogada sem pressão."
+      ],
+      [
+        "Dados, correções e análises",
+        "O histórico de eventos permite reconstruir a partida após reabri-la e aplicar correções. Os testes de integração incluem registrar uma sequência de futebol, corrigir uma ação, desfazer um gol e conferir o placar, além de exportar e restaurar os dados em JSON.\n\nNa análise de Markov do futebol, os estados podem representar zonas do campo ou tipos de ação. O cálculo conta as transições observadas dentro das posses e divide cada contagem pelo total de saídas daquele estado. Trechos com coleta suspensa interrompem a sequência; a análise não cria uma ligação através dessa lacuna.\n\nO intercâmbio de futebol usa um subconjunto do esquema StatsBomb e informa suas limitações. Os registros continuam sendo coleta própria. Um chute manual não recebe um valor de xG inventado."
+      ],
+      [
+        "Limites da coleta manual",
+        "Os mapas descrevem as posições e trajetórias registradas. Eles não reconstroem o posicionamento contínuo de todos os jogadores. Eventos que deixaram de ser observados podem mudar tanto os totais quanto as sequências disponíveis para análise.\n\nUma probabilidade de transição descreve a amostra coletada, não o efeito causal de uma ação. As estimativas de vitória do voleibol usam o estado do placar e ainda precisam de calibração com um histórico maior de partidas."
+      ],
+      [
+        "Estado atual da versão",
+        "A documentação apresenta a versão 0.5 em desenvolvimento, com a entrada do futebol. O aplicativo mantém o voleibol, o armazenamento local e os relatórios editáveis em PDF. A versão disponível no link de download é a 0.3.0 e não contém todos os recursos descritos aqui.\n\nO repositório tem testes dirigidos de registro, persistência e intercâmbio. A validação global ainda registra falhas em cenários de interface, e o piloto humano continua pendente. Os testes automatizados existentes não encerram essa validação."
+      ]
+    ],
+    "implementacao": [
+      [
+        "Interface",
+        "React + TypeScript"
+      ],
+      [
+        "Desktop",
+        "Electron"
+      ],
+      [
+        "Persistência",
+        "IndexedDB local"
+      ],
+      [
+        "Intercâmbio",
+        "Backup JSON; subconjunto StatsBomb"
+      ],
+      [
+        "Relatórios",
+        "PDF editável no voleibol"
+      ],
+      [
+        "Análises",
+        "Espaciais e cadeias de Markov"
+      ],
+      [
+        "Testes",
+        "Vitest + Playwright"
+      ],
+      [
+        "Estado",
+        "v0.5 em desenvolvimento; download v0.3.0"
+      ]
+    ],
+    "referencias": [
+      [
+        "Persistência local",
+        "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/blob/6c8f2fbccb0f569874858745a030df6d27beb06f/src/infrastructure/persistence/indexeddb/ScoutTrainerDatabase.ts"
+      ],
+      [
+        "Cálculo de transições",
+        "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/blob/6c8f2fbccb0f569874858745a030df6d27beb06f/src/domain/football/FootballMarkovAnalyzer.ts"
+      ]
     ]
   },
   "registro-do-atleta": {
     "numero": "02",
     "area": "Organização de dados / revisão humana",
-    "chamada": "Quando os registros não contam a mesma história.",
-    "resumo": "Nomes diferentes, datas incompletas, planilhas de várias áreas. Tentei reunir o histórico de um atleta sem apagar de onde veio cada informação — nem esconder o que ainda precisa ser conferido.",
-    "capa": "registro-atleta-demo-revisoes.png",
-    "legenda": "Fila de revisão: os casos duvidosos ficam visíveis. Todos os dados desta demonstração são fictícios.",
+    "chamada": "Planilhas, nomes diferentes e informações para conferir.",
+    "resumo": "Trabalho com planilhas e registros de atletas praticamente todos os dias. Quando comecei a estudar LLMs e modelos que podem rodar localmente, fiquei pensando em como eles poderiam ajudar nesse trabalho. A ideia do Registro do Atleta veio daí: reunir informações, facilitar a consulta e a revisão e usar IA como apoio quando fizer sentido.",
+    "capa": "registro-atleta-revisoes-atual.png",
+    "legenda": "Revisão de identidade: conferir o nome, vincular um cadastro ou manter o caso sem vínculo. Captura atual com dados inteiramente fictícios.",
     "secoes": [
-      ["De onde veio", "No esporte, cada área registra uma parte do acompanhamento. Os nomes, as datas e os formatos nem sempre combinam. Juntar essas informações para entender a trajetória de um atleta pode dar mais trabalho do que deveria."],
-      ["O que tentei construir", "Um lugar para aproximar registros de PSR, fisioterapia e avaliações físicas, preservando as fontes. A aplicação guarda cópias dos dados recebidos, aponta possíveis duplicidades e reúne o histórico para consulta."],
-      ["Uma decisão importante", "Quando dois nomes parecem ser da mesma pessoa, isso ainda é uma hipótese. Preferi separar os casos duvidosos para revisão humana e guardar a origem dos registros. A parte opcional de IA pode ajudar a resumir ou explicar, mas a decisão sobre o que entra no banco continua sujeita à revisão."],
-      ["O que funciona hoje", "A demonstração permite navegar pela visão geral, pelos atletas, pelo macrociclo e pela fila de revisões. O projeto usa Python, FastAPI e SQLite para organizar os registros. As telas deste portfólio mostram exclusivamente dados fictícios."],
-      ["O que ainda falta", "O projeto continua em desenvolvimento. Uma demonstração com dados inventados permite conferir o fluxo, mas não comprova que todos os formatos e ambiguidades encontrados no trabalho estão resolvidos. A aplicação não é uma ferramenta de decisão clínica."],
-      ["O que levei daqui", "Organizar dados também é decidir quais dúvidas precisam continuar visíveis. Passei a dar mais atenção à origem de uma informação, às correções e ao caminho que alguém precisa percorrer para conferir um registro."]
+      [
+        "De onde veio a ideia",
+        "Trabalho com dados praticamente todos os dias. No esporte, isso significa lidar com planilhas de áreas diferentes, nomes escritos de formas diferentes, datas incompletas e informações que precisam ser conferidas antes de serem juntadas.\n\nQuando comecei a estudar LLMs e modelos que podem rodar localmente, fiquei pensando em como eles poderiam ajudar nesse trabalho. A ideia do Registro do Atleta veio daí: reunir essas informações, facilitar a consulta e usar IA como apoio, sem deixar que o modelo decida sozinho o que é um dado correto.\n\nO projeto recebe fontes configuradas, incluindo arquivos XLSX e CSV, e organiza registros de PSR, fisioterapia e avaliações físicas em tabelas próprias. A edição pública contém apenas código e dados sintéticos."
+      ],
+      [
+        "Organização dos registros",
+        "A leitura preserva os arquivos brutos. O sistema calcula hashes SHA-256, guarda cópias das fontes e carrega os registros em uma área intermediária do SQLite. As transformações mantêm referência ao registro de origem.\n\nProcessar novamente uma fonte que não mudou não deve criar cópias dos mesmos registros. Há um teste específico que importa a mesma planilha duas vezes e verifica que a segunda execução não acrescenta novos registros."
+      ],
+      [
+        "Identificação e duplicidades",
+        "Os nomes são normalizados e associados a um cadastro de atletas. Quando a correspondência tem baixa confiança, ela entra como candidata à revisão. As variações de nome confirmadas ficam vinculadas ao cadastro, com registro da decisão.\n\nA identificação da pessoa e a duplicidade de uma informação são problemas separados. Mesmo depois de vincular um registro ao atleta, ainda pode ser necessário conferir se duas entradas representam o mesmo acontecimento. Esses achados ficam em uma fila própria."
+      ],
+      [
+        "Revisão humana",
+        "A API permite confirmar uma correspondência, rejeitá-la ou criar um novo cadastro. A revisão registra a decisão, a autoria e as observações. Os testes conferem, por exemplo, se confirmar uma identidade cria a associação de nome e grava a revisão no banco.\n\nTambém há filas para datas, duplicidades e alertas. A integração opcional com modelos locais pelo Ollama fica desabilitada por padrão; pode apoiar resumos e explicações, mas não tem autoridade para decidir sozinha a identidade de um atleta ou uma correção de data."
+      ],
+      [
+        "Arquitetura da aplicação",
+        "O núcleo usa Python e SQLite. Os dados são persistidos em um arquivo local, e a API em FastAPI atende o dashboard em HTML, CSS e JavaScript. Essa organização permite executar a aplicação no computador sem instalar um servidor de banco separado.\n\nO projeto inclui backup pela API do SQLite e verificação de integridade na restauração. Também controla execuções concorrentes da rotina de processamento. A demo sintética é um modo de consulta separado: pode ser servida como site estático e não depende da API para mostrar as telas."
+      ],
+      [
+        "Limites e próximos testes",
+        "As fontes precisam ser configuradas para cada instalação. A demonstração não comprova que os formatos e as ambiguidades encontrados em uma rotina real estejam todos resolvidos. Ainda é necessário conferir as regras de identificação, datas e duplicidades com as fontes de cada contexto.\n\nOs alertas publicados são exemplos técnicos, não recomendações clínicas. As análises estatísticas avançadas dependem de verificações de qualidade e metodologia. O projeto continua em desenvolvimento."
+      ]
+    ],
+    "implementacao": [
+      [
+        "Núcleo",
+        "Python 3.12+"
+      ],
+      [
+        "Dados",
+        "SQLite local"
+      ],
+      [
+        "API",
+        "FastAPI + Uvicorn"
+      ],
+      [
+        "Interface",
+        "HTML, CSS e JavaScript"
+      ],
+      [
+        "Entrada",
+        "Fontes XLSX e CSV configuradas"
+      ],
+      [
+        "Revisão",
+        "Identidade, datas e duplicidades"
+      ],
+      [
+        "Testes",
+        "Pytest"
+      ],
+      [
+        "Estado",
+        "Em desenvolvimento; demo sintética"
+      ]
+    ],
+    "referencias": [
+      [
+        "Arquitetura da aplicação",
+        "https://github.com/lucaaregis4r-ops/registro-do-atleta/blob/0cded5c8ae76acf81aa2ee2532c9177194879b3c/docs/ARCHITECTURE.md"
+      ],
+      [
+        "Testes de revisão",
+        "https://github.com/lucaaregis4r-ops/registro-do-atleta/blob/0cded5c8ae76acf81aa2ee2532c9177194879b3c/tests/unit/test_api_review.py"
+      ]
     ]
   },
   "mapa-de-valores-imobiliarios-em-belo-horizonte": {
     "numero": "03",
     "area": "Dados públicos / exploração geográfica",
-    "chamada": "O que os anúncios deixam ver sobre uma cidade?",
-    "resumo": "Saí de um assunto conhecido para investigar os preços de imóveis em Belo Horizonte. Antes de chegar ao mapa, precisei lidar com endereços, anúncios repetidos e fontes que não foram feitas para conversar entre si.",
-    "capa": "mapa-valores-bh-visao-geral.png",
-    "legenda": "Mapa de Belo Horizonte com comparação entre a base de 2021 e anúncios de 2026.",
+    "chamada": "Começou porque eu queria trabalhar com mapas.",
+    "resumo": "Sempre gostei de mapas e queria aprender melhor scraping e coleta automática. Comecei raspando anúncios de imóveis em Belo Horizonte e organizando os dados por localização. A ideia é acompanhar como os valores aparecem e mudam pela cidade — ou simplesmente procurar bairros onde os preços estão mais baixos.",
+    "capa": "moradia-bh-atlas.png",
+    "legenda": "Atlas do Moradia BH: comparação dos preços pedidos de venda por bairro, entre as bases de 2021 e 2026. Captura de outubro de 2026.",
     "secoes": [
-      ["De onde veio", "Quis fazer um projeto de dados fora do esporte. Os anúncios de imóveis de Belo Horizonte me deram uma pergunta concreta: como valores de venda, aluguel e condomínio aparecem em diferentes partes da cidade?"],
-      ["O que tentei construir", "Um mapa para explorar anúncios e bases públicas por bairro e tipo de valor. A interface permite alternar camadas, consultar métricas e aproximar regiões para olhar os dados com mais detalhe."],
-      ["O trabalho antes do mapa", "Os dados chegaram com endereços escritos de formas diferentes, repetições e valores ausentes. Foi preciso tratar essas diferenças antes de colocar pontos e comparações na tela. A parte visual depende de escolhas que acontecem bem antes dela."],
-      ["O que funciona hoje", "O protótipo está publicado e pode ser aberto no navegador. Há camadas da base de 2021 e de anúncios de 2026, com filtros para explorar venda, aluguel e outros valores. As imagens e a demonstração mostram interações com esse mapa."],
-      ["Como ler os resultados", "Anúncios não representam todos os imóveis de Belo Horizonte, e um preço anunciado não é necessariamente o preço de uma negociação. As bases de períodos diferentes também têm coberturas diferentes. A comparação ajuda a formular perguntas; sozinha, não mede a valorização de toda a cidade."],
-      ["O que levei daqui", "Aprendi bastante ao trabalhar com fontes que não chegaram prontas para análise. O projeto me fez pensar tanto no tratamento dos dados quanto no cuidado necessário para mostrar uma comparação sem prometer mais do que a amostra permite."]
+      [
+        "Por que um mapa de imóveis",
+        "Sempre gostei de mapas e comecei a querer construir aplicações que usassem mapas para visualizar informações. Também queria aprender melhor scraping e coleta automática.\n\nComecei raspando anúncios de imóveis em Belo Horizonte e organizando os dados por localização. A ideia é acompanhar como os valores aparecem e mudam pela cidade — ou simplesmente procurar bairros onde os preços estão mais baixos. Antes de chegar ao mapa, tem bastante trabalho com anúncios repetidos, valores e endereços."
+      ],
+      [
+        "Fontes utilizadas",
+        "O projeto começou como um mapa de valores imobiliários em Belo Horizonte e hoje se chama Moradia BH. Há dois recortes: o Atlas usa bases de anúncios de venda de 2021 e 2026; o Mercado Agora mostra principalmente anúncios de aluguel das coletas recentes.\n\nAs bases históricas estão em arquivos JSON separados por ano. Os dados recentes vêm de um coletor do QuintoAndar. Venda histórica e oferta atual de aluguel têm fontes e métodos diferentes e ficam em ambientes distintos na interface."
+      ],
+      [
+        "Coleta e validação",
+        "O coletor em Python prepara os anúncios e verifica o lote antes de gravá-lo. Entre as verificações estão falhas de leitura das páginas, ausência de cidade ou bairro e uma queda excessiva na quantidade de anúncios em relação à última coleta aceita.\n\nUma coleta incompleta poderia fazer imóveis parecerem retirados do mercado. Por isso, um lote rejeitado não substitui os dados aceitos anteriormente. Os testes incluem rejeitar uma coleta truncada antes de gravar seus anúncios. O histórico é mantido em PostgreSQL local; o site recebe arquivos JSON exportados."
+      ],
+      [
+        "Valores, duplicidades e localização",
+        "A normalização converte preços e medidas, separa aluguel, condomínio e IPTU e calcula aluguel por m² quando há área válida. Dentro de uma coleta, registros repetidos são eliminados pela identidade do anúncio e pela fonte. Isso não garante reconhecer o mesmo imóvel anunciado com identidades diferentes.\n\nCidade e bairro são normalizados para consulta a um cache geográfico. Quando falta a coordenada do anúncio, o coletor pode usar uma referência do bairro. Essa posição tem precisão de bairro; não representa o endereço exato do imóvel."
+      ],
+      [
+        "Construção do mapa",
+        "A interface usa HTML, JavaScript e Leaflet. Os arquivos JSON alimentam camadas, filtros e consultas por bairro. A navegação por fragmentos da URL permite publicar as diferentes telas no GitHub Pages sem configurar rotas no servidor.\n\nO banco completo fica no computador que executa a coleta. Para consultar o site, o navegador carrega os arquivos públicos, sem acessar diretamente o PostgreSQL. O agendamento local depende de o computador estar ligado e conectado."
+      ],
+      [
+        "Comparação entre períodos",
+        "No Atlas, a variação é calculada a partir da mediana do preço pedido de venda por m² em cada bairro. A comparação exige o mínimo de anúncios configurado nos dois anos. A base de 2021 foi tratada como apartamentos porque não possui o tipo de imóvel.\n\nNo Mercado Agora, mudanças entre coletas descrevem a oferta observada de aluguel. A entrada ou saída de imóveis com características diferentes pode alterar a mediana mesmo sem mudança no preço dos anúncios que permaneceram. Essas coletas não formam uma série única com o Atlas de venda."
+      ],
+      [
+        "O que os dados não permitem concluir",
+        "O valor anunciado não é o valor de uma transação. As amostras também não representam todos os imóveis da cidade. Comparar duas medianas não permite atribuir a diferença à valorização de um mesmo conjunto de imóveis.\n\nAmostras pequenas, mudanças na composição dos anúncios e localizações aproximadas limitam a leitura por bairro. O projeto continua em desenvolvimento. Na captura do Mercado Agora feita em 8 de outubro de 2026, a última coleta não foi concluída e o site manteve a base aceita anteriormente. Esse estado também faz parte do funcionamento que ainda estou acompanhando."
+      ]
+    ],
+    "implementacao": [
+      [
+        "Interface",
+        "HTML + JavaScript + Leaflet"
+      ],
+      [
+        "Publicação",
+        "Site estático no GitHub Pages"
+      ],
+      [
+        "Coleta",
+        "Python; anúncios do QuintoAndar"
+      ],
+      [
+        "Histórico local",
+        "PostgreSQL em Docker"
+      ],
+      [
+        "Dados do site",
+        "JSONs históricos e coletas aceitas"
+      ],
+      [
+        "Comparação",
+        "Mediana de venda/m² por bairro"
+      ],
+      [
+        "Testes",
+        "Testes de coleta e validação"
+      ],
+      [
+        "Estado",
+        "Publicado; em desenvolvimento"
+      ]
+    ],
+    "referencias": [
+      [
+        "Estrutura e operação",
+        "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh/blob/73bf5edf47b18edb92fbb3b736653c103dbda985/README.md"
+      ],
+      [
+        "Regras de validação da coleta",
+        "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh/blob/73bf5edf47b18edb92fbb3b736653c103dbda985/pipeline/validation.py"
+      ]
     ]
   }
 }

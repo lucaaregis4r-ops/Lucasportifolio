@@ -1,6 +1,6 @@
-# Lucas Regis — Projetos e investigações
+# Lucas Regis — Portfólio
 
-Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. A apresentação parte dos problemas e das decisões de cada projeto, com identidade editorial em roxo, grafite e papel claro.
+Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. A apresentação parte dos problemas e das decisões de cada projeto, com identidade editorial em ameixa, grafite e papel claro. Archivo organiza a interface; Newsreader é usada na prosa; a fonte mono identifica metadados e informações técnicas.
 
 ## Estrutura
 
@@ -22,7 +22,8 @@ Abra `http://127.0.0.1:8791/`. Os HTMLs gerados estão versionados; servir e pub
 ## Editar
 
 - `data/projetos.json`: cadastro dos projetos, descrições, tecnologias, situação, imagens e links.
-- `data/editorial.json`: chamadas e relatos dos três projetos selecionados.
+- `data/editorial.json`: chamadas, relatos, fichas de implementação e referências dos três projetos selecionados.
+- `docs/fontes-editoriais.md`: código e documentação que sustentam os detalhes técnicos publicados.
 - `scripts/build.py`: estrutura das páginas e textos gerais.
 - `style.css`: identidade e layout responsivo.
 - `script.js`: filtros, troca de imagens e reprodução explícita dos GIFs.
@@ -47,3 +48,5 @@ O Dashboard não aponta para as versões públicas das aplicações porque os re
 As imagens conceituais do simulador de RH permanecem identificadas como referências planejadas. A galeria abre com capturas do protótipo jogável. No Chatbot Configurável, as telas identificam o provedor local de teste.
 
 A versão 0.5 do Scout Trainer está em desenvolvimento. O download público indicado corresponde à versão 0.3.0; o texto mantém essa diferença explícita.
+
+As capturas de Scout Trainer, Registro do Atleta e Moradia BH foram revistas em 8 de outubro de 2026. O GIF do mapa documenta a versão anterior, explicitamente identificada na legenda. As origens relatadas nos textos seguem as explicações fornecidas pelo autor.
