@@ -3,13 +3,13 @@
     "numero": "01",
     "area": "Observação de jogo / aplicação local",
     "chamada": "Uma tentativa de construir meu próprio scout.",
-    "resumo": "Quem trabalha com esporte sabe que programas de scout nem sempre são baratos. Comecei pensando se conseguiria construir uma alternativa open source para os esportes que mais acompanho no trabalho. No começo era um treino de códigos de vôlei; depois vieram registro de partidas, coleta visual, mapas e futebol.",
-    "capa": "scout-trainer-registro-visual.png",
-    "legenda": "Registro visual na versão em desenvolvimento: ação, trajetória, qualidade e atleta. Partida preparada com o elenco demonstrativo, ainda sem ações registradas.",
+    "resumo": "Quem trabalha com esporte sabe que programas de scout nem sempre são baratos. Comecei treinando códigos de vôlei e depois passei a registrar partidas. O projeto cresceu: hoje experimento formas de coleta para voleibol, futebol, futsal e basquete, sem perder de vista o que uma pessoa consegue observar durante o jogo.",
+    "capa": "scout-trainer-volei-2026.png",
+    "legenda": "Voleibol no Scout Trainer: captura real da interface de desenvolvimento em outubro de 2026, com uma partida de demonstração.",
     "secoes": [
       [
         "Como comecei",
-        "Quem trabalha com esporte sabe que programas de scout nem sempre são baratos. Comecei pensando se conseguiria construir uma alternativa open source para os esportes que mais acompanho no trabalho.\n\nNo começo, o Scout Trainer servia principalmente para treinar códigos de voleibol. Depois fui acrescentando registro de partidas, coleta visual, mapas, trajetórias e futebol. O projeto continua mudando conforme vou testando essas formas de registrar o jogo.\n\nO programa funciona localmente. Partidas, cadastros e eventos ficam em IndexedDB, no computador, sem exigir um servidor para registrar o jogo. O backup em JSON permite levar esses registros para outra instalação."
+        "Quem trabalha com esporte sabe que programas de scout nem sempre são baratos. Comecei pensando se conseguiria construir uma alternativa open source para os esportes que mais acompanho no trabalho.\n\nNo começo, o Scout Trainer servia principalmente para treinar códigos de voleibol. Depois fui acrescentando registro de partidas, coleta visual, mapas, trajetórias e futebol. Mais recentemente, acrescentei fluxos para futsal e basquete. O projeto continua mudando conforme vou testando essas formas de registrar o jogo.\n\nO programa funciona localmente. Partidas, cadastros e eventos ficam em IndexedDB, no computador, sem exigir um servidor para registrar o jogo. O backup em JSON permite levar esses registros para outra instalação."
       ],
       [
         "Voleibol: registro digitado e visual",
@@ -18,6 +18,10 @@
       [
         "Futebol: níveis de observação",
         "A coleta pode começar pela bola e pela equipe em posse. Passes, conduções, jogadores e finalizações recebem mais detalhes quando há condições de observá-los. O estado da bola também distingue controle, disputa, parada e situação desconhecida.\n\nNo registro de pressão, “não houve pressão” e “não consegui observar se houve pressão” são valores diferentes. Se eu não observei, esse trecho não pode entrar na análise como uma jogada sem pressão."
+      ],
+      [
+        "Futsal e basquete",
+        "O futsal ganhou um fluxo de registro rápido que cabe no celular e usa o relógio da partida. No basquete, comecei a registrar arremessos e posses completas para calcular medidas como aproveitamento efetivo e pontos por posse. Essas medidas dependem de uma coleta consistente: um lance incompleto não deve virar uma posse completa por conveniência.\n\nAs telas de cada modalidade têm controles próprios. Estou tentando manter uma linguagem comum na interface, mas isso ainda precisa ser testado com pessoas registrando jogos em situações reais."
       ],
       [
         "Dados, correções e análises",
@@ -29,7 +33,7 @@
       ],
       [
         "Estado atual da versão",
-        "A documentação apresenta a versão 0.5 em desenvolvimento, com a entrada do futebol. O aplicativo mantém o voleibol, o armazenamento local e os relatórios editáveis em PDF. A versão disponível no link de download é a 0.3.0 e não contém todos os recursos descritos aqui.\n\nO repositório tem testes dirigidos de registro, persistência e intercâmbio. A validação global ainda registra falhas em cenários de interface, e o piloto humano continua pendente. Os testes automatizados existentes não encerram essa validação."
+        "O código do repositório está na versão 0.7.0 em desenvolvimento e abrange quatro modalidades. O download publicado continua na versão 0.3.0; quem a instalar não encontrará todas as telas mostradas aqui.\n\nO repositório tem testes de registro, persistência, intercâmbio e interface. Eles ajudam a detectar regressões, mas não substituem um piloto humano durante uma partida."
       ]
     ],
     "implementacao": [
@@ -63,17 +67,21 @@
       ],
       [
         "Estado",
-        "v0.5 em desenvolvimento; download v0.3.0"
+        "Código v0.7.0 em desenvolvimento; download v0.3.0"
       ]
     ],
     "referencias": [
       [
         "Persistência local",
-        "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/blob/6c8f2fbccb0f569874858745a030df6d27beb06f/src/infrastructure/persistence/indexeddb/ScoutTrainerDatabase.ts"
+        "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/blob/e1287c6a00ac0a000c97035373e6d020c98ee9bd/src/infrastructure/persistence/indexeddb/ScoutTrainerDatabase.ts"
       ],
       [
         "Cálculo de transições",
-        "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/blob/6c8f2fbccb0f569874858745a030df6d27beb06f/src/domain/football/FootballMarkovAnalyzer.ts"
+        "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/blob/e1287c6a00ac0a000c97035373e6d020c98ee9bd/src/domain/football/FootballMarkovAnalyzer.ts"
+      ],
+      [
+        "Guia visual e capturas",
+        "https://github.com/lucaaregis4r-ops/Treino-de-estatistica/tree/e1287c6a00ac0a000c97035373e6d020c98ee9bd/docs/design"
       ]
     ]
   },
@@ -159,9 +167,9 @@
     "numero": "03",
     "area": "Dados públicos / exploração geográfica",
     "chamada": "Começou porque eu queria trabalhar com mapas.",
-    "resumo": "Sempre gostei de mapas e queria aprender melhor scraping e coleta automática. Comecei raspando anúncios de imóveis em Belo Horizonte e organizando os dados por localização. A ideia é acompanhar como os valores aparecem e mudam pela cidade — ou simplesmente procurar bairros onde os preços estão mais baixos.",
-    "capa": "moradia-bh-atlas.png",
-    "legenda": "Atlas do Moradia BH: comparação dos preços pedidos de venda por bairro, entre as bases de 2021 e 2026. Captura de outubro de 2026.",
+    "resumo": "Sempre gostei de mapas e queria aprender coleta automática. Comecei com anúncios de Belo Horizonte; agora o Moradia BH permite explorar ofertas e medianas por cidade, bairro e região da RMBH, com as diferenças entre as fontes à vista.",
+    "capa": "moradia-bh-mosaico-2026.png",
+    "legenda": "Mosaico de BH em 21/10/2026: bairros coloridos pela mediana do preço pedido de venda por m²; áreas cinzas têm amostra insuficiente.",
     "secoes": [
       [
         "Por que um mapa de imóveis",
@@ -170,6 +178,10 @@
       [
         "Fontes utilizadas",
         "O projeto começou como um mapa de valores imobiliários em Belo Horizonte e hoje se chama Moradia BH. Há dois recortes: o Atlas usa bases de anúncios de venda de 2021 e 2026; o Mercado Agora mostra principalmente anúncios de aluguel das coletas recentes.\n\nAs bases históricas estão em arquivos JSON separados por ano. Os dados recentes vêm de um coletor do QuintoAndar. Venda histórica e oferta atual de aluguel têm fontes e métodos diferentes e ficam em ambientes distintos na interface."
+      ],
+      [
+        "Mosaico da região metropolitana",
+        "O Mosaico acrescentou um mapa das 34 cidades da região metropolitana. Em Belo Horizonte, Contagem, Betim e Nova Lima, posso entrar em bairros ou áreas e ver células de 400 metros; nas outras cidades, a grade interna usa um quilômetro. A interface alterna venda, aluguel e valor total ou valor por metro quadrado, conforme a base escolhida.\n\nA malha vem de bases públicas de municípios e bairros. Algumas áreas, como as de Nova Lima, ainda são propostas de limite. O mapa exige pelo menos cinco anúncios para colorir cidades e bairros e três nas células. Também separa posições precisas daquelas aproximadas pelo bairro, para não distribuir um anúncio arbitrariamente pela grade. Uma região com três anúncios coloridos não permite uma conclusão firme sobre os preços daquele lugar."
       ],
       [
         "Coleta e validação",
@@ -189,7 +201,7 @@
       ],
       [
         "O que os dados não permitem concluir",
-        "O valor anunciado não é o valor de uma transação. As amostras também não representam todos os imóveis da cidade. Comparar duas medianas não permite atribuir a diferença à valorização de um mesmo conjunto de imóveis.\n\nAmostras pequenas, mudanças na composição dos anúncios e localizações aproximadas limitam a leitura por bairro. O projeto continua em desenvolvimento. Na captura do Mercado Agora feita em 8 de outubro de 2026, a última coleta não foi concluída e o site manteve a base aceita anteriormente. Esse estado também faz parte do funcionamento que ainda estou acompanhando."
+        "O valor anunciado não é o valor de uma transação. As amostras também não representam todos os imóveis da cidade. Comparar duas medianas não permite atribuir a diferença à valorização de um mesmo conjunto de imóveis.\n\nAmostras pequenas, mudanças na composição dos anúncios e localizações aproximadas limitam a leitura por bairro. O projeto continua em desenvolvimento. Na captura do Mercado Agora feita em 8 de outubro de 2026, a última coleta não foi concluída e o site manteve a base aceita anteriormente. Esse estado também faz parte do funcionamento que ainda estou acompanhando.\n\nAs imagens da galeria registram o Mosaico, o Atlas e o Mercado Agora em outubro de 2026; cada tela usa bases e recortes próprios."
       ]
     ],
     "implementacao": [
@@ -218,6 +230,10 @@
         "Mediana de venda/m² por bairro"
       ],
       [
+        "Mosaico",
+        "34 cidades; células de 400 m ou 1 km conforme a área"
+      ],
+      [
         "Testes",
         "Testes de coleta e validação"
       ],
@@ -229,11 +245,11 @@
     "referencias": [
       [
         "Estrutura e operação",
-        "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh/blob/73bf5edf47b18edb92fbb3b736653c103dbda985/README.md"
+        "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh/blob/db5072fd85083815cf8e8f9d2339bfd087b88ba0/README.md"
       ],
       [
         "Regras de validação da coleta",
-        "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh/blob/73bf5edf47b18edb92fbb3b736653c103dbda985/pipeline/validation.py"
+        "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh/blob/db5072fd85083815cf8e8f9d2339bfd087b88ba0/pipeline/validation.py"
       ]
     ]
   }

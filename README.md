@@ -5,11 +5,11 @@ Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. A apr
 ## Estrutura
 
 - Abertura, três trabalhos selecionados, percurso do Scout, laboratório, trajetória e contato.
-- Páginas próprias para os dez projetos, com endereço compartilhável, contexto, ferramentas e documentação visual.
+- Páginas próprias para os doze projetos, com endereço compartilhável, contexto, ferramentas e documentação visual.
 - Scout Trainer, Registro do Atleta e o mapa de BH têm relatos sobre origem, escolhas, funcionamento atual, limites e aprendizados.
 - O Scout de Vôlei é apresentado como experimento anterior, conectado ao Scout Trainer.
 - Navegação e conteúdo independem de JavaScript. Os filtros do laboratório e controles das galerias são melhorias opcionais.
-- Os dois GIFs só carregam após clicar em **Reproduzir demonstração** e podem ser interrompidos. São capturas de interações reais, não simulações de recursos.
+- Os GIFs existentes só carregam após clicar em **Reproduzir demonstração** e podem ser interrompidos. São capturas de interações reais, não simulações de recursos.
 
 ## Abrir localmente
 
@@ -41,12 +41,12 @@ O verificador confere arquivos, âncoras, títulos principais e atributos altern
 
 ## Mídia e cuidado com os dados
 
-As imagens do Registro do Atleta e do Dashboard Olympico usam **apenas dados fictícios**. O dashboard utiliza a captura atualizada, não a imagem antiga.
+As imagens do Registro do Atleta e do Dashboard Olympico usam **apenas dados fictícios**. A captura do dashboard documenta uma demonstração anterior; o repositório evoluiu depois dela.
 
 O Dashboard não aponta para as versões públicas das aplicações porque os repositórios correspondentes alertam para a presença de dados de atletas. Não inclua capturas dessas versões.
 
 As imagens conceituais do simulador de RH permanecem identificadas como referências planejadas. A galeria abre com capturas do protótipo jogável. No Chatbot Configurável, as telas identificam o provedor local de teste.
 
-A versão 0.5 do Scout Trainer está em desenvolvimento. O download público indicado corresponde à versão 0.3.0; o texto mantém essa diferença explícita.
+A versão 0.7.0 do código do Scout Trainer está em desenvolvimento. O download público indicado corresponde à versão 0.3.0; o texto mantém essa diferença explícita.
 
-As capturas de Scout Trainer, Registro do Atleta e Moradia BH foram revistas em 8 de outubro de 2026. O GIF do mapa documenta a versão anterior, explicitamente identificada na legenda. As origens relatadas nos textos seguem as explicações fornecidas pelo autor.
+Em 21 de outubro de 2026, foram acrescentadas capturas reais das quatro modalidades do Scout Trainer, do Mosaico do Moradia BH, da versão atual de A Temporada e da interface local do gerador de vídeos. O vídeo produzido pelo gerador não integra este portfólio. O Sorge não tem interface visual própria: a figura é um diagrama identificado como tal. As imagens antigas de A Temporada continuam na galeria e estão legendadas por versão. O GIF antigo do mapa também permanece identificado como histórico.
