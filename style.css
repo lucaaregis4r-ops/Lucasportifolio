@@ -1522,3 +1522,13 @@ figcaption>span:first-child {
 
 /* A saudação acompanha o nome sem perder a hierarquia da abertura. */
 .opening h1 .greeting { display:block; color:var(--ink); font-size:clamp(24px,3.4vw,46px); font-weight:500; letter-spacing:-.035em; line-height:1.2; margin-bottom:12px; white-space:normal; }
+
+/* Imagens e leitura do laboratório */
+.lab-row { grid-template-columns: 35px minmax(180px, 240px) minmax(0, 1fr) 80px; }
+.lab-image img { display:block; width:100%; height:auto; aspect-ratio:1.65; object-fit:cover; object-position:top; }
+.lab-row--atlas { background:#e9e2e8; margin-inline:-16px; padding-inline:16px; }
+.lab-row--atlas .lab-copy .meta { color:#4d3048; font-weight:600; }
+.lab-row--atlas .lab-image { border-color:#b7a7b4; }
+.lab-filters button:focus-visible, a:focus-visible { outline:3px solid #80516f; outline-offset:3px; }
+@media(max-width:760px) { .lab-row { grid-template-columns:23px minmax(0,1fr) 115px; } .lab-row--atlas { margin-inline:0; padding-inline:0; background:transparent; } }
+@media(max-width:380px) { .lab-row { grid-template-columns:20px minmax(0,1fr) 90px; } .lab-image { display:block; } .lab-copy h3 { font-size:19px; } }
