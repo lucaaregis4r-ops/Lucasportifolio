@@ -1,6 +1,6 @@
 # Lucas Regis — Portfólio
 
-Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. Reúne os projetos, suas decisões de desenvolvimento e capturas das interfaces. O layout usa ameixa, grafite e fundo claro; Archivo, Newsreader e uma fonte monoespaçada diferenciam títulos, prosa e informações técnicas.
+Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. [Abrir o portfólio](https://lucaaregis4r-ops.github.io/Lucasportifolio/). Reúne os projetos, suas decisões de desenvolvimento e capturas das interfaces. O layout usa ameixa, grafite e fundo claro; Archivo, Newsreader e uma fonte monoespaçada diferenciam títulos, prosa e informações técnicas.
 
 ## Estrutura
 
