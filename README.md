@@ -1,6 +1,6 @@
 # Lucas Regis — Portfólio
 
-Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. A apresentação parte dos problemas e das decisões de cada projeto, com identidade editorial em ameixa, grafite e papel claro. Archivo organiza a interface; Newsreader é usada na prosa; a fonte mono identifica metadados e informações técnicas.
+Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. Reúne os projetos, suas decisões de desenvolvimento e capturas das interfaces. O layout usa ameixa, grafite e fundo claro; Archivo, Newsreader e uma fonte monoespaçada diferenciam títulos, prosa e informações técnicas.
 
 ## Estrutura
 
@@ -49,4 +49,4 @@ As imagens conceituais do simulador de RH permanecem identificadas como referên
 
 A versão 0.7.0 do código do Scout Trainer está em desenvolvimento. O download público indicado corresponde à versão 0.3.0; o texto mantém essa diferença explícita.
 
-Em 21 de outubro de 2026, foram acrescentadas capturas reais das quatro modalidades do Scout Trainer, do Mosaico do Moradia BH, da versão atual de A Temporada e da interface local do gerador de vídeos. O vídeo produzido pelo gerador não integra este portfólio. O Sorge não tem interface visual própria: a figura é um diagrama identificado como tal. As imagens antigas de A Temporada continuam na galeria e estão legendadas por versão. O GIF antigo do mapa também permanece identificado como histórico.
+A galeria inclui capturas reais das quatro modalidades do Scout Trainer, do Mosaico do Moradia BH, da versão atual de A Temporada e da interface local do gerador de vídeos. O vídeo produzido pelo gerador não está no portfólio. A imagem do Sorge é um diagrama, pois o projeto não tem interface própria. As capturas antigas de A Temporada e o GIF do mapa estão identificados como históricos.
