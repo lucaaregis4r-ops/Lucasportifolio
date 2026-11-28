@@ -1,11 +1,11 @@
 # Lucas Regis — Portfólio
 
-Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. [Abrir o portfólio](https://lucaaregis4r-ops.github.io/Lucasportifolio/). Reúne os projetos, suas decisões de desenvolvimento e capturas das interfaces. O layout usa ameixa, grafite e fundo claro; Archivo, Newsreader e uma fonte monoespaçada diferenciam títulos, prosa e informações técnicas.
+Portfólio estático em HTML, CSS e JavaScript, publicado no GitHub Pages. [Abrir o portfólio](https://lucaaregis4r-ops.github.io/Lucasportifolio/). Apresenta análise de dados, IA aplicada e automação em primeiro plano, com a trajetória no esporte como contexto e origem de parte dos projetos. Registra as decisões de desenvolvimento, o estado de cada ferramenta e suas limitações. O layout usa ameixa, grafite e fundo claro; Archivo, Newsreader e uma fonte monoespaçada diferenciam títulos, prosa e informações técnicas.
 
 ## Estrutura
 
-- Abertura, três trabalhos selecionados, percurso do Scout, laboratório, trajetória e contato.
-- Páginas próprias para os doze projetos, com endereço compartilhável, contexto, ferramentas e documentação visual.
+- Abertura, quatro projetos de dados, IA e automação, um resumo do método de trabalho, outros projetos e contato.
+- Páginas próprias para os doze projetos, com contexto, ferramentas, links e documentação visual.
 - Scout Trainer, Registro do Atleta e o mapa de BH têm relatos sobre origem, escolhas, funcionamento atual, limites e aprendizados.
 - O Scout de Vôlei é apresentado como experimento anterior, conectado ao Scout Trainer.
 - Navegação e conteúdo independem de JavaScript. Os filtros do laboratório e controles das galerias são melhorias opcionais.

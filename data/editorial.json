@@ -1,6 +1,6 @@
 {
   "scout-trainer": {
-    "numero": "01",
+    "numero": "09",
     "area": "Observação de jogo / aplicação local",
     "chamada": "Uma tentativa de construir meu próprio scout.",
     "resumo": "Quem trabalha com esporte sabe que programas de scout nem sempre são baratos. Comecei treinando códigos de vôlei e depois passei a registrar partidas. O projeto cresceu: hoje experimento formas de coleta para voleibol, futebol, futsal e basquete, sem perder de vista o que uma pessoa consegue observar durante o jogo.",
@@ -86,7 +86,7 @@
     ]
   },
   "registro-do-atleta": {
-    "numero": "02",
+    "numero": "06",
     "area": "Organização de dados / revisão humana",
     "chamada": "Planilhas, nomes diferentes e informações para conferir.",
     "resumo": "Trabalho com planilhas e registros de atletas praticamente todos os dias. Quando comecei a estudar LLMs e modelos que podem rodar localmente, fiquei pensando em como eles poderiam ajudar nesse trabalho. A ideia do Registro do Atleta veio daí: reunir informações, facilitar a consulta e a revisão e usar IA como apoio quando fizer sentido.",
@@ -164,10 +164,10 @@
     ]
   },
   "mapa-de-valores-imobiliarios-em-belo-horizonte": {
-    "numero": "03",
-    "area": "Dados públicos / exploração geográfica",
-    "chamada": "Começou porque eu queria trabalhar com mapas.",
-    "resumo": "Sempre gostei de mapas e queria aprender coleta automática. Comecei com anúncios de Belo Horizonte; agora o Moradia BH permite explorar ofertas e medianas por cidade, bairro e região da RMBH, com as diferenças entre as fontes à vista.",
+    "numero": "01",
+    "area": "Dados / coleta, validação e visualização geográfica",
+    "chamada": "Organizei anúncios dispersos em um mapa que mostra de onde vêm os dados e o que eles permitem enxergar.",
+    "resumo": "O Moradia BH organiza ofertas imobiliárias e permite explorar resultados por bairro, cidade e região metropolitana. O projeto reúne o Atlas histórico de venda, o Mercado Agora de aluguel e o Mosaico da RMBH. As fontes e os métodos ficam separados; os valores são de anúncios, não de transações.",
     "capa": "moradia-bh-mosaico-2026.png",
     "legenda": "Mosaico de BH em 21/10/2026: bairros coloridos pela mediana do preço pedido de venda por m²; áreas cinzas têm amostra insuficiente.",
     "secoes": [
@@ -250,6 +250,176 @@
       [
         "Regras de validação da coleta",
         "https://github.com/lucaaregis4r-ops/Valor-de-Casas-em-bh/blob/db5072fd85083815cf8e8f9d2339bfd087b88ba0/pipeline/validation.py"
+      ]
+    ]
+  },
+  "modelo-de-chatbot-configuravel": {
+    "numero": "02",
+    "area": "IA aplicada / busca em documentos",
+    "chamada": "Um mesmo aplicativo permite configurar assistentes para tarefas diferentes.",
+    "resumo": "O Chatbot Configurável deixa escolher instruções, provedor e modo de conversa. Também busca trechos em documentos e mostra as fontes usadas na resposta. A primeira versão está concluída; a qualidade das respostas ainda precisa de avaliação sistemática.",
+    "capa": "chatbot-capa.png",
+    "legenda": "Tela do Chatbot Configurável com uma conversa de demonstração no provedor local de teste.",
+    "secoes": [
+      [
+        "Configurar sem refazer a aplicação",
+        "A interface permite definir nome e instruções do assistente, escolher o provedor e selecionar um modo de conversa: consulta, tutor ou avaliação. Assim, a mesma aplicação pode ser experimentada em tarefas diferentes."
+      ],
+      [
+        "Consultar documentos com fontes",
+        "A base de conhecimento aceita arquivos TXT, MD, PDF, DOCX, CSV e XLSX. O aplicativo procura trechos relacionados à pergunta e apresenta as fontes junto à resposta. O projeto ainda precisa de uma avaliação mais ampla para verificar quando as respostas estão de fato apoiadas nos documentos."
+      ],
+      [
+        "Histórico e portabilidade",
+        "As conversas ficam organizadas no histórico. As configurações dos assistentes podem ser exportadas e importadas em JSON, facilitando guardar versões e experimentar instruções diferentes."
+      ],
+      [
+        "Estado atual",
+        "A primeira versão funcional está concluída e pode ser configurada com provedor local de teste, OpenRouter ou Gemini. O próximo passo é avaliar a recuperação e a qualidade das respostas com documentos e perguntas variadas."
+      ]
+    ],
+    "implementacao": [
+      [
+        "Aplicação",
+        "Next.js + TypeScript"
+      ],
+      [
+        "Persistência",
+        "SQLite para histórico e configurações"
+      ],
+      [
+        "Busca",
+        "RAG e recuperação de trechos em documentos"
+      ],
+      [
+        "Entradas",
+        "TXT, MD, PDF, DOCX, CSV e XLSX"
+      ],
+      [
+        "Modelos",
+        "Provedor local de teste, OpenRouter e Gemini"
+      ],
+      [
+        "Estado",
+        "Primeira versão concluída; avaliação sistemática pendente"
+      ]
+    ],
+    "referencias": [
+      [
+        "Repositório do projeto",
+        "https://github.com/lucaaregis4r-ops/Modelo-de-chatbot-configuravel"
+      ]
+    ]
+  },
+  "sorge": {
+    "numero": "03",
+    "area": "Automação / agenda e integrações",
+    "chamada": "Resolver por regras o que é previsível e encaminhar o restante para interpretação.",
+    "resumo": "O protótipo recebe comandos pelo Telegram, atende pedidos previsíveis com regras locais e encaminha mensagens abertas para interpretação estruturada. Eventos e histórico ficam em SQLite. As integrações com n8n e Google Calendar ainda precisam ser validadas em uso contínuo.",
+    "capa": "sorge-fluxo.svg",
+    "legenda": "Diagrama do fluxo do Sorge: mensagem, regras locais, interpretação opcional e armazenamento.",
+    "secoes": [
+      [
+        "Separar comandos de mensagens abertas",
+        "Perguntas previsíveis, como consultar o dia ou verificar se o serviço está funcionando, seguem regras locais. Frases abertas podem ser encaminhadas a um modelo, que devolve campos estruturados para revisão."
+      ],
+      [
+        "Guardar eventos e histórico",
+        "O gateway recebe mensagens de uma conta autorizada no Telegram. O SQLite mantém o histórico e os eventos, enquanto o serviço local agenda lembretes."
+      ],
+      [
+        "Tratar integrações como parte do fluxo",
+        "O projeto prevê integração com n8n e Google Calendar. Se a integração não responder, o fluxo usa a base local. Ainda falta validar em uso contínuo como eventos criados durante uma falha retornam ao calendário."
+      ],
+      [
+        "Estado atual",
+        "O protótipo tem testes para roteamento, persistência, lembretes e clientes externos simulados. Mensagens no Telegram e chamadas a provedores externos passam por esses serviços quando usados."
+      ]
+    ],
+    "implementacao": [
+      [
+        "Aplicação",
+        "Python"
+      ],
+      [
+        "Canal",
+        "Bot e gateway no Telegram"
+      ],
+      [
+        "Regras e dados",
+        "Roteamento local + SQLite"
+      ],
+      [
+        "Integrações",
+        "n8n e Google Calendar em avaliação"
+      ],
+      [
+        "Validação",
+        "Testes de roteamento, persistência e lembretes"
+      ],
+      [
+        "Estado",
+        "Protótipo funcional; sincronização contínua pendente de validação"
+      ]
+    ],
+    "referencias": [
+      [
+        "Repositório do projeto",
+        "https://github.com/lucaaregis4r-ops/Sorge"
+      ]
+    ]
+  },
+  "estudio-de-videos-curtos": {
+    "numero": "04",
+    "area": "Automação de conteúdo / processamento de mídia",
+    "chamada": "Um roteiro aprovado vira uma fila de cenas que ainda passa pela revisão humana.",
+    "resumo": "A ferramenta organiza um fluxo local para dividir roteiros em cenas, buscar mídia, gerar narração e montar vídeos verticais com FFmpeg. A interface permite revisar etapas e organizar produções em lote. O projeto parte do MoneyPrinterTurbo, com a contribuição própria e os recursos herdados identificados.",
+    "capa": "estudio-videos-curtos-criacao.png",
+    "legenda": "Interface local para criação de um vídeo curto: roteiro, voz e estilo.",
+    "secoes": [
+      [
+        "Roteiro dividido em cenas",
+        "O fluxo começa com um texto escrito e aprovado por uma pessoa. O aplicativo separa o roteiro em cenas para que texto, mídia, voz e montagem possam ser revisados antes da exportação."
+      ],
+      [
+        "Etapas repetitivas em um só lugar",
+        "A interface local em Streamlit organiza busca de mídia, geração de narração e montagem com FFmpeg. Uma fila local permite acompanhar mais de um roteiro e reunir os arquivos produzidos."
+      ],
+      [
+        "Revisão e origem do código",
+        "A automação reduz etapas manuais, mas não substitui a revisão do resultado final. O projeto foi construído a partir do MoneyPrinterTurbo; a base original e os recursos herdados permanecem identificados, e as demonstrações herdadas não são apresentadas como produção própria."
+      ]
+    ],
+    "implementacao": [
+      [
+        "Interface",
+        "Streamlit"
+      ],
+      [
+        "Montagem",
+        "FFmpeg"
+      ],
+      [
+        "Processamento",
+        "Python, TTS e mídia por cenas"
+      ],
+      [
+        "Organização",
+        "Fila local e arquivos exportados"
+      ],
+      [
+        "Base original",
+        "MoneyPrinterTurbo, com crédito ao projeto upstream"
+      ],
+      [
+        "Estado",
+        "Protótipo local; revisão final feita por uma pessoa"
+      ]
+    ],
+    "referencias": [
+      [
+        "Repositório do projeto",
+        "https://github.com/lucaaregis4r-ops/geradordevideos"
       ]
     ]
   }
